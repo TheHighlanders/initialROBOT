@@ -23,7 +23,7 @@ public class TankDriveCmd extends Command {
     protected void execute() {
 
     	
-    	Robot.dt.driveLR(Robot.oi.getLeftJoystickY(), Robot.oi.getRightJoystickY());
+    	Robot.dt.driveLR(Robot.oi.getLeftYOfXbox(), Robot.oi.getRightYOfXbox());
     }
 
     // Make this return true when this Command no longer needs to run execute()

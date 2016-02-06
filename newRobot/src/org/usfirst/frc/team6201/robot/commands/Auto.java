@@ -10,8 +10,8 @@ public class Auto extends CommandGroup {
     
     public  Auto() {
     	
-    	addSequential (new DriveDistanceCmd (15.0));
-    	addSequential (new WaitCommand (5.0));
+    	//addSequential (new DriveDistanceCmd (15.0));
+    	//addSequential (new WaitCommand (5.0));
     	addSequential (new DriveTimeCmd (3.0));
     	
     	//addParallel needs to be next to eachother

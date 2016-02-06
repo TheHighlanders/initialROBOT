@@ -9,8 +9,16 @@ import edu.wpi.first.wpilibj.livewindow.LiveWindow;
 import org.usfirst.frc.team6201.robot.commands.Auto;
 import org.usfirst.frc.team6201.robot.commands.DriveDistanceCmd;
 import org.usfirst.frc.team6201.robot.commands.DriveTimeCmd;
-import org.usfirst.frc.team6201.robot.commands.TankDriveCmd;
 import org.usfirst.frc.team6201.robot.subsystems.Drivetrain;
+
+import com.ni.vision.NIVision;
+import com.ni.vision.NIVision.DrawMode;
+import com.ni.vision.NIVision.Image;
+import com.ni.vision.NIVision.ShapeMode;
+
+import edu.wpi.first.wpilibj.CameraServer;
+import edu.wpi.first.wpilibj.SampleRobot;
+import edu.wpi.first.wpilibj.Timer;
 import edu.wpi.first.wpilibj.smartdashboard.SendableChooser;
 import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
 
@@ -21,13 +29,16 @@ import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
  * creating this project, you must also update the manifest file in the resource
  * directory.
  * 	
- * @
+ * @contributor David Matthews 
  */
 public class Robot extends IterativeRobot {
 
 	public static final Drivetrain dt = new Drivetrain();
 	public static OI oi;
-
+	
+    int session;
+    Image frame;
+    
     Command autonomousCommand;
     SendableChooser chooser;
 
@@ -42,6 +53,13 @@ public class Robot extends IterativeRobot {
         chooser.addObject("Drive Distance", new DriveDistanceCmd(15));
         chooser.addObject("Drive, wait, and drive Auto", new Auto());
         SmartDashboard.putData("Auto mode", chooser);
+        
+        frame = NIVision.imaqCreateImage(NIVision.ImageType.IMAGE_RGB, 0);
+
+        // the camera name (ex "cam0") can be found through the roborio web interface
+        session = NIVision.IMAQdxOpenCamera("cam0",
+                NIVision.IMAQdxCameraControlMode.CameraControlModeController);
+        NIVision.IMAQdxConfigureGrab(session);
     }
 	
 	/**
@@ -116,7 +134,26 @@ public class Robot extends IterativeRobot {
      * This function is called periodically during operator control
      */
     public void teleopPeriodic() {
-        Scheduler.getInstance().run();
+        NIVision.IMAQdxStartAcquisition(session);
+
+        /**
+         * grab an image, draw the circle, and provide it for the camera server
+         * which will in turn send it to the dashboard.
+         */
+        NIVision.Rect rect = new NIVision.Rect(10, 10, 100, 100);
+
+        while (isOperatorControl() && isEnabled()) {
+
+            NIVision.IMAQdxGrab(session, frame, 1);
+      
+            
+            CameraServer.getInstance().setImage(frame);
+            SmartDashboard.putNumber("image ", frame);
+            Scheduler.getInstance().run();
+            Timer.delay(0.005);		// wait for a motor update time
+        }
+        NIVision.IMAQdxStopAcquisition(session);
+
     }
     
     /**

@@ -1,22 +1,25 @@
 
 package org.usfirst.frc.team6201.robot.subsystems;
 
-import org.usfirst.frc.team6201.robot.Robot;
 import org.usfirst.frc.team6201.robot.RobotMap;
-import org.usfirst.frc.team6201.robot.commands.TankDriveCmd;
+import org.usfirst.frc.team6201.robot.commands.ArcadeDriveCmd;
+/// not used
+// import org.usfirst.frc.team6201.robot.commands.TankDriveCmd;
 
 import edu.wpi.first.wpilibj.Encoder;
 import edu.wpi.first.wpilibj.Talon;
+import edu.wpi.first.wpilibj.Spark;
 import edu.wpi.first.wpilibj.command.PIDSubsystem;
-import edu.wpi.first.wpilibj.command.Subsystem; 
+
 
 
 public class Drivetrain extends PIDSubsystem {
 
 	//  Motors
-	private Talon leftDrive = new Talon (RobotMap.LEFT_DRIVE);
-	private Talon rightDrive = new Talon (RobotMap.RIGHT_DRIVE);
-	
+	private Talon leftDrive1 = new Talon (RobotMap.LEFT_DRIVE1);
+	private Talon rightDrive1 = new Talon (RobotMap.RIGHT_DRIVE1);
+	private Spark leftDrive2 = new Spark (RobotMap.LEFT_DRIVE2);
+	private Spark rightDrive2 = new Spark (RobotMap.RIGHT_DRIVE2);
 	
 	// Sensors
 	private Encoder leftEncoder = new Encoder (RobotMap.ENCODER_LEFT_A, RobotMap.ENCODER_LEFT_B);
@@ -29,19 +32,21 @@ public class Drivetrain extends PIDSubsystem {
 	public Drivetrain () {
 		super ("Drvetrain", P, I, D);
 		
-		leftEncoder.setDistancePerPulse(1);
+		leftEncoder.setDistancePerPulse(RobotMap.SET_DISTANCE_PER_PULSE);
 	}
 	
 	public void initDefaultCommand() {
-    	setDefaultCommand (new TankDriveCmd());
+    	setDefaultCommand (new ArcadeDriveCmd());
     }
     
     //sets the power of the left and right motors.
     // Power can be between -1 and 1.
     // 0 is stop, extremum  are full speed.
     public void driveLR (double leftPower, double rightPower) {
-    	leftDrive.set(leftPower);
-    	rightDrive.set(-rightPower);
+    	leftDrive1.set(leftPower);
+    	rightDrive1.set(-rightPower);
+    	leftDrive2.set(leftPower);
+    	rightDrive2.set(-rightPower);
     }
     
     //stops the drivetrain
