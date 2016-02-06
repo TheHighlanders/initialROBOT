@@ -134,26 +134,7 @@ public class Robot extends IterativeRobot {
      * This function is called periodically during operator control
      */
     public void teleopPeriodic() {
-        NIVision.IMAQdxStartAcquisition(session);
-
-        /**
-         * grab an image, draw the circle, and provide it for the camera server
-         * which will in turn send it to the dashboard.
-         */
-        NIVision.Rect rect = new NIVision.Rect(10, 10, 100, 100);
-
-        while (isOperatorControl() && isEnabled()) {
-
-            NIVision.IMAQdxGrab(session, frame, 1);
-      
-            
-            CameraServer.getInstance().setImage(frame);
-            SmartDashboard.putNumber("image ", frame);
-            Scheduler.getInstance().run();
-            Timer.delay(0.005);		// wait for a motor update time
-        }
-        NIVision.IMAQdxStopAcquisition(session);
-
+        Scheduler.getInstance().run();
     }
     
     /**
