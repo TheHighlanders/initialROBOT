@@ -10,7 +10,10 @@ import edu.wpi.first.wpilibj.command.Command;
  */
 public class DriveTimeCmd extends Command {
 
+	// how long have we been driving?
 	private Timer timer = new Timer ();
+	
+	// how long do we want to drive?
 	private double drivingTime;
 	
     public DriveTimeCmd(double drivingTime) {
@@ -18,6 +21,7 @@ public class DriveTimeCmd extends Command {
     }
 
     protected void initialize() {
+    	//we start driving
     	timer.start ();
     	Robot.dt.driveLR(1.0, 1.0);
     }
@@ -27,7 +31,7 @@ public class DriveTimeCmd extends Command {
 
     protected boolean isFinished() {
         
-  
+  // have we been driving as long as we want to
     	return timer.get()>this.drivingTime;
     }
 
