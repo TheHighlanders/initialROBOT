@@ -28,6 +28,10 @@ public class OI {
 		return arcade.getRawAxis(RobotMap.LOGITECH_ROTATE_AXIS);
 	}
 	
+	public double getXAxisOfLogitech(){
+		return arcade.getRawAxis(RobotMap.LOGITECH_X_AXIS);
+	}
+	
 	public double getYAxisOfLogitech(){
 		return arcade.getRawAxis(RobotMap.LOGITECH_Y_AXIS);
 	}
