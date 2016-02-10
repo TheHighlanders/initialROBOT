@@ -8,6 +8,7 @@ import org.usfirst.frc.team6201.robot.commands.ArcadeDriveCmd;
 
 import edu.wpi.first.wpilibj.Encoder;
 import edu.wpi.first.wpilibj.Talon;
+import edu.wpi.first.wpilibj.Victor;
 import edu.wpi.first.wpilibj.Spark;
 import edu.wpi.first.wpilibj.command.PIDSubsystem;
 
@@ -16,10 +17,10 @@ import edu.wpi.first.wpilibj.command.PIDSubsystem;
 public class Drivetrain extends PIDSubsystem {
 
 	//  Motors
-	private Talon leftDrive1 = new Talon (RobotMap.LEFT_DRIVE1);
-	private Talon rightDrive1 = new Talon (RobotMap.RIGHT_DRIVE1);
-	private Spark leftDrive2 = new Spark (RobotMap.LEFT_DRIVE2);
-	private Spark rightDrive2 = new Spark (RobotMap.RIGHT_DRIVE2);
+	private Victor leftDrive1 = new Victor (RobotMap.LEFT_DRIVE1);
+	private Victor rightDrive1 = new Victor (RobotMap.RIGHT_DRIVE1);
+	private Victor leftDrive2 = new Victor (RobotMap.LEFT_DRIVE2);
+	private Victor rightDrive2 = new Victor (RobotMap.RIGHT_DRIVE2);
 	
 	// Sensors
 	private Encoder leftEncoder = new Encoder (RobotMap.ENCODER_LEFT_A, RobotMap.ENCODER_LEFT_B);
