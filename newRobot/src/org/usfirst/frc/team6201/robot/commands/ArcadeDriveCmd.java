@@ -13,10 +13,7 @@ public class ArcadeDriveCmd extends Command {
 
 
 	// declaring variables 
-	private double rawX; // X axis from the Joystick
-	private double rawY; // Y axis from the Joystick
-	private double scaledY; // Y axis after tan curve
-	private double scaledX; // X axis after tan curve
+
 	private double turn; // how much turning?
 	private double power; // how much speed?
 	private double nTurn; // adjusted turn
