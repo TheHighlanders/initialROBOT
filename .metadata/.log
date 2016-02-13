@@ -6088,3 +6088,22 @@ This warning can be switched off on the Team > Git > Confirmations and Warnings 
 
 !ENTRY edu.wpi.first.wpilib.plugins.core 1 0 2016-02-13 12:57:21.873
 !MESSAGE [edu.wpi.first.wpilib.plugins.core.wizards.Tag@28f20b2a, edu.wpi.first.wpilib.plugins.core.wizards.Tag@56cd8903, edu.wpi.first.wpilib.plugins.core.wizards.Tag@4bd0d62f, edu.wpi.first.wpilib.plugins.core.wizards.Tag@71ebd1d9, edu.wpi.first.wpilib.plugins.core.wizards.Tag@49f82f95, edu.wpi.first.wpilib.plugins.core.wizards.Tag@73c72238, edu.wpi.first.wpilib.plugins.core.wizards.Tag@3e6be3c1, edu.wpi.first.wpilib.plugins.core.wizards.Tag@112188cc, edu.wpi.first.wpilib.plugins.core.wizards.Tag@19ad99fa, edu.wpi.first.wpilib.plugins.core.wizards.Tag@5331be15, edu.wpi.first.wpilib.plugins.core.wizards.Tag@32a53a59, edu.wpi.first.wpilib.plugins.core.wizards.Tag@2f5fb329, edu.wpi.first.wpilib.plugins.core.wizards.Tag@5ac88d71, edu.wpi.first.wpilib.plugins.core.wizards.Tag@457512b, edu.wpi.first.wpilib.plugins.core.wizards.Tag@1f3bd40a]
+
+!ENTRY org.eclipse.egit.ui 4 0 2016-02-13 13:01:26.692
+!MESSAGE Failed to refresh projects from index changes
+!STACK 1
+org.eclipse.core.internal.resources.ResourceException: Errors occurred while refreshing resources with the local file system.
+	at org.eclipse.core.internal.localstore.FileSystemResourceManager.refreshResource(FileSystemResourceManager.java:960)
+	at org.eclipse.core.internal.localstore.FileSystemResourceManager.refresh(FileSystemResourceManager.java:941)
+	at org.eclipse.core.internal.resources.Resource.refreshLocal(Resource.java:1593)
+	at org.eclipse.egit.ui.Activator$ResourceRefreshJob.runInWorkspace(Activator.java:418)
+	at org.eclipse.core.internal.resources.InternalWorkspaceJob.run(InternalWorkspaceJob.java:39)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:55)
+Contains: The project description file (.project) for 'RemoteSystemsTempFiles' is missing.  This file contains important information about the project.  The project will not function properly until this file is restored.
+!SUBENTRY 1 org.eclipse.core.resources 4 271 2016-02-13 13:01:26.692
+!MESSAGE Errors occurred while refreshing resources with the local file system.
+!SUBENTRY 2 org.eclipse.core.resources 4 567 2016-02-13 13:01:26.692
+!MESSAGE The project description file (.project) for 'RemoteSystemsTempFiles' is missing.  This file contains important information about the project.  The project will not function properly until this file is restored.
+
+!ENTRY org.eclipse.egit.ui 4 0 2016-02-13 13:01:27.222
+!MESSAGE Errors occurred while refreshing resources with the local file system.
