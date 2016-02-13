@@ -4,6 +4,7 @@ import org.usfirst.frc.team6201.robot.Robot;
 import org.usfirst.frc.team6201.robot.subsystems.Drivetrain;
 
 import edu.wpi.first.wpilibj.command.Command;
+import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
 
 /**
  *@author David Matthews
@@ -22,13 +23,19 @@ public class ArcadeDriveCmd extends Command {
 	private double nPower; // adjusted power
 	private final double TANDOMAIN_Y = 1.3;
 	private final double TANDOMAIN_X = 1.3;
+	private final double XTHREEDOMAIN = 0.5;
+	
 	
 	
 	// uses a tan curve for the sensitivity of the robot vs. joystick position.
 	// compresses the values to fit within the desired range of tan, and within the desired output range.
 	
-	private double scaledVal (double rawVal, double domain){
+	private double scaledValTan (double rawVal, double domain){
 		return Math.tan(rawVal*domain) / (Math.tan(domain));
+	}
+	
+	private double scaledValXThree (double rawVal, double domain){
+		return (Math.pow(rawVal, 3)/Math.pow(domain,3));
 	}
 	
 	
@@ -42,13 +49,20 @@ public class ArcadeDriveCmd extends Command {
 
     // Called repeatedly when this Command is scheduled to run
     protected void execute() {
-    	turn = scaledVal(Robot.oi.getXAxisOfLogitech(), TANDOMAIN_X);
-    	power = scaledVal(Robot.oi.getLeftYOfXbox(), TANDOMAIN_Y);
+    	
+    	turn = scaledValTan(Robot.oi.getXAxisOfLogitech(), TANDOMAIN_X);
+    	power = scaledValTan(Robot.oi.getYAxisOfLogitech(), TANDOMAIN_Y);
+    	
+    	//turn = scaledValXThree (Robot.oi.getXAxisOfLogitech(), XTHREEDOMAIN);
+    	//power = scaledValXThree (Robot.oi.getYAxisOfLogitech(), XTHREEDOMAIN);
     	
     	nPower = 0.95*power;
     	nTurn = (1-power) * turn;
     
-    	Robot.dt.driveLR(nPower + nTurn, nPower - nTurn);
+    	SmartDashboard.putNumber("nPower: ", nPower);
+    	SmartDashboard.putNumber("nTurn: ", nTurn);
+    	
+    	Robot.dt.driveLR((nPower + nTurn), (nPower - nTurn));
 	}
 
     // Make this return true when this Command no longer needs to run execute()

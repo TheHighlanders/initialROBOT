@@ -8,10 +8,10 @@ package org.usfirst.frc.team6201.robot;
 public class RobotMap {
 	
 	// PWM
-	public static final int LEFT_DRIVE1 = 0;
-	public static final int RIGHT_DRIVE1 = 1;
-	public static final int RIGHT_DRIVE2 =3;
-	public static final int LEFT_DRIVE2 = 2;
+	public static final int LEFT_DRIVE1 = 2;
+	public static final int RIGHT_DRIVE1 = 0;
+	public static final int RIGHT_DRIVE2 =1;
+	public static final int LEFT_DRIVE2 = 3;
 	
 	public static final int ENCODER_LEFT_A = 3;
 	public static final int ENCODER_LEFT_B = 0;

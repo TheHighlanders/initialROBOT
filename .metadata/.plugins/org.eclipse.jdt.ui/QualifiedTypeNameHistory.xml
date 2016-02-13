@@ -3,4 +3,6 @@
 <fullyQualifiedTypeName name="edu.wpi.first.wpilibj.Joystick"/>
 <fullyQualifiedTypeName name="org.usfirst.frc.team6201.robot.RobotMap"/>
 <fullyQualifiedTypeName name="org.usfirst.frc.team6201.robot.commands.ArcadeDriveCmd"/>
+<fullyQualifiedTypeName name="edu.wpi.first.wpilibj.Victor"/>
+<fullyQualifiedTypeName name="edu.wpi.first.wpilibj.ADXRS450_Gyro"/>
 </qualifiedTypeNameHistroy>
