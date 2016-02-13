@@ -5,7 +5,7 @@ import org.usfirst.frc.team6201.robot.Robot;
 import edu.wpi.first.wpilibj.command.Command;
 
 /**
- *
+ * Drives the robot a set distance
  */
 public class DriveDistanceCmd extends Command {
 
