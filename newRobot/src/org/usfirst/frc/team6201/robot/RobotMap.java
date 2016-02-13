@@ -22,13 +22,13 @@ public class RobotMap {
 	
 	// TankdriveCmd
 	public static final int XBOX = 0;
-	public static final int ARCADE = 1;
 	public static final int UP_AXIS = 0;
 	public static final int XBOX_RIGHT = 0;
 	public static final int XBOX_LEFT = 0;
 	
 	
 	// ArcadeDriveCmd
+	public static final int ARCADE = 1;
 	public static final int LOGITECH = 1;
 	public static final int LOGITECH_X_AXIS = 0;
 	public static final int LOGITECH_Y_AXIS = 1;
