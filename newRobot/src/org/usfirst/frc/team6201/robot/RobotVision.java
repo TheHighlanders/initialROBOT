@@ -14,7 +14,22 @@ import edu.wpi.first.wpilibj.vision.AxisCamera;
  * This demo shows the use of the AxisCamera class.
  * Uses AxisCamera class to manually acquire a new image each frame, and annotate the image by drawing
  * a circle on it, and show it on the FRC Dashboard.
+        ___
+      /  /\   |---.
+      |__|/__ |---,\
+      |  `   |=    `
+      |      /|
+      |  .--' |
+      |   |   |
+      |   |   |
+      |   |   |
+     /    |   |
+    /_____\   |
+ * 
+ * 
  */
+
+
 
 public class RobotVision extends SampleRobot {
     int session;
