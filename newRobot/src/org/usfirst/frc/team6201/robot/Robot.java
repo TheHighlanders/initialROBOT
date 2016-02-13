@@ -31,6 +31,8 @@ import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
  * 	
  * @contributor David Matthews 
  */
+
+//Hi Max! Can you read this?
 public class Robot extends IterativeRobot {
 
 	public static final Drivetrain dt = new Drivetrain();
@@ -53,6 +55,7 @@ public class Robot extends IterativeRobot {
         chooser.addObject("Drive Distance", new DriveDistanceCmd(15));
         chooser.addObject("Drive, wait, and drive Auto", new Auto());
         SmartDashboard.putData("Auto mode", chooser);
+        SmartDashboard.
         
     }
 	
