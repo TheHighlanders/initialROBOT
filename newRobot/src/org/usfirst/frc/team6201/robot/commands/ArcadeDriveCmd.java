@@ -21,6 +21,7 @@ public class ArcadeDriveCmd extends Command {
 	private final double TANDOMAIN_Y = 1.3;
 	private final double TANDOMAIN_X = 1.3;
 	private final double XTHREEDOMAIN = 0.5;
+	public static int fowardOrReverse = 1; // starts in foward
 	
 	
 	
@@ -34,7 +35,6 @@ public class ArcadeDriveCmd extends Command {
 	private double scaledValXThree (double rawVal, double domain){
 		return (Math.pow(rawVal, 3)/Math.pow(domain,3));
 	}
-	
 	
     public ArcadeDriveCmd() {
     	requires(Robot.dt);
@@ -59,7 +59,7 @@ public class ArcadeDriveCmd extends Command {
     	SmartDashboard.putNumber("nPower: ", nPower);
     	SmartDashboard.putNumber("nTurn: ", nTurn);
     	
-    	Robot.dt.driveLR((nPower + nTurn), (nPower - nTurn));
+    	Robot.dt.driveLR(fowardOrReverse*(nPower + nTurn), fowardOrReverse*(nPower - nTurn));
 	}
 
     // Make this return true when this Command no longer needs to run execute()
