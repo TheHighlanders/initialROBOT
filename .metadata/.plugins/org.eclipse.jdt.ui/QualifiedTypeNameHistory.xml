@@ -2,11 +2,12 @@
 <qualifiedTypeNameHistroy>
 <fullyQualifiedTypeName name="edu.wpi.first.wpilibj.Joystick"/>
 <fullyQualifiedTypeName name="org.usfirst.frc.team6201.robot.RobotMap"/>
-<fullyQualifiedTypeName name="org.usfirst.frc.team6201.robot.commands.ArcadeDriveCmd"/>
 <fullyQualifiedTypeName name="edu.wpi.first.wpilibj.Victor"/>
-<fullyQualifiedTypeName name="edu.wpi.first.wpilibj.ADXRS450_Gyro"/>
 <fullyQualifiedTypeName name="edu.wpi.first.wpilibj.smartdashboard.SmartDashboard"/>
 <fullyQualifiedTypeName name="edu.wpi.first.wpilibj.command.Command"/>
 <fullyQualifiedTypeName name="edu.wpi.first.wpilibj.smartdashboard.SendableChooser"/>
 <fullyQualifiedTypeName name="edu.wpi.first.wpilibj.buttons.JoystickButton"/>
+<fullyQualifiedTypeName name="org.usfirst.frc.team6201.robot.commands.ArcadeDriveCmd"/>
+<fullyQualifiedTypeName name="org.usfirst.frc.team6201.robot.commands.FowardOrReverseCmd"/>
+<fullyQualifiedTypeName name="edu.wpi.first.wpilibj.ADXRS450_Gyro"/>
 </qualifiedTypeNameHistroy>
