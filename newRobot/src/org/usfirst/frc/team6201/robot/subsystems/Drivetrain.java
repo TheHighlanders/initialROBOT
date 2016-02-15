@@ -7,6 +7,7 @@ import org.usfirst.frc.team6201.robot.commands.ArcadeDriveCmd;
 // import org.usfirst.frc.team6201.robot.commands.TankDriveCmd;
 import org.usfirst.frc.team6201.robot.commands.CameraAndDriveCmdGrp;
 
+import edu.wpi.first.wpilibj.ADXRS450_Gyro;
 import edu.wpi.first.wpilibj.Encoder;
 import edu.wpi.first.wpilibj.Talon;
 import edu.wpi.first.wpilibj.Victor;
@@ -22,6 +23,8 @@ import edu.wpi.first.wpilibj.command.PIDSubsystem;
  * 
  *
  */
+
+
 public class Drivetrain extends PIDSubsystem {
 
 	//  Motors
@@ -32,7 +35,8 @@ public class Drivetrain extends PIDSubsystem {
 	
 	// Sensors
 	private Encoder leftEncoder = new Encoder (RobotMap.ENCODER_LEFT_A, RobotMap.ENCODER_LEFT_B);
-
+	private	ADXRS450_Gyro gyro = new ADXRS450_Gyro();
+	
 	// PID values
 	public static double P = 0;
 	public static double I = 0;
@@ -63,8 +67,29 @@ public class Drivetrain extends PIDSubsystem {
     	this.driveLR(0,0);
     }
     
+    //resets the encoder count
     public void resetEncoders () {
-    leftEncoder.reset();
+    	leftEncoder.reset();
+    }
+    
+    //calibrates the gyro
+    public void calibrateGyro(){
+    	gyro.calibrate();
+    }
+    
+    //resets the gyro to 0
+    public void resetGyro(){
+    	gyro.reset();
+    }
+    
+    //gets the current gyro angle
+    public double getGyroAngle(){
+    	return gyro.getAngle();
+    }
+    
+    //gets the current gyro rate
+    public double getGyroRate(){
+    	return gyro.getRate();
     }
 
 	@Override

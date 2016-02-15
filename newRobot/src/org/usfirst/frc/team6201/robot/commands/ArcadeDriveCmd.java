@@ -33,7 +33,7 @@ public class ArcadeDriveCmd extends Command {
 	private final double gyroRateGain = 1; // This is used to make the desired turn rate as output by the Joystick match the 
 	
 	
-	ADXRS450_Gyro gyro = new ADXRS450_Gyro();
+	
 	
 	
 	
@@ -55,8 +55,8 @@ public class ArcadeDriveCmd extends Command {
 
     // Called just before this Command runs the first time
     protected void initialize() {
-    	gyro.calibrate();
-    	gyro.reset();
+    	Robot.dt.calibrateGyro();
+    	Robot.dt.resetGyro();
     	
     }
 
@@ -71,7 +71,7 @@ public class ArcadeDriveCmd extends Command {
     	
     	processedPower = 0.95*rawPower; // leaves room for turning at full speed ahead.
     	processedOnceTurn = (1-rawPower) * rawTurn; // allows for turning full speed at stop.
-    	processedTwiceTurn = (processedOnceTurn - gyroRateGain*gyro.getRate())*pTurnGain + processedOnceTurn; // uses the gyro as a feedback loop to drive at the desired turn rate. 
+    	processedTwiceTurn = (processedOnceTurn - gyroRateGain*Robot.dt.getGyroRate())*pTurnGain + processedOnceTurn; // uses the gyro as a feedback loop to drive at the desired turn rate. 
     	
     	SmartDashboard.putNumber("rPower: ", Robot.oi.getYAxisOfLogitech());
     	SmartDashboard.putNumber("rTurn: ", Robot.oi.getXAxisOfLogitech());
@@ -80,8 +80,8 @@ public class ArcadeDriveCmd extends Command {
     	SmartDashboard.putNumber("p1Turn: ", processedOnceTurn);
     	SmartDashboard.putNumber("p2Turn: ", processedTwiceTurn);
     	
-    	SmartDashboard.putNumber("GyroAngle: ", gyro.getAngle());
-    	SmartDashboard.putNumber("GyroRate: ", gyro.getRate());
+    	SmartDashboard.putNumber("GyroAngle: ", Robot.dt.getGyroAngle());
+    	SmartDashboard.putNumber("GyroRate: ", Robot.dt.getGyroRate());
     	
     	Robot.dt.driveLR(RobotMap.fowardOrReverse*(processedPower + processedTwiceTurn), RobotMap.fowardOrReverse*(processedPower - processedTwiceTurn));
 	}

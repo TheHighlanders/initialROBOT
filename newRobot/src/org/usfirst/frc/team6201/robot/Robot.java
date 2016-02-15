@@ -56,7 +56,7 @@ public class Robot extends IterativeRobot {
 		oi = new OI();
         chooser = new SendableChooser();
         chooser.addDefault("Default Auto", new DriveTimeCmd(3.0));
-        chooser.addObject("Drive Distance", new TurnAngleCmd(15));
+        chooser.addObject("Drive Distance", new TurnAngleCmd(15, 1));
         chooser.addObject("Drive, wait, and drive Auto", new Auto());
         SmartDashboard.putData("Auto mode", chooser);
     	
