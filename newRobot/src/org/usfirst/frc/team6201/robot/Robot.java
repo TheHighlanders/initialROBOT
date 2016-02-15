@@ -12,6 +12,7 @@ import org.usfirst.frc.team6201.robot.commands.DriveDistanceCmd;
 import org.usfirst.frc.team6201.robot.commands.WhichCameraCmd;
 import org.usfirst.frc.team6201.robot.commands.DriveTimeCmd;
 import org.usfirst.frc.team6201.robot.subsystems.Drivetrain;
+import org.usfirst.frc.team6201.robot.subsystems.Roller;
 
 import com.ni.vision.NIVision;
 import com.ni.vision.NIVision.DrawMode;
@@ -37,6 +38,7 @@ import edu.wpi.first.wpilibj.vision.USBCamera;
 public class Robot extends IterativeRobot {
 
 	public static final Drivetrain dt = new Drivetrain();
+	public static final Roller roller = new Roller();
 	public static OI oi;
 
     Command autonomousCommand;

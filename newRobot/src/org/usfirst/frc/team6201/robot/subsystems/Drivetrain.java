@@ -43,7 +43,7 @@ public class Drivetrain extends PIDSubsystem {
 	public static double D = 0;
 
 	public Drivetrain () {
-		super ("Drvetrain", P, I, D);
+		super ("Drivetrain", P, I, D);
 		
 		leftEncoder.setDistancePerPulse(RobotMap.SET_DISTANCE_PER_PULSE);
 	}

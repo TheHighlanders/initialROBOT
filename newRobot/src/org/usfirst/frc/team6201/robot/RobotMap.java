@@ -14,6 +14,7 @@ public class RobotMap {
 	public static final int RIGHT_DRIVE1 = 3;
 	public static final int RIGHT_DRIVE2 = 4;
 	public static final int LEFT_DRIVE2 = 1;
+	public static final int ROLLER = 2;
 	
 	public static final int ENCODER_LEFT_A = 3;
 	public static final int ENCODER_LEFT_B = 0;
