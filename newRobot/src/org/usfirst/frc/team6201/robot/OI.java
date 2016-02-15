@@ -1,10 +1,10 @@
 package org.usfirst.frc.team6201.robot;
 
-import org.usfirst.frc.team6201.robot.commands.FowardOrReverseCmd;
-import org.usfirst.frc.team6201.robot.commands.SwitchCamCmd;
-
+import org.usfirst.frc.team6201.robot.commands.FowardCamCmd;
+import org.usfirst.frc.team6201.robot.commands.FowardDriveCmd;
+import org.usfirst.frc.team6201.robot.commands.RearCamCmd;
+import org.usfirst.frc.team6201.robot.commands.RearDriveCmd;
 import edu.wpi.first.wpilibj.Joystick;
-import edu.wpi.first.wpilibj.Timer;
 import edu.wpi.first.wpilibj.buttons.Button;
 import edu.wpi.first.wpilibj.buttons.JoystickButton;
 
@@ -48,11 +48,11 @@ public class OI {
 		Button button3 = new JoystickButton(arcade, 3);
 		Button button5 = new JoystickButton(arcade, 5);
 		
-		button3.whenPressed(new FowardDriveCmd);
-		button3.whenPressed(new ForwardCamCmd);
+		button3.whenPressed(new FowardDriveCmd());
+		button3.whenPressed(new FowardCamCmd());
 		
-		button5.whenPressed(new RearDriveCmd);
-		button5.whenPressed(new RearCamCmd);
+		button5.whenPressed(new RearDriveCmd());
+		button5.whenPressed(new RearCamCmd());
 		
 	}
 	

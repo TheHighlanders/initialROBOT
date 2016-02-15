@@ -16,8 +16,13 @@
 <fullyQualifiedTypeName name="org.usfirst.frc.team6201.robot.commands.CameraAndDriveCmdGrp"/>
 <fullyQualifiedTypeName name="org.usfirst.frc.team6201.robot.commands.DirectionCmdGrp"/>
 <fullyQualifiedTypeName name="org.usfirst.frc.team6201.robot.Robot"/>
-<fullyQualifiedTypeName name="org.usfirst.frc.team6201.robot.RobotMap"/>
 <fullyQualifiedTypeName name="org.usfirst.frc.team6201.robot.commands.SwitchCamCmd"/>
 <fullyQualifiedTypeName name="edu.wpi.first.wpilibj.Timer"/>
 <fullyQualifiedTypeName name="org.usfirst.frc.team6201.robot.commands.ArcadeDriveCmd"/>
+<fullyQualifiedTypeName name="org.usfirst.frc.team6201.robot.commands.DriveDistanceCmd"/>
+<fullyQualifiedTypeName name="org.usfirst.frc.team6201.robot.commands.FowardDriveCmd"/>
+<fullyQualifiedTypeName name="org.usfirst.frc.team6201.robot.commands.RearCamCmd"/>
+<fullyQualifiedTypeName name="org.usfirst.frc.team6201.robot.commands.RearDriveCmd"/>
+<fullyQualifiedTypeName name="org.usfirst.frc.team6201.robot.commands.FowardCamCmd"/>
+<fullyQualifiedTypeName name="org.usfirst.frc.team6201.robot.RobotMap"/>
 </qualifiedTypeNameHistroy>

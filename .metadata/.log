@@ -8800,3 +8800,469 @@ This warning can be switched off on the Team > Git > Confirmations and Warnings 
 
 !ENTRY WPILib_Java_Robot_Development 1 0 2016-02-15 09:59:35.615
 !MESSAGE Project: P/newRobot
+
+!ENTRY WPILib_Java_Robot_Development 1 0 2016-02-15 10:04:51.108
+!MESSAGE [org.usfirst.frc.team6201.robot.commands [in src [in newRobot]]
+  CameraAndDriveCmdGrp.java
+    package org.usfirst.frc.team6201.robot.commands
+    import edu.wpi.first.wpilibj.command.CommandGroup
+    class CameraAndDriveCmdGrp
+      CameraAndDriveCmdGrp()
+  Auto.java
+    package org.usfirst.frc.team6201.robot.commands
+    import edu.wpi.first.wpilibj.command.CommandGroup
+    import edu.wpi.first.wpilibj.command.WaitCommand
+    class Auto
+      Auto()
+  TankDriveCmd.java (not open)
+  DriveDistanceCmd.java
+    package org.usfirst.frc.team6201.robot.commands
+    import org.usfirst.frc.team6201.robot.Robot
+    import edu.wpi.first.wpilibj.command.Command
+    class DriveDistanceCmd
+      double distance
+      DriveDistanceCmd(double)
+      void initialize()
+      void execute()
+      boolean isFinished()
+      void end()
+      void interrupted()
+  DriveTimeCmd.java
+    package org.usfirst.frc.team6201.robot.commands
+    import org.usfirst.frc.team6201.robot.Robot
+    import edu.wpi.first.wpilibj.Timer
+    import edu.wpi.first.wpilibj.command.Command
+    class DriveTimeCmd
+      Timer timer
+      double drivingTime
+      DriveTimeCmd(double)
+      void initialize()
+      void execute()
+      boolean isFinished()
+      void end()
+      void interrupted()
+  [Working copy] FowardOrReverseCmd.java
+    package org.usfirst.frc.team6201.robot.commands
+    import org.usfirst.frc.team6201.robot.RobotMap
+    import edu.wpi.first.wpilibj.command.Command
+    class FowardOrReverseCmd
+      FowardOrReverseCmd()
+      void initialize()
+      void execute()
+      boolean isFinished()
+      void end()
+      void interrupted()
+  [Working copy] SwitchCamCmd.java
+    package org.usfirst.frc.team6201.robot.commands
+    import org.usfirst.frc.team6201.robot.Robot
+    import org.usfirst.frc.team6201.robot.RobotMap
+    import edu.wpi.first.wpilibj.command.Command
+    class SwitchCamCmd
+      SwitchCamCmd()
+      void initialize()
+      void execute()
+      boolean isFinished()
+      void end()
+      void interrupted()
+  ArcadeDriveCmd.java (not open)
+  CameraRunCmd.java (not open)
+  WhichCameraCmd.java
+    package org.usfirst.frc.team6201.robot.commands
+    import org.usfirst.frc.team6201.robot.Robot
+    import org.usfirst.frc.team6201.robot.RobotMap
+    import com.ni.vision.NIVision
+    import com.ni.vision.NIVision.Image
+    import edu.wpi.first.wpilibj.CameraServer
+    import edu.wpi.first.wpilibj.command.Command
+    class WhichCameraCmd
+      int camFront
+      int camRear
+      int curCam
+      Image frame
+      CameraServer server
+      WhichCameraCmd()
+      int getFrontCam()
+      int getRearCam()
+      void initialize()
+      void execute()
+      boolean isFinished()
+      void end()
+      void interrupted()
+      void changeCam(int)
+      void updateCam()]
+
+!ENTRY WPILib_Java_Robot_Development 1 0 2016-02-15 10:04:51.139
+!MESSAGE class org.eclipse.jdt.internal.core.PackageFragment
+
+!ENTRY WPILib_Java_Robot_Development 1 0 2016-02-15 10:04:51.171
+!MESSAGE initialize
+
+!ENTRY WPILib_Java_Robot_Development 1 0 2016-02-15 10:04:51.186
+!MESSAGE Project: P/newRobot
+
+!ENTRY WPILib_Java_Robot_Development 1 0 2016-02-15 10:05:51.538
+!MESSAGE [org.usfirst.frc.team6201.robot.commands [in src [in newRobot]]
+  CameraAndDriveCmdGrp.java
+    package org.usfirst.frc.team6201.robot.commands
+    import edu.wpi.first.wpilibj.command.CommandGroup
+    class CameraAndDriveCmdGrp
+      CameraAndDriveCmdGrp()
+  Auto.java
+    package org.usfirst.frc.team6201.robot.commands
+    import edu.wpi.first.wpilibj.command.CommandGroup
+    import edu.wpi.first.wpilibj.command.WaitCommand
+    class Auto
+      Auto()
+  TankDriveCmd.java (not open)
+  DriveDistanceCmd.java
+    package org.usfirst.frc.team6201.robot.commands
+    import org.usfirst.frc.team6201.robot.Robot
+    import edu.wpi.first.wpilibj.command.Command
+    class DriveDistanceCmd
+      double distance
+      DriveDistanceCmd(double)
+      void initialize()
+      void execute()
+      boolean isFinished()
+      void end()
+      void interrupted()
+  DriveTimeCmd.java
+    package org.usfirst.frc.team6201.robot.commands
+    import org.usfirst.frc.team6201.robot.Robot
+    import edu.wpi.first.wpilibj.Timer
+    import edu.wpi.first.wpilibj.command.Command
+    class DriveTimeCmd
+      Timer timer
+      double drivingTime
+      DriveTimeCmd(double)
+      void initialize()
+      void execute()
+      boolean isFinished()
+      void end()
+      void interrupted()
+  [Working copy] FowardOrReverseCmd.java
+    package org.usfirst.frc.team6201.robot.commands
+    import org.usfirst.frc.team6201.robot.RobotMap
+    import edu.wpi.first.wpilibj.command.Command
+    class FowardOrReverseCmd
+      FowardOrReverseCmd()
+      void initialize()
+      void execute()
+      boolean isFinished()
+      void end()
+      void interrupted()
+  [Working copy] SwitchCamCmd.java
+    package org.usfirst.frc.team6201.robot.commands
+    import org.usfirst.frc.team6201.robot.Robot
+    import org.usfirst.frc.team6201.robot.RobotMap
+    import edu.wpi.first.wpilibj.command.Command
+    class SwitchCamCmd
+      SwitchCamCmd()
+      void initialize()
+      void execute()
+      boolean isFinished()
+      void end()
+      void interrupted()
+  ArcadeDriveCmd.java (not open)
+  CameraRunCmd.java (not open)
+  WhichCameraCmd.java
+    package org.usfirst.frc.team6201.robot.commands
+    import org.usfirst.frc.team6201.robot.Robot
+    import org.usfirst.frc.team6201.robot.RobotMap
+    import com.ni.vision.NIVision
+    import com.ni.vision.NIVision.Image
+    import edu.wpi.first.wpilibj.CameraServer
+    import edu.wpi.first.wpilibj.command.Command
+    class WhichCameraCmd
+      int camFront
+      int camRear
+      int curCam
+      Image frame
+      CameraServer server
+      WhichCameraCmd()
+      int getFrontCam()
+      int getRearCam()
+      void initialize()
+      void execute()
+      boolean isFinished()
+      void end()
+      void interrupted()
+      void changeCam(int)
+      void updateCam()]
+
+!ENTRY WPILib_Java_Robot_Development 1 0 2016-02-15 10:05:51.570
+!MESSAGE class org.eclipse.jdt.internal.core.PackageFragment
+
+!ENTRY WPILib_Java_Robot_Development 1 0 2016-02-15 10:05:51.601
+!MESSAGE initialize
+
+!ENTRY WPILib_Java_Robot_Development 1 0 2016-02-15 10:05:51.632
+!MESSAGE Project: P/newRobot
+
+!ENTRY WPILib_Java_Robot_Development 1 0 2016-02-15 10:05:57.669
+!MESSAGE Class: FowardDriveCmd Package: org.usfirst.frc.team6201.robot.commands
+
+!ENTRY WPILib_Java_Robot_Development 1 0 2016-02-15 10:06:08.042
+!MESSAGE [org.usfirst.frc.team6201.robot.commands [in src [in newRobot]]
+  CameraAndDriveCmdGrp.java
+    package org.usfirst.frc.team6201.robot.commands
+    import edu.wpi.first.wpilibj.command.CommandGroup
+    class CameraAndDriveCmdGrp
+      CameraAndDriveCmdGrp()
+  Auto.java
+    package org.usfirst.frc.team6201.robot.commands
+    import edu.wpi.first.wpilibj.command.CommandGroup
+    import edu.wpi.first.wpilibj.command.WaitCommand
+    class Auto
+      Auto()
+  TankDriveCmd.java (not open)
+  DriveDistanceCmd.java
+    package org.usfirst.frc.team6201.robot.commands
+    import org.usfirst.frc.team6201.robot.Robot
+    import edu.wpi.first.wpilibj.command.Command
+    class DriveDistanceCmd
+      double distance
+      DriveDistanceCmd(double)
+      void initialize()
+      void execute()
+      boolean isFinished()
+      void end()
+      void interrupted()
+  DriveTimeCmd.java
+    package org.usfirst.frc.team6201.robot.commands
+    import org.usfirst.frc.team6201.robot.Robot
+    import edu.wpi.first.wpilibj.Timer
+    import edu.wpi.first.wpilibj.command.Command
+    class DriveTimeCmd
+      Timer timer
+      double drivingTime
+      DriveTimeCmd(double)
+      void initialize()
+      void execute()
+      boolean isFinished()
+      void end()
+      void interrupted()
+  [Working copy] FowardOrReverseCmd.java
+    package org.usfirst.frc.team6201.robot.commands
+    import org.usfirst.frc.team6201.robot.RobotMap
+    import edu.wpi.first.wpilibj.command.Command
+    class FowardOrReverseCmd
+      FowardOrReverseCmd()
+      void initialize()
+      void execute()
+      boolean isFinished()
+      void end()
+      void interrupted()
+  [Working copy] SwitchCamCmd.java
+    package org.usfirst.frc.team6201.robot.commands
+    import org.usfirst.frc.team6201.robot.Robot
+    import org.usfirst.frc.team6201.robot.RobotMap
+    import edu.wpi.first.wpilibj.command.Command
+    class SwitchCamCmd
+      SwitchCamCmd()
+      void initialize()
+      void execute()
+      boolean isFinished()
+      void end()
+      void interrupted()
+  ArcadeDriveCmd.java (not open)
+  CameraRunCmd.java (not open)
+  WhichCameraCmd.java
+    package org.usfirst.frc.team6201.robot.commands
+    import org.usfirst.frc.team6201.robot.Robot
+    import org.usfirst.frc.team6201.robot.RobotMap
+    import com.ni.vision.NIVision
+    import com.ni.vision.NIVision.Image
+    import edu.wpi.first.wpilibj.CameraServer
+    import edu.wpi.first.wpilibj.command.Command
+    class WhichCameraCmd
+      int camFront
+      int camRear
+      int curCam
+      Image frame
+      CameraServer server
+      WhichCameraCmd()
+      int getFrontCam()
+      int getRearCam()
+      void initialize()
+      void execute()
+      boolean isFinished()
+      void end()
+      void interrupted()
+      void changeCam(int)
+      void updateCam()
+  FowardDriveCmd.java (not open)]
+
+!ENTRY WPILib_Java_Robot_Development 1 0 2016-02-15 10:06:08.058
+!MESSAGE class org.eclipse.jdt.internal.core.PackageFragment
+
+!ENTRY WPILib_Java_Robot_Development 1 0 2016-02-15 10:06:08.089
+!MESSAGE initialize
+
+!ENTRY WPILib_Java_Robot_Development 1 0 2016-02-15 10:06:08.120
+!MESSAGE Project: P/newRobot
+
+!ENTRY WPILib_Java_Robot_Development 1 0 2016-02-15 10:06:12.067
+!MESSAGE Class: FowardCamCmd Package: org.usfirst.frc.team6201.robot.commands
+
+!ENTRY WPILib_Java_Robot_Development 1 0 2016-02-15 10:06:18.931
+!MESSAGE [org.usfirst.frc.team6201.robot.commands [in src [in newRobot]]
+  CameraAndDriveCmdGrp.java
+    package org.usfirst.frc.team6201.robot.commands
+    import edu.wpi.first.wpilibj.command.CommandGroup
+    class CameraAndDriveCmdGrp
+      CameraAndDriveCmdGrp()
+  Auto.java
+    package org.usfirst.frc.team6201.robot.commands
+    import edu.wpi.first.wpilibj.command.CommandGroup
+    import edu.wpi.first.wpilibj.command.WaitCommand
+    class Auto
+      Auto()
+  TankDriveCmd.java (not open)
+  DriveDistanceCmd.java
+    package org.usfirst.frc.team6201.robot.commands
+    import org.usfirst.frc.team6201.robot.Robot
+    import edu.wpi.first.wpilibj.command.Command
+    class DriveDistanceCmd
+      double distance
+      DriveDistanceCmd(double)
+      void initialize()
+      void execute()
+      boolean isFinished()
+      void end()
+      void interrupted()
+  DriveTimeCmd.java
+    package org.usfirst.frc.team6201.robot.commands
+    import org.usfirst.frc.team6201.robot.Robot
+    import edu.wpi.first.wpilibj.Timer
+    import edu.wpi.first.wpilibj.command.Command
+    class DriveTimeCmd
+      Timer timer
+      double drivingTime
+      DriveTimeCmd(double)
+      void initialize()
+      void execute()
+      boolean isFinished()
+      void end()
+      void interrupted()
+  [Working copy] FowardOrReverseCmd.java
+    package org.usfirst.frc.team6201.robot.commands
+    import org.usfirst.frc.team6201.robot.RobotMap
+    import edu.wpi.first.wpilibj.command.Command
+    class FowardOrReverseCmd
+      FowardOrReverseCmd()
+      void initialize()
+      void execute()
+      boolean isFinished()
+      void end()
+      void interrupted()
+  [Working copy] SwitchCamCmd.java
+    package org.usfirst.frc.team6201.robot.commands
+    import org.usfirst.frc.team6201.robot.Robot
+    import org.usfirst.frc.team6201.robot.RobotMap
+    import edu.wpi.first.wpilibj.command.Command
+    class SwitchCamCmd
+      SwitchCamCmd()
+      void initialize()
+      void execute()
+      boolean isFinished()
+      void end()
+      void interrupted()
+  ArcadeDriveCmd.java (not open)
+  CameraRunCmd.java (not open)
+  WhichCameraCmd.java
+    package org.usfirst.frc.team6201.robot.commands
+    import org.usfirst.frc.team6201.robot.Robot
+    import org.usfirst.frc.team6201.robot.RobotMap
+    import com.ni.vision.NIVision
+    import com.ni.vision.NIVision.Image
+    import edu.wpi.first.wpilibj.CameraServer
+    import edu.wpi.first.wpilibj.command.Command
+    class WhichCameraCmd
+      int camFront
+      int camRear
+      int curCam
+      Image frame
+      CameraServer server
+      WhichCameraCmd()
+      int getFrontCam()
+      int getRearCam()
+      void initialize()
+      void execute()
+      boolean isFinished()
+      void end()
+      void interrupted()
+      void changeCam(int)
+      void updateCam()
+  FowardDriveCmd.java (not open)
+  FowardCamCmd.java (not open)]
+
+!ENTRY WPILib_Java_Robot_Development 1 0 2016-02-15 10:06:19.399
+!MESSAGE class org.eclipse.jdt.internal.core.PackageFragment
+
+!ENTRY WPILib_Java_Robot_Development 1 0 2016-02-15 10:06:19.430
+!MESSAGE initialize
+
+!ENTRY WPILib_Java_Robot_Development 1 0 2016-02-15 10:06:19.445
+!MESSAGE Project: P/newRobot
+
+!ENTRY WPILib_Java_Robot_Development 1 0 2016-02-15 10:06:24.016
+!MESSAGE Class: RearDriveCMd Package: org.usfirst.frc.team6201.robot.commands
+
+!ENTRY WPILib_Java_Robot_Development 1 0 2016-02-15 10:06:46.697
+!MESSAGE [org.usfirst.frc.team6201.robot.commands [in src [in newRobot]]
+  FowardCamCmd.java (not open)
+  Auto.java (not open)
+  DriveDistanceCmd.java (not open)
+  DriveTimeCmd.java (not open)
+  [Working copy] FowardOrReverseCmd.java
+    package org.usfirst.frc.team6201.robot.commands
+    import org.usfirst.frc.team6201.robot.RobotMap
+    import edu.wpi.first.wpilibj.command.Command
+    class FowardOrReverseCmd
+      FowardOrReverseCmd()
+      void initialize()
+      void execute()
+      boolean isFinished()
+      void end()
+      void interrupted()
+  CameraRunCmd.java (not open)
+  WhichCameraCmd.java (not open)
+  CameraAndDriveCmdGrp.java (not open)
+  FowardDriveCmd.java (not open)
+  TankDriveCmd.java (not open)
+  RearDriveCmd.java
+    package org.usfirst.frc.team6201.robot.commands
+    import edu.wpi.first.wpilibj.command.Command
+    class RearDriveCmd
+      RearDriveCmd()
+      void initialize()
+      void execute()
+      boolean isFinished()
+      void end()
+      void interrupted()
+  [Working copy] SwitchCamCmd.java
+    package org.usfirst.frc.team6201.robot.commands
+    import org.usfirst.frc.team6201.robot.Robot
+    import org.usfirst.frc.team6201.robot.RobotMap
+    import edu.wpi.first.wpilibj.command.Command
+    class SwitchCamCmd
+      SwitchCamCmd()
+      void initialize()
+      void execute()
+      boolean isFinished()
+      void end()
+      void interrupted()
+  ArcadeDriveCmd.java (not open)]
+
+!ENTRY WPILib_Java_Robot_Development 1 0 2016-02-15 10:06:46.728
+!MESSAGE class org.eclipse.jdt.internal.core.PackageFragment
+
+!ENTRY WPILib_Java_Robot_Development 1 0 2016-02-15 10:06:46.760
+!MESSAGE initialize
+
+!ENTRY WPILib_Java_Robot_Development 1 0 2016-02-15 10:06:46.791
+!MESSAGE Project: P/newRobot
+
+!ENTRY WPILib_Java_Robot_Development 1 0 2016-02-15 10:07:05.323
+!MESSAGE Class: RearCamCmd Package: org.usfirst.frc.team6201.robot.commands

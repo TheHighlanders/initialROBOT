@@ -2,9 +2,6 @@ package org.usfirst.frc.team6201.robot.commands;
 
 import org.usfirst.frc.team6201.robot.Robot;
 import org.usfirst.frc.team6201.robot.RobotMap;
-import org.usfirst.frc.team6201.robot.subsystems.Drivetrain;
-
-import edu.wpi.first.wpilibj.ADXRS450_Gyro;
 import edu.wpi.first.wpilibj.command.Command;
 import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
 
@@ -22,11 +19,10 @@ public class ArcadeDriveCmd extends Command {
 	private double processedOnceTurn; // Turn that has been sent adjusted via Tan function
 	private double processedTwiceTurn; // Turn derived from processedOnceTurn and gyro.getRate(). Used to drive the robot at the desired turn rate. This will be fed to the motors
 	private double processedPower; // adjusted power
+
 	
 	private final double TANDOMAIN_Y = 1.3; // used for sensitivity of joystick
 	private final double TANDOMAIN_X = 1.3; // used for sensitivity of joystick
-	private final double XTHREEDOMAIN = 0.5; // used for sensitivity of joystick
-	
 	
 	private final double pTurnGain = 1; // This is used for allowing us to drive in a straight line.
 											//We MUST test to find the appropriate  value for this.
@@ -45,10 +41,6 @@ public class ArcadeDriveCmd extends Command {
 		return Math.tan(rawVal*domain) / (Math.tan(domain));
 	}
 	
-	private double scaledValXThree (double rawVal, double domain){
-		return ((Math.pow(rawVal, 3))/(Math.pow(domain,3)));
-	}
-	
     public ArcadeDriveCmd() {
     	requires(Robot.dt);
     }
@@ -65,9 +57,6 @@ public class ArcadeDriveCmd extends Command {
     	
     	rawTurn = scaledValTan(Robot.oi.getXAxisOfLogitech(), TANDOMAIN_X);
     	rawPower = scaledValTan(Robot.oi.getYAxisOfLogitech(), TANDOMAIN_Y);
-    	
-    	//turn = scaledValXThree (Robot.oi.getXAxisOfLogitech(), XTHREEDOMAIN);
-    	//power = scaledValXThree (Robot.oi.getYAxisOfLogitech(), XTHREEDOMAIN);
     	
     	processedPower = 0.95*rawPower; // leaves room for turning at full speed ahead.
     	processedOnceTurn = (1-rawPower) * rawTurn; // allows for turning full speed at stop.
