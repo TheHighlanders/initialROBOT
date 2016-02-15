@@ -4,6 +4,8 @@ package org.usfirst.frc.team6201.robot;
  * to a variable name. This provides flexibility changing wiring, makes checking
  * the wiring easier and significantly reduces the number of magic numbers
  * floating around.
+ * 
+ * @author David Matthews
  */
 public class RobotMap {
 	
@@ -33,10 +35,19 @@ public class RobotMap {
 	public static final int LOGITECH_X_AXIS = 0;
 	public static final int LOGITECH_Y_AXIS = 1;
 	public static final int LOGITECH_ROTATE_AXIS = 2;
+	public static int fowardOrReverse = 1; // which side of the robot is considered 'front'?
+
 
 	// Analog
 	public static final int IR_COLLIDER_DECTOR = 0;
 	public static final int LED = 1;
+	
+	
+	// Which camera to view from?
+	
+	public static final String FRONT_CAM = "cam1";
+	public static final String REAR_CAM = "cam2";
+	public static final int IMG_QUALITY = 50;
 	
 	
 }

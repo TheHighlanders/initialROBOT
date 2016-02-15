@@ -1,6 +1,7 @@
 package org.usfirst.frc.team6201.robot.commands;
 
 import org.usfirst.frc.team6201.robot.Robot;
+import org.usfirst.frc.team6201.robot.RobotMap;
 import org.usfirst.frc.team6201.robot.subsystems.Drivetrain;
 
 import edu.wpi.first.wpilibj.ADXRS450_Gyro;
@@ -26,11 +27,10 @@ public class ArcadeDriveCmd extends Command {
 	private final double TANDOMAIN_X = 1.3; // used for sensitivity of joystick
 	private final double XTHREEDOMAIN = 0.5; // used for sensitivity of joystick
 	
-	public static int fowardOrReverse = 1; // which side of the robot is considered 'front'?
 	
 	private final double pTurnGain = 1; // This is used for allowing us to drive in a straight line.
 											//We MUST test to find the appropriate  value for this.
-	private final double gyroRateGain = 720; // This is used to make the desired turn rate as output by the Joystick match the 
+	private final double gyroRateGain = 1; // This is used to make the desired turn rate as output by the Joystick match the 
 	
 	
 	ADXRS450_Gyro gyro = new ADXRS450_Gyro();
@@ -76,13 +76,14 @@ public class ArcadeDriveCmd extends Command {
     	SmartDashboard.putNumber("rPower: ", Robot.oi.getYAxisOfLogitech());
     	SmartDashboard.putNumber("rTurn: ", Robot.oi.getXAxisOfLogitech());
     	
-    	SmartDashboard.putNumber("nPower: ", processedPower);
-    	SmartDashboard.putNumber("nTurn: ", processedOnceTurn);
+    	SmartDashboard.putNumber("pPower: ", processedPower);
+    	SmartDashboard.putNumber("p1Turn: ", processedOnceTurn);
+    	SmartDashboard.putNumber("p2Turn: ", processedTwiceTurn);
     	
     	SmartDashboard.putNumber("GyroAngle: ", gyro.getAngle());
     	SmartDashboard.putNumber("GyroRate: ", gyro.getRate());
     	
-    	Robot.dt.driveLR(fowardOrReverse*(processedPower + processedTwiceTurn), fowardOrReverse*(processedPower - processedTwiceTurn));
+    	Robot.dt.driveLR(RobotMap.fowardOrReverse*(processedPower + processedTwiceTurn), RobotMap.fowardOrReverse*(processedPower - processedTwiceTurn));
 	}
 
     // Make this return true when this Command no longer needs to run execute()

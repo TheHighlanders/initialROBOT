@@ -5,6 +5,7 @@ import org.usfirst.frc.team6201.robot.RobotMap;
 import org.usfirst.frc.team6201.robot.commands.ArcadeDriveCmd;
 /// not used
 // import org.usfirst.frc.team6201.robot.commands.TankDriveCmd;
+import org.usfirst.frc.team6201.robot.commands.CameraAndDriveCmdGrp;
 
 import edu.wpi.first.wpilibj.Encoder;
 import edu.wpi.first.wpilibj.Talon;
@@ -13,7 +14,14 @@ import edu.wpi.first.wpilibj.Spark;
 import edu.wpi.first.wpilibj.command.PIDSubsystem;
 
 
-
+/**
+ * 
+ * @author David Matthews
+ * 
+ * This is the subsystem for the drivetrain
+ * 
+ *
+ */
 public class Drivetrain extends PIDSubsystem {
 
 	//  Motors
@@ -37,7 +45,7 @@ public class Drivetrain extends PIDSubsystem {
 	}
 	
 	public void initDefaultCommand() {
-    	setDefaultCommand (new ArcadeDriveCmd());
+    	setDefaultCommand (new CameraAndDriveCmdGrp());
     }
     
     //sets the power of the left and right motors.

@@ -27,6 +27,8 @@
 		<item value="63" key="DIALOG_X_ORIGIN"/>
 		<item value="117" key="DIALOG_Y_ORIGIN"/>
 	</section>
+	<section name="RenameInformationPopup">
+	</section>
 	<section name="ClasspathContainerSelectionPage">
 		<item value="0" key="index"/>
 	</section>

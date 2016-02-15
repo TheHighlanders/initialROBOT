@@ -1,19 +1,23 @@
 package org.usfirst.frc.team6201.robot;
 
-import org.usfirst.frc.team6201.robot.commands.ArcadeDriveCmd;
 import org.usfirst.frc.team6201.robot.commands.FowardOrReverseCmd;
+import org.usfirst.frc.team6201.robot.commands.SwitchCamCmd;
 
 import edu.wpi.first.wpilibj.Joystick;
+import edu.wpi.first.wpilibj.Timer;
 import edu.wpi.first.wpilibj.buttons.Button;
 import edu.wpi.first.wpilibj.buttons.JoystickButton;
 
 /**
  * This class is the glue that binds the controls on the physical operator
  * interface to the commands and command groups that allow control of the robot.
+ *
+ *@author David Matthews
+ *
  */
 public class OI {
 	
-	//I'm adding a comment to OI
+	
 	// Tank Drive
 	private Joystick xbox = new Joystick(RobotMap.XBOX);
 	
@@ -41,9 +45,11 @@ public class OI {
 	}
 	
 	public OI () {
-		Button button1 = new JoystickButton(arcade, 1);
+		Button button2 = new JoystickButton(arcade, 2);
 		
-		button1.whenPressed(new FowardOrReverseCmd());
+		button2.whenPressed(new FowardOrReverseCmd());
+		Timer.delay(0.001);
+		button2.whenPressed(new SwitchCamCmd());
 			
 	}
 	
