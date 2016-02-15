@@ -8578,3 +8578,225 @@ This warning can be switched off on the Team > Git > Confirmations and Warnings 
 
 !ENTRY edu.wpi.first.wpilib.plugins.core 1 0 2016-02-14 22:44:22.093
 !MESSAGE Installedjava
+!SESSION 2016-02-15 08:13:35.966 -----------------------------------------------
+eclipse.buildId=4.5.1.M20150904-0015
+java.version=1.8.0_71
+java.vendor=Oracle Corporation
+BootLoader constants: OS=win32, ARCH=x86_64, WS=win32, NL=en_US
+Framework arguments:  -product org.eclipse.epp.package.java.product
+Command-line arguments:  -os win32 -ws win32 -arch x86_64 -product org.eclipse.epp.package.java.product
+
+!ENTRY org.eclipse.egit.ui 2 0 2016-02-15 08:14:21.748
+!MESSAGE Warning: The environment variable HOME is not set. The following directory will be used to store the Git
+user global configuration and to define the default location to store repositories: 'C:\Users\FRC_6201'. If this is
+not correct please set the HOME environment variable and restart Eclipse. Otherwise Git for Windows and
+EGit might behave differently since they see different configuration options.
+This warning can be switched off on the Team > Git > Confirmations and Warnings preference page.
+
+!ENTRY edu.wpi.first.wpilib.plugins.core 1 0 2016-02-15 08:14:33.302
+!MESSAGE Installing tools if necessary
+
+!ENTRY edu.wpi.first.wpilib.plugins.core 1 0 2016-02-15 08:14:34.005
+!MESSAGE Installedtools
+
+!ENTRY edu.wpi.first.wpilib.plugins.core 1 0 2016-02-15 08:14:35.114
+!MESSAGE Installing cpp if necessary
+
+!ENTRY edu.wpi.first.wpilib.plugins.core 1 0 2016-02-15 08:14:36.051
+!MESSAGE Installedcpp
+
+!ENTRY edu.wpi.first.wpilib.plugins.core 1 0 2016-02-15 08:14:45.981
+!MESSAGE Installing java if necessary
+
+!ENTRY edu.wpi.first.wpilib.plugins.core 1 0 2016-02-15 08:14:45.997
+!MESSAGE Installedjava
+!SESSION 2016-02-15 08:55:27.107 -----------------------------------------------
+eclipse.buildId=4.5.1.M20150904-0015
+java.version=1.8.0_71
+java.vendor=Oracle Corporation
+BootLoader constants: OS=win32, ARCH=x86_64, WS=win32, NL=en_US
+Framework arguments:  -product org.eclipse.epp.package.java.product -product org.eclipse.epp.package.java.product -product org.eclipse.epp.package.java.product -product org.eclipse.epp.package.java.product
+Command-line arguments:  -os win32 -ws win32 -arch x86_64 -product org.eclipse.epp.package.java.product -product org.eclipse.epp.package.java.product -product org.eclipse.epp.package.java.product -data C:\Users\FRC_6201\workspace -product org.eclipse.epp.package.java.product
+
+!ENTRY org.eclipse.egit.ui 2 0 2016-02-15 08:56:08.200
+!MESSAGE Warning: The environment variable HOME is not set. The following directory will be used to store the Git
+user global configuration and to define the default location to store repositories: 'C:\Users\FRC_6201'. If this is
+not correct please set the HOME environment variable and restart Eclipse. Otherwise Git for Windows and
+EGit might behave differently since they see different configuration options.
+This warning can be switched off on the Team > Git > Confirmations and Warnings preference page.
+
+!ENTRY edu.wpi.first.wpilib.plugins.core 1 0 2016-02-15 09:27:40.641
+!MESSAGE Installing tools if necessary
+
+!ENTRY edu.wpi.first.wpilib.plugins.core 1 0 2016-02-15 09:27:41.110
+!MESSAGE Installedtools
+
+!ENTRY edu.wpi.first.wpilib.plugins.core 1 0 2016-02-15 09:27:41.188
+!MESSAGE Installing cpp if necessary
+
+!ENTRY edu.wpi.first.wpilib.plugins.core 1 0 2016-02-15 09:27:41.203
+!MESSAGE Installedcpp
+
+!ENTRY edu.wpi.first.wpilib.plugins.core 1 0 2016-02-15 09:27:41.453
+!MESSAGE Installing java if necessary
+
+!ENTRY edu.wpi.first.wpilib.plugins.core 1 0 2016-02-15 09:27:41.532
+!MESSAGE Installedjava
+
+!ENTRY WPILib_Java_Robot_Development 1 0 2016-02-15 09:36:03.751
+!MESSAGE Running ant file: C:\Users\FRC_6201\workspace\newRobot\build.xml
+
+!ENTRY WPILib_Java_Robot_Development 1 0 2016-02-15 09:36:03.767
+!MESSAGE Targets: deploy, Mode: run
+
+!ENTRY WPILib_Java_Robot_Development 4 0 2016-02-15 09:38:38.086
+!MESSAGE Selection isn't a project: [L/newRobot/src/org/usfirst/frc/team6201/robot/commands/TurnAngleCmd.java]
+
+!ENTRY WPILib_Java_Robot_Development 4 0 2016-02-15 09:38:56.899
+!MESSAGE Selection isn't a project: [L/newRobot/src/org/usfirst/frc/team6201/robot/commands/TurnAngleCmd.java]
+
+!ENTRY WPILib_Java_Robot_Development 4 0 2016-02-15 09:39:21.858
+!MESSAGE Selection isn't a project: [L/newRobot/src/org/usfirst/frc/team6201/robot/commands/TurnAngleCmd.java]
+
+!ENTRY WPILib_Java_Robot_Development 1 0 2016-02-15 09:39:32.933
+!MESSAGE Running ant file: C:\Users\FRC_6201\workspace\newRobot\build.xml
+
+!ENTRY WPILib_Java_Robot_Development 1 0 2016-02-15 09:39:32.948
+!MESSAGE Targets: deploy, Mode: run
+!SESSION 2016-02-15 09:41:07.613 -----------------------------------------------
+eclipse.buildId=4.5.1.M20150904-0015
+java.version=1.8.0_71
+java.vendor=Oracle Corporation
+BootLoader constants: OS=win32, ARCH=x86_64, WS=win32, NL=en_US
+Framework arguments:  -product org.eclipse.epp.package.java.product
+Command-line arguments:  -os win32 -ws win32 -arch x86_64 -product org.eclipse.epp.package.java.product
+
+!ENTRY org.eclipse.egit.ui 2 0 2016-02-15 09:41:50.141
+!MESSAGE Warning: The environment variable HOME is not set. The following directory will be used to store the Git
+user global configuration and to define the default location to store repositories: 'C:\Users\FRC_6201'. If this is
+not correct please set the HOME environment variable and restart Eclipse. Otherwise Git for Windows and
+EGit might behave differently since they see different configuration options.
+This warning can be switched off on the Team > Git > Confirmations and Warnings preference page.
+
+!ENTRY edu.wpi.first.wpilib.plugins.core 1 0 2016-02-15 09:41:53.089
+!MESSAGE Installing tools if necessary
+
+!ENTRY edu.wpi.first.wpilib.plugins.core 1 0 2016-02-15 09:41:53.869
+!MESSAGE Installedtools
+
+!ENTRY edu.wpi.first.wpilib.plugins.core 1 0 2016-02-15 09:41:54.197
+!MESSAGE Installing cpp if necessary
+
+!ENTRY edu.wpi.first.wpilib.plugins.core 1 0 2016-02-15 09:41:55.492
+!MESSAGE Installedcpp
+
+!ENTRY edu.wpi.first.wpilib.plugins.core 1 0 2016-02-15 09:41:57.052
+!MESSAGE Installing java if necessary
+
+!ENTRY edu.wpi.first.wpilib.plugins.core 1 0 2016-02-15 09:41:57.520
+!MESSAGE Installedjava
+
+!ENTRY WPILib_Java_Robot_Development 1 0 2016-02-15 09:43:14.473
+!MESSAGE Running ant file: C:\Users\FRC_6201\workspace\newRobot\build.xml
+
+!ENTRY WPILib_Java_Robot_Development 1 0 2016-02-15 09:43:14.473
+!MESSAGE Targets: deploy, Mode: run
+
+!ENTRY WPILib_Java_Robot_Development 1 0 2016-02-15 09:59:35.506
+!MESSAGE [org.usfirst.frc.team6201.robot.commands [in src [in newRobot]]
+  CameraAndDriveCmdGrp.java
+    package org.usfirst.frc.team6201.robot.commands
+    import edu.wpi.first.wpilibj.command.CommandGroup
+    class CameraAndDriveCmdGrp
+      CameraAndDriveCmdGrp()
+  Auto.java
+    package org.usfirst.frc.team6201.robot.commands
+    import edu.wpi.first.wpilibj.command.CommandGroup
+    import edu.wpi.first.wpilibj.command.WaitCommand
+    class Auto
+      Auto()
+  TankDriveCmd.java (not open)
+  DriveDistanceCmd.java
+    package org.usfirst.frc.team6201.robot.commands
+    import org.usfirst.frc.team6201.robot.Robot
+    import edu.wpi.first.wpilibj.command.Command
+    class DriveDistanceCmd
+      double distance
+      DriveDistanceCmd(double)
+      void initialize()
+      void execute()
+      boolean isFinished()
+      void end()
+      void interrupted()
+  DriveTimeCmd.java
+    package org.usfirst.frc.team6201.robot.commands
+    import org.usfirst.frc.team6201.robot.Robot
+    import edu.wpi.first.wpilibj.Timer
+    import edu.wpi.first.wpilibj.command.Command
+    class DriveTimeCmd
+      Timer timer
+      double drivingTime
+      DriveTimeCmd(double)
+      void initialize()
+      void execute()
+      boolean isFinished()
+      void end()
+      void interrupted()
+  [Working copy] FowardOrReverseCmd.java
+    package org.usfirst.frc.team6201.robot.commands
+    import org.usfirst.frc.team6201.robot.RobotMap
+    import edu.wpi.first.wpilibj.command.Command
+    class FowardOrReverseCmd
+      FowardOrReverseCmd()
+      void initialize()
+      void execute()
+      boolean isFinished()
+      void end()
+      void interrupted()
+  [Working copy] SwitchCamCmd.java
+    package org.usfirst.frc.team6201.robot.commands
+    import org.usfirst.frc.team6201.robot.Robot
+    import org.usfirst.frc.team6201.robot.RobotMap
+    import edu.wpi.first.wpilibj.command.Command
+    class SwitchCamCmd
+      SwitchCamCmd()
+      void initialize()
+      void execute()
+      boolean isFinished()
+      void end()
+      void interrupted()
+  ArcadeDriveCmd.java (not open)
+  CameraRunCmd.java (not open)
+  WhichCameraCmd.java
+    package org.usfirst.frc.team6201.robot.commands
+    import org.usfirst.frc.team6201.robot.Robot
+    import org.usfirst.frc.team6201.robot.RobotMap
+    import com.ni.vision.NIVision
+    import com.ni.vision.NIVision.Image
+    import edu.wpi.first.wpilibj.CameraServer
+    import edu.wpi.first.wpilibj.command.Command
+    class WhichCameraCmd
+      int camFront
+      int camRear
+      int curCam
+      Image frame
+      CameraServer server
+      WhichCameraCmd()
+      int getFrontCam()
+      int getRearCam()
+      void initialize()
+      void execute()
+      boolean isFinished()
+      void end()
+      void interrupted()
+      void changeCam(int)
+      void updateCam()]
+
+!ENTRY WPILib_Java_Robot_Development 1 0 2016-02-15 09:59:35.537
+!MESSAGE class org.eclipse.jdt.internal.core.PackageFragment
+
+!ENTRY WPILib_Java_Robot_Development 1 0 2016-02-15 09:59:35.584
+!MESSAGE initialize
+
+!ENTRY WPILib_Java_Robot_Development 1 0 2016-02-15 09:59:35.615
+!MESSAGE Project: P/newRobot

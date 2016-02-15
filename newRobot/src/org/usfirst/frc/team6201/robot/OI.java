@@ -45,12 +45,15 @@ public class OI {
 	}
 	
 	public OI () {
-		Button button2 = new JoystickButton(arcade, 2);
+		Button button3 = new JoystickButton(arcade, 3);
+		Button button5 = new JoystickButton(arcade, 5);
 		
-		button2.whenPressed(new FowardOrReverseCmd());
-		Timer.delay(0.001);
-		button2.whenPressed(new SwitchCamCmd());
-			
+		button3.whenPressed(new FowardDriveCmd);
+		button3.whenPressed(new ForwardCamCmd);
+		
+		button5.whenPressed(new RearDriveCmd);
+		button5.whenPressed(new RearCamCmd);
+		
 	}
 	
 	
