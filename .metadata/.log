@@ -9310,3 +9310,139 @@ This warning can be switched off on the Team > Git > Confirmations and Warnings 
 
 !ENTRY WPILib_Java_Robot_Development 1 0 2016-02-15 10:38:00.306
 !MESSAGE Targets: deploy, Mode: run
+!SESSION 2016-02-15 10:48:51.590 -----------------------------------------------
+eclipse.buildId=4.5.1.M20150904-0015
+java.version=1.8.0_71
+java.vendor=Oracle Corporation
+BootLoader constants: OS=win32, ARCH=x86_64, WS=win32, NL=en_US
+Framework arguments:  -product org.eclipse.epp.package.java.product
+Command-line arguments:  -os win32 -ws win32 -arch x86_64 -product org.eclipse.epp.package.java.product
+
+!ENTRY org.eclipse.egit.ui 2 0 2016-02-15 10:49:32.946
+!MESSAGE Warning: The environment variable HOME is not set. The following directory will be used to store the Git
+user global configuration and to define the default location to store repositories: 'C:\Users\FRC_6201'. If this is
+not correct please set the HOME environment variable and restart Eclipse. Otherwise Git for Windows and
+EGit might behave differently since they see different configuration options.
+This warning can be switched off on the Team > Git > Confirmations and Warnings preference page.
+
+!ENTRY edu.wpi.first.wpilib.plugins.core 1 0 2016-02-15 10:49:33.087
+!MESSAGE Installing tools if necessary
+
+!ENTRY edu.wpi.first.wpilib.plugins.core 1 0 2016-02-15 10:49:34.584
+!MESSAGE Installedtools
+
+!ENTRY edu.wpi.first.wpilib.plugins.core 1 0 2016-02-15 10:49:34.771
+!MESSAGE Installing cpp if necessary
+
+!ENTRY edu.wpi.first.wpilib.plugins.core 1 0 2016-02-15 10:49:35.598
+!MESSAGE Installedcpp
+
+!ENTRY edu.wpi.first.wpilib.plugins.core 1 0 2016-02-15 10:49:35.910
+!MESSAGE Installing java if necessary
+
+!ENTRY edu.wpi.first.wpilib.plugins.core 1 0 2016-02-15 10:49:37.252
+!MESSAGE Installedjava
+
+!ENTRY WPILib_Java_Robot_Development 1 0 2016-02-15 10:50:00.885
+!MESSAGE Running ant file: C:\Users\FRC_6201\workspace\newRobot\build.xml
+
+!ENTRY WPILib_Java_Robot_Development 1 0 2016-02-15 10:50:00.885
+!MESSAGE Targets: deploy, Mode: run
+
+!ENTRY WPILib_Java_Robot_Development 1 0 2016-02-15 10:51:12.635
+!MESSAGE Running ant file: C:\Users\FRC_6201\workspace\newRobot\build.xml
+
+!ENTRY WPILib_Java_Robot_Development 1 0 2016-02-15 10:51:12.635
+!MESSAGE Targets: deploy, Mode: run
+
+!ENTRY WPILib_Java_Robot_Development 1 0 2016-02-15 11:07:54.718
+!MESSAGE Running ant file: C:\Users\FRC_6201\workspace\newRobot\build.xml
+
+!ENTRY WPILib_Java_Robot_Development 1 0 2016-02-15 11:07:54.735
+!MESSAGE Targets: deploy, Mode: run
+!SESSION 2016-02-15 11:13:20.549 -----------------------------------------------
+eclipse.buildId=4.5.1.M20150904-0015
+java.version=1.8.0_71
+java.vendor=Oracle Corporation
+BootLoader constants: OS=win32, ARCH=x86_64, WS=win32, NL=en_US
+Framework arguments:  -product org.eclipse.epp.package.java.product
+Command-line arguments:  -os win32 -ws win32 -arch x86_64 -product org.eclipse.epp.package.java.product
+
+!ENTRY org.eclipse.egit.ui 2 0 2016-02-15 11:14:09.853
+!MESSAGE Warning: The environment variable HOME is not set. The following directory will be used to store the Git
+user global configuration and to define the default location to store repositories: 'C:\Users\FRC_6201'. If this is
+not correct please set the HOME environment variable and restart Eclipse. Otherwise Git for Windows and
+EGit might behave differently since they see different configuration options.
+This warning can be switched off on the Team > Git > Confirmations and Warnings preference page.
+
+!ENTRY edu.wpi.first.wpilib.plugins.core 1 0 2016-02-15 11:14:19.946
+!MESSAGE Installing tools if necessary
+
+!ENTRY edu.wpi.first.wpilib.plugins.core 1 0 2016-02-15 11:14:20.154
+!MESSAGE Installedtools
+
+!ENTRY edu.wpi.first.wpilib.plugins.core 1 0 2016-02-15 11:14:21.243
+!MESSAGE Installing cpp if necessary
+
+!ENTRY edu.wpi.first.wpilib.plugins.core 1 0 2016-02-15 11:14:22.766
+!MESSAGE Installedcpp
+
+!ENTRY edu.wpi.first.wpilib.plugins.core 1 0 2016-02-15 11:14:23.128
+!MESSAGE Installing java if necessary
+
+!ENTRY edu.wpi.first.wpilib.plugins.core 1 0 2016-02-15 11:14:23.240
+!MESSAGE Installedjava
+
+!ENTRY WPILib_Java_Robot_Development 1 0 2016-02-15 11:16:25.758
+!MESSAGE Running ant file: C:\Users\FRC_6201\workspace\newRobot\build.xml
+
+!ENTRY WPILib_Java_Robot_Development 1 0 2016-02-15 11:16:25.779
+!MESSAGE Targets: deploy, Mode: run
+
+!ENTRY WPILib_Java_Robot_Development 1 0 2016-02-15 11:19:26.015
+!MESSAGE Running ant file: C:\Users\FRC_6201\workspace\newRobot\build.xml
+
+!ENTRY WPILib_Java_Robot_Development 1 0 2016-02-15 11:19:26.025
+!MESSAGE Targets: deploy, Mode: run
+
+!ENTRY WPILib_Java_Robot_Development 1 0 2016-02-15 11:21:56.698
+!MESSAGE Running ant file: C:\Users\FRC_6201\workspace\newRobot\build.xml
+
+!ENTRY WPILib_Java_Robot_Development 1 0 2016-02-15 11:21:56.717
+!MESSAGE Targets: deploy, Mode: run
+
+!ENTRY WPILib_Java_Robot_Development 1 0 2016-02-15 11:23:39.140
+!MESSAGE Running ant file: C:\Users\FRC_6201\workspace\newRobot\build.xml
+
+!ENTRY WPILib_Java_Robot_Development 1 0 2016-02-15 11:23:39.153
+!MESSAGE Targets: deploy, Mode: run
+
+!ENTRY WPILib_Java_Robot_Development 1 0 2016-02-15 11:40:36.901
+!MESSAGE Running ant file: C:\Users\FRC_6201\workspace\newRobot\build.xml
+
+!ENTRY WPILib_Java_Robot_Development 1 0 2016-02-15 11:40:36.921
+!MESSAGE Targets: deploy, Mode: run
+
+!ENTRY WPILib_Java_Robot_Development 1 0 2016-02-15 11:42:06.758
+!MESSAGE Running ant file: C:\Users\FRC_6201\workspace\newRobot\build.xml
+
+!ENTRY WPILib_Java_Robot_Development 1 0 2016-02-15 11:42:06.788
+!MESSAGE Targets: deploy, Mode: run
+
+!ENTRY WPILib_Java_Robot_Development 1 0 2016-02-15 11:42:45.783
+!MESSAGE Running ant file: C:\Users\FRC_6201\workspace\newRobot\build.xml
+
+!ENTRY WPILib_Java_Robot_Development 1 0 2016-02-15 11:42:45.792
+!MESSAGE Targets: deploy, Mode: run
+
+!ENTRY WPILib_Java_Robot_Development 1 0 2016-02-15 11:57:38.897
+!MESSAGE Running ant file: C:\Users\FRC_6201\workspace\newRobot\build.xml
+
+!ENTRY WPILib_Java_Robot_Development 1 0 2016-02-15 11:57:38.906
+!MESSAGE Targets: deploy, Mode: run
+
+!ENTRY WPILib_Java_Robot_Development 1 0 2016-02-15 12:17:05.709
+!MESSAGE Running ant file: C:\Users\FRC_6201\workspace\newRobot\build.xml
+
+!ENTRY WPILib_Java_Robot_Development 1 0 2016-02-15 12:17:05.709
+!MESSAGE Targets: deploy, Mode: run

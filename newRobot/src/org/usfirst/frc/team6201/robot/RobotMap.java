@@ -47,7 +47,7 @@ public class RobotMap {
 	
 	public static final String FRONT_CAM = "cam1";
 	public static final String REAR_CAM = "cam2";
-	public static final int IMG_QUALITY = 50;
+	public static final int IMG_QUALITY = 1;
 	
 	
 }

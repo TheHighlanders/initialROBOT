@@ -24,9 +24,9 @@ public class ArcadeDriveCmd extends Command {
 	private final double TANDOMAIN_Y = 1.3; // used for sensitivity of joystick
 	private final double TANDOMAIN_X = 1.3; // used for sensitivity of joystick
 	
-	private final double pTurnGain = 1; // This is used for allowing us to drive in a straight line.
+	private final double pTurnGain = 0.05; // This is used for allowing us to drive in a straight line.
 											//We MUST test to find the appropriate  value for this.
-	private final double gyroRateGain = 1; // This is used to make the desired turn rate as output by the Joystick match the 
+	private final double gyroRateGain = 0.05; // This is used to make the desired turn rate as output by the Joystick match the 
 	
 	
 	
@@ -72,7 +72,11 @@ public class ArcadeDriveCmd extends Command {
     	SmartDashboard.putNumber("GyroAngle: ", Robot.dt.getGyroAngle());
     	SmartDashboard.putNumber("GyroRate: ", Robot.dt.getGyroRate());
     	
-    	Robot.dt.driveLR(RobotMap.fowardOrReverse*(processedPower + processedTwiceTurn), RobotMap.fowardOrReverse*(processedPower - processedTwiceTurn));
+    	if (RobotMap.fowardOrReverse == 1){
+        	Robot.dt.driveLR(RobotMap.fowardOrReverse*(processedPower + processedTwiceTurn), RobotMap.fowardOrReverse*(processedPower - processedTwiceTurn));
+    	} else {
+    		Robot.dt.driveLR(RobotMap.fowardOrReverse*(processedPower - processedTwiceTurn), RobotMap.fowardOrReverse*(processedPower + processedTwiceTurn));
+    	}
 	}
 
     // Make this return true when this Command no longer needs to run execute()
