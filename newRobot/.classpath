@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <classpath>
-	<classpathentry exported="true" kind="lib" path="/Users/maxnadeau/wpilib/java/current/lib/NetworkTables.jar"/>
-	<classpathentry exported="true" kind="lib" path="/Users/maxnadeau/wpilib/java/current/lib/WPILib.jar"/>
+	<classpathentry exported="true" kind="lib" path="importantJars/NetworkTables.jar"/>
+	<classpathentry exported="true" kind="lib" path="importantJars/WPILib.jar"/>
+	<classpathentry exported="true" kind="lib" path="importantJars"/>
 	<classpathentry excluding="org/usfirst/frc/team6201/robot/subsystems/Sensors.java|org/usfirst/frc/team6201/robot/commands/TurnAngleCmd.java" kind="src" path="src"/>
 	<classpathentry exported="true" kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
 	<classpathentry kind="output" path="bin"/>
