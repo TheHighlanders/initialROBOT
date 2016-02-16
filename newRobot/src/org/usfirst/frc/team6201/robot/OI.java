@@ -4,6 +4,9 @@ import org.usfirst.frc.team6201.robot.commands.FowardCamCmd;
 import org.usfirst.frc.team6201.robot.commands.FowardDriveCmd;
 import org.usfirst.frc.team6201.robot.commands.RearCamCmd;
 import org.usfirst.frc.team6201.robot.commands.RearDriveCmd;
+import org.usfirst.frc.team6201.robot.commands.RollInCmd;
+import org.usfirst.frc.team6201.robot.commands.RollOutCmd;
+
 import edu.wpi.first.wpilibj.Joystick;
 import edu.wpi.first.wpilibj.buttons.Button;
 import edu.wpi.first.wpilibj.buttons.JoystickButton;
@@ -45,6 +48,7 @@ public class OI {
 	}
 	
 	public OI () {
+		//camera reversal
 		Button button3 = new JoystickButton(arcade, 3);
 		Button button5 = new JoystickButton(arcade, 5);
 		
@@ -54,6 +58,12 @@ public class OI {
 		button5.whenPressed(new RearDriveCmd());
 		button5.whenPressed(new RearCamCmd());
 		
+		// ball roller
+		Button button4 = new JoystickButton(arcade, 4);
+		Button button6 = new JoystickButton(arcade, 6);
+		
+		button4.whenPressed(new RollInCmd());
+		button6.whenPressed(new RollOutCmd());
 	}
 	
 	
