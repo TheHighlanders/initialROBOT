@@ -1,16 +1,20 @@
 package org.usfirst.frc.team6201.robot.subsystems;
 
 import org.usfirst.frc.team6201.robot.RobotMap;
-import org.usfirst.frc.team6201.robot.commands.RollInCmd;
-
-import edu.wpi.first.wpilibj.Victor;
+import edu.wpi.first.wpilibj.Spark;
+import edu.wpi.first.wpilibj.Timer;
 import edu.wpi.first.wpilibj.command.PIDSubsystem;
 
 /**
+ *@author Max Nadaeu
+ *@author David Matthews
  *
+ * The subsystem for controlling the ball picking up device. 
  */
 public class Roller extends PIDSubsystem {
-	private Victor motor = new Victor (RobotMap.ROLLER);
+	private Spark motor = new Spark (RobotMap.ROLLER);
+	public Timer timer = new Timer();
+	
     // Put methods for controlling this subsystem
     // here. Call these from Commands.
 
@@ -22,8 +26,7 @@ public class Roller extends PIDSubsystem {
 	}
 	
     public void initDefaultCommand() {
-        // Set the default command for a subsystem here.
-        setDefaultCommand(new RollInCmd());
+
     }
     
     public void roll(double power){
@@ -31,7 +34,7 @@ public class Roller extends PIDSubsystem {
     }
     
     public void stop(){
-    	roll(0);
+    	roll(0.0);
     }
 
 	@Override

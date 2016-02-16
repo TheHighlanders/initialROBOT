@@ -21,6 +21,11 @@ public class RobotMap {
 	
 	public static final double SET_DISTANCE_PER_PULSE = 1;
 	
+	
+	// Roller
+	public static final double PICKUP_BALL = 1.0;
+	public static final double RELEASE_BALL = -1.0;
+	
 	/// OI
 	
 	// TankdriveCmd
@@ -45,10 +50,9 @@ public class RobotMap {
 	
 	
 	// Which camera to view from?
-	
 	public static final String FRONT_CAM = "cam1";
 	public static final String REAR_CAM = "cam2";
-	public static final int IMG_QUALITY = 1;
+	public static final int IMG_QUALITY = 20;
 	
 	
 }
