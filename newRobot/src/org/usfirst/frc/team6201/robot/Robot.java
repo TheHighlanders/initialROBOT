@@ -38,7 +38,7 @@ import edu.wpi.first.wpilibj.vision.USBCamera;
 public class Robot extends IterativeRobot {
 
 	public static final Drivetrain dt = new Drivetrain();
-	//public static final Roller roller = new Roller();
+	public static final Roller roller = new Roller();
 	public static OI oi;
 
     Command autonomousCommand;
