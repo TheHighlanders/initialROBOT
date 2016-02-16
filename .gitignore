@@ -1,7 +1,9 @@
 jars
-/.metadata/.plugins/org.eclipse.core.resources/.history/1
+/.metadata/.plugins/org.eclipse.core.resources/.history
 /.metadata/.plugins/org.eclipse.debug.core/.launches
 *.class
 /.recommenders/index/http___download_eclipse_org_recommenders_models_mars_
-/.metadata/.plugins/org.eclipse.ltk.core.refactoring/.refactorings/newRobot/2016/2/8
+/.metadata/.plugins/org.eclipse.ltk.core.refactoring/.refactorings
 /.metadata/.plugins/org.eclipse.jdt.core
+/RemoteSystemsTempFiles
+/.metadata/.plugins/org.eclipse.core.resources/.projects/RemoteSystemsTempFiles
