@@ -11,7 +11,7 @@ public class RollInCmd extends Command {
 
     public RollInCmd() {
         // Use requires() here to declare subsystem dependencies
-         requires(Robot.roller);
+        // requires(Robot.roller);
     }
 
     // Called just before this Command runs the first time
@@ -21,7 +21,7 @@ public class RollInCmd extends Command {
 
     // Called repeatedly when this Command is scheduled to run
     protected void execute() {
-    	Robot.roller.roll(5.0);
+    	//Robot.roller.roll(5.0);
     }
 
     // Make this return true when this Command no longer needs to run execute()
@@ -32,7 +32,7 @@ public class RollInCmd extends Command {
 
     // Called once after isFinished returns true
     protected void end() {
-    	Robot.roller.stop();
+    	//Robot.roller.stop();
     }
 
     // Called when another command which requires one or more of the same

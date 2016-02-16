@@ -58,12 +58,12 @@ public class OI {
 		button5.whenPressed(new RearDriveCmd());
 		button5.whenPressed(new RearCamCmd());
 		
-		// ball roller
+		/*// ball roller
 		Button button4 = new JoystickButton(arcade, 4);
 		Button button6 = new JoystickButton(arcade, 6);
 		
 		button4.whenPressed(new RollInCmd());
-		button6.whenPressed(new RollOutCmd());
+		button6.whenPressed(new RollOutCmd());*/
 	}
 	
 	
