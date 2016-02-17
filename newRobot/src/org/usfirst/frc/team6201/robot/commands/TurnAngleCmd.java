@@ -1,4 +1,5 @@
-package org.usfirst.frc.team6201.robot.subsystems;
+package org.usfirst.frc.team6201.robot.commands;
+
 import org.usfirst.frc.team6201.robot.Robot;
 import org.usfirst.frc.team6201.robot.RobotMap;
 
@@ -45,3 +46,4 @@ public class TurnAngleCmd extends Command {
     	this.end();
     }
 }
+
