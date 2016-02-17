@@ -4,17 +4,18 @@ import org.usfirst.frc.team6201.robot.Robot;
 import org.usfirst.frc.team6201.robot.RobotMap;
 
 import edu.wpi.first.wpilibj.command.Command;
+import edu.wpi.first.wpilibj.command.PIDCommand;
 
 /**
  *
  */
-public class TurnAngleCmd extends Command {
+public class TurnAngleCmd extends PIDCommand {
 
-	public static double goal;
+	public static boolean finished = false;
     public TurnAngleCmd(double rotation) {
         // Use requires() here to declare subsystem dependencies
-         requires(Robot.dt);
-         this.goal = Robot.dt.getGyroAngle() + rotation;
+    	super(rotation, 0, 0);
+        requires(Robot.dt);
     }
 
     // Called just before this Command runs the first time
@@ -24,17 +25,13 @@ public class TurnAngleCmd extends Command {
 
     // Called repeatedly when this Command is scheduled to run
     protected void execute() {
-    	if(this.goal > Robot.dt.getGyroAngle())
-    		Robot.dt.driveLR(RobotMap.ROTATION_SPEED, -RobotMap.ROTATION_SPEED);
-    	else
-    		Robot.dt.driveLR(-RobotMap.ROTATION_SPEED, RobotMap.ROTATION_SPEED);
+    	
     }
-
-    // Make this return true when this Command no longer needs to run execute()
-    protected boolean isFinished() {
-        return (Math.abs(Robot.dt.getGyroAngle() - this.goal) < RobotMap.ROTATION_LEEWAY);
-    }
-
+    
+	protected boolean isFinished() {
+		return this.finished;
+	}
+    
     // Called once after isFinished returns true
     protected void end() {
     	Robot.dt.stop();
@@ -45,5 +42,18 @@ public class TurnAngleCmd extends Command {
     protected void interrupted() {
     	this.end();
     }
+
+	protected double returnPIDInput() {
+		// TODO Auto-generated method stub
+		return Robot.dt.getGyroAngle();
+	}
+
+	protected void usePIDOutput(double arg0) {
+		// TODO Auto-generated method stub
+		Robot.dt.driveLR(arg0, -arg0);
+		if(arg0 == 0){
+			this.finished = true;
+		}
+	}
 }
 
