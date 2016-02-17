@@ -5,6 +5,7 @@ package org.usfirst.frc.team6201.robot;
  * the wiring easier and significantly reduces the number of magic numbers
  * floating around.
  * 
+ * @author Max Nadeau
  * @author David Matthews
  */
 public class RobotMap {
@@ -21,6 +22,8 @@ public class RobotMap {
 	
 	public static final double SET_DISTANCE_PER_PULSE = 1;
 	
+	public static final double ROTATION_LEEWAY = 5.0;
+	public static final double ROTATION_SPEED = 1.0;
 	
 	// Roller
 	public static final double PICKUP_BALL = 1.0;

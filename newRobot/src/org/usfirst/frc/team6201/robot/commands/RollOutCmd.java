@@ -5,7 +5,7 @@ import org.usfirst.frc.team6201.robot.RobotMap;
 import edu.wpi.first.wpilibj.command.Command;
 
 /**
- *@author Max Nadaeu
+ *@author Max Nadeau
  *@author David Matthews
  *
  *Tells the robot to release the ball

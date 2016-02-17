@@ -6,8 +6,9 @@ import edu.wpi.first.wpilibj.Timer;
 import edu.wpi.first.wpilibj.command.PIDSubsystem;
 
 /**
- *@author Max Nadaeu
+ *
  *@author David Matthews
+ *@author Max Nadeau
  *
  * The subsystem for controlling the ball picking up device. 
  */
