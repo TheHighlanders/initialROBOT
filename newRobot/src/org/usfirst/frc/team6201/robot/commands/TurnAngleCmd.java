@@ -12,15 +12,19 @@ import edu.wpi.first.wpilibj.command.PIDCommand;
 public class TurnAngleCmd extends PIDCommand {
 
 	public static boolean finished = false;
+	public static double startPos = Robot.dt.getGyroAngle();
+	
     public TurnAngleCmd(double rotation) {
         // Use requires() here to declare subsystem dependencies
-    	super(rotation, 0, 0);
+    	super(1, 0, 0);
+    	this.setSetpoint(this.startPos + rotation);
         requires(Robot.dt);
     }
 
     // Called just before this Command runs the first time
     protected void initialize() {
     	Robot.dt.resetGyro();
+    	
     }
 
     // Called repeatedly when this Command is scheduled to run
