@@ -1,37 +1,41 @@
 package org.usfirst.frc.team6201.robot.commands;
 
 import org.usfirst.frc.team6201.robot.Robot;
-import org.usfirst.frc.team6201.robot.RobotMap;
 
 import edu.wpi.first.wpilibj.command.Command;
-import edu.wpi.first.wpilibj.command.PIDCommand;
 
 /**
  *
  */
-public class TurnAngleCmd extends PIDCommand {
+public class TurnAngleCmd extends Command {
 
-	public static boolean finished = false;
-    public TurnAngleCmd(double rotation) {
-        // Use requires() here to declare subsystem dependencies
-    	super(rotation, 0, 0);
-        requires(Robot.dt);
+	private double turn;
+	private double scalarOnTurn = 0.1;
+	private double rotation;
+	private double acceptedError;
+	
+    public TurnAngleCmd(double rotation, double acceptedError) {
+    	requires(Robot.dt);
+    	this.rotation = rotation;
+        this.acceptedError = acceptedError;
     }
 
     // Called just before this Command runs the first time
     protected void initialize() {
-    	Robot.dt.resetGyro();
+       	Robot.dt.resetGyro();
     }
 
     // Called repeatedly when this Command is scheduled to run
     protected void execute() {
-    	
+    	turn = scalarOnTurn*(Robot.dt.getGyroAngle() - rotation);
+    	Robot.dt.driveLR(turn, -turn);
     }
-    
-	protected boolean isFinished() {
-		return this.finished;
-	}
-    
+
+    // Make this return true when this Command no longer needs to run execute()
+    protected boolean isFinished() {
+        return (Math.abs(Robot.dt.getGyroAngle() - rotation)<= acceptedError);
+    }
+
     // Called once after isFinished returns true
     protected void end() {
     	Robot.dt.stop();
@@ -40,20 +44,6 @@ public class TurnAngleCmd extends PIDCommand {
     // Called when another command which requires one or more of the same
     // subsystems is scheduled to run
     protected void interrupted() {
-    	this.end();
+    	end();
     }
-
-	protected double returnPIDInput() {
-		// TODO Auto-generated method stub
-		return Robot.dt.getGyroAngle();
-	}
-
-	protected void usePIDOutput(double arg0) {
-		// TODO Auto-generated method stub
-		Robot.dt.driveLR(arg0, -arg0);
-		if(arg0 == 0){
-			this.finished = true;
-		}
-	}
 }
-

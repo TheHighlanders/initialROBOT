@@ -9564,3 +9564,277 @@ org.eclipse.swt.SWTException: Widget is disposed
 	at org.eclipse.equinox.launcher.Main.invokeFramework(Main.java:669)
 	at org.eclipse.equinox.launcher.Main.basicRun(Main.java:608)
 	at org.eclipse.equinox.launcher.Main.run(Main.java:1515)
+!SESSION 2016-02-16 15:53:20.605 -----------------------------------------------
+eclipse.buildId=4.5.1.M20150904-0015
+java.version=1.8.0_71
+java.vendor=Oracle Corporation
+BootLoader constants: OS=win32, ARCH=x86_64, WS=win32, NL=en_US
+Framework arguments:  -product org.eclipse.epp.package.java.product
+Command-line arguments:  -os win32 -ws win32 -arch x86_64 -product org.eclipse.epp.package.java.product
+
+!ENTRY org.eclipse.egit.ui 2 0 2016-02-16 15:54:09.712
+!MESSAGE Warning: The environment variable HOME is not set. The following directory will be used to store the Git
+user global configuration and to define the default location to store repositories: 'C:\Users\FRC_6201'. If this is
+not correct please set the HOME environment variable and restart Eclipse. Otherwise Git for Windows and
+EGit might behave differently since they see different configuration options.
+This warning can be switched off on the Team > Git > Confirmations and Warnings preference page.
+
+!ENTRY edu.wpi.first.wpilib.plugins.core 1 0 2016-02-16 15:54:13.555
+!MESSAGE Installing tools if necessary
+
+!ENTRY edu.wpi.first.wpilib.plugins.core 1 0 2016-02-16 15:54:13.836
+!MESSAGE Installedtools
+
+!ENTRY edu.wpi.first.wpilib.plugins.core 1 0 2016-02-16 15:54:15.101
+!MESSAGE Installing cpp if necessary
+
+!ENTRY edu.wpi.first.wpilib.plugins.core 1 0 2016-02-16 15:54:15.428
+!MESSAGE Installedcpp
+
+!ENTRY edu.wpi.first.wpilib.plugins.core 1 0 2016-02-16 15:54:15.788
+!MESSAGE Installing java if necessary
+
+!ENTRY edu.wpi.first.wpilib.plugins.core 1 0 2016-02-16 15:54:17.521
+!MESSAGE Installedjava
+
+!ENTRY WPILib_Java_Robot_Development 1 0 2016-02-16 15:56:44.008
+!MESSAGE [org.usfirst.frc.team6201.robot.commands [in src [in newRobot]]
+  FowardCamCmd.java (not open)
+  Auto.java (not open)
+  DriveDistanceCmd.java (not open)
+  DriveTimeCmd.java (not open)
+  CameraRunCmd.java (not open)
+  WhichCameraCmd.java (not open)
+  CameraAndDriveCmdGrp.java (not open)
+  FowardDriveCmd.java (not open)
+  RollOutCmd.java (not open)
+  TankDriveCmd.java (not open)
+  RearDriveCmd.java (not open)
+  RollInCmd.java (not open)
+  ArcadeDriveCmd.java (not open)
+  RearCamCmd.java (not open)]
+
+!ENTRY WPILib_Java_Robot_Development 1 0 2016-02-16 15:56:44.023
+!MESSAGE class org.eclipse.jdt.internal.core.PackageFragment
+
+!ENTRY WPILib_Java_Robot_Development 1 0 2016-02-16 15:56:44.070
+!MESSAGE initialize
+
+!ENTRY WPILib_Java_Robot_Development 1 0 2016-02-16 15:56:44.070
+!MESSAGE Project: P/newRobot
+
+!ENTRY WPILib_Java_Robot_Development 1 0 2016-02-16 15:56:52.308
+!MESSAGE Class: TurnAngleCmd Package: org.usfirst.frc.team6201.robot.commands
+!SESSION 2016-02-17 15:39:56.015 -----------------------------------------------
+eclipse.buildId=4.5.1.M20150904-0015
+java.version=1.8.0_71
+java.vendor=Oracle Corporation
+BootLoader constants: OS=win32, ARCH=x86_64, WS=win32, NL=en_US
+Framework arguments:  -product org.eclipse.epp.package.java.product
+Command-line arguments:  -os win32 -ws win32 -arch x86_64 -product org.eclipse.epp.package.java.product
+
+!ENTRY org.eclipse.egit.ui 2 0 2016-02-17 15:40:35.868
+!MESSAGE Warning: The environment variable HOME is not set. The following directory will be used to store the Git
+user global configuration and to define the default location to store repositories: 'C:\Users\FRC_6201'. If this is
+not correct please set the HOME environment variable and restart Eclipse. Otherwise Git for Windows and
+EGit might behave differently since they see different configuration options.
+This warning can be switched off on the Team > Git > Confirmations and Warnings preference page.
+
+!ENTRY edu.wpi.first.wpilib.plugins.core 1 0 2016-02-17 15:40:37.802
+!MESSAGE Installing tools if necessary
+
+!ENTRY edu.wpi.first.wpilib.plugins.core 1 0 2016-02-17 15:40:38.255
+!MESSAGE Installedtools
+
+!ENTRY edu.wpi.first.wpilib.plugins.core 1 0 2016-02-17 15:40:38.598
+!MESSAGE Installing cpp if necessary
+
+!ENTRY edu.wpi.first.wpilib.plugins.core 1 0 2016-02-17 15:40:39.144
+!MESSAGE Installedcpp
+
+!ENTRY edu.wpi.first.wpilib.plugins.core 1 0 2016-02-17 15:40:42.795
+!MESSAGE Installing java if necessary
+
+!ENTRY edu.wpi.first.wpilib.plugins.core 1 0 2016-02-17 15:40:47.865
+!MESSAGE Installedjava
+
+!ENTRY WPILib_Java_Robot_Development 1 0 2016-02-17 15:57:59.870
+!MESSAGE Running ant file: C:\Users\FRC_6201\workspace\newRobot\build.xml
+
+!ENTRY WPILib_Java_Robot_Development 1 0 2016-02-17 15:57:59.932
+!MESSAGE Targets: simulate, Mode: run
+
+!ENTRY WPILib_Java_Robot_Development 1 0 2016-02-17 16:00:11.973
+!MESSAGE Running ant file: C:\Users\FRC_6201\workspace\newRobot\build.xml
+
+!ENTRY WPILib_Java_Robot_Development 1 0 2016-02-17 16:00:12.020
+!MESSAGE Targets: deploy, Mode: run
+
+!ENTRY WPILib_Java_Robot_Development 1 0 2016-02-17 16:10:20.414
+!MESSAGE [org.usfirst.frc.team6201.robot.commands [in src [in newRobot]]
+  FowardCamCmd.java
+    package org.usfirst.frc.team6201.robot.commands
+    import org.usfirst.frc.team6201.robot.Robot
+    import edu.wpi.first.wpilibj.command.Command
+    class FowardCamCmd
+      FowardCamCmd()
+      void initialize()
+      void execute()
+      boolean isFinished()
+      void end()
+      void interrupted()
+  [Working copy] TurnAngleCmd.java
+    package org.usfirst.frc.team6201.robot.commands
+    import org.usfirst.frc.team6201.robot.Robot
+    import org.usfirst.frc.team6201.robot.RobotMap
+    import edu.wpi.first.wpilibj.command.Command
+    import edu.wpi.first.wpilibj.command.PIDCommand
+    class TurnAngleCmd
+      double turn
+      double scalarOnTurn
+      double rotation
+      double acceptedError
+      TurnAngleCmd(double, double)
+      void initialize()
+      void execute()
+      boolean isFinished()
+      void end()
+      void interrupted()
+  Auto.java (not open)
+  DriveDistanceCmd.java (not open)
+  DriveTimeCmd.java
+    package org.usfirst.frc.team6201.robot.commands
+    import org.usfirst.frc.team6201.robot.Robot
+    import edu.wpi.first.wpilibj.Timer
+    import edu.wpi.first.wpilibj.command.Command
+    class DriveTimeCmd
+      Timer timer
+      double drivingTime
+      DriveTimeCmd(double)
+      void initialize()
+      void execute()
+      boolean isFinished()
+      void end()
+      void interrupted()
+  CameraRunCmd.java (not open)
+  WhichCameraCmd.java
+    package org.usfirst.frc.team6201.robot.commands
+    import org.usfirst.frc.team6201.robot.RobotMap
+    import com.ni.vision.NIVision
+    import com.ni.vision.NIVision.Image
+    import edu.wpi.first.wpilibj.CameraServer
+    import edu.wpi.first.wpilibj.command.Command
+    class WhichCameraCmd
+      int camFront
+      int camRear
+      int curCam
+      Image frame
+      CameraServer server
+      WhichCameraCmd()
+      int getFrontCam()
+      int getRearCam()
+      void initialize()
+      void execute()
+      boolean isFinished()
+      void end()
+      void interrupted()
+      void changeCam(int)
+      void updateCam()
+  CameraAndDriveCmdGrp.java
+    package org.usfirst.frc.team6201.robot.commands
+    import edu.wpi.first.wpilibj.command.CommandGroup
+    class CameraAndDriveCmdGrp
+      CameraAndDriveCmdGrp()
+  FowardDriveCmd.java
+    package org.usfirst.frc.team6201.robot.commands
+    import org.usfirst.frc.team6201.robot.RobotMap
+    import edu.wpi.first.wpilibj.command.Command
+    class FowardDriveCmd
+      FowardDriveCmd()
+      void initialize()
+      void execute()
+      boolean isFinished()
+      void end()
+      void interrupted()
+  RollOutCmd.java
+    package org.usfirst.frc.team6201.robot.commands
+    import org.usfirst.frc.team6201.robot.Robot
+    import org.usfirst.frc.team6201.robot.RobotMap
+    import edu.wpi.first.wpilibj.command.Command
+    class RollOutCmd
+      RollOutCmd()
+      void initialize()
+      void execute()
+      boolean isFinished()
+      void end()
+      void interrupted()
+  TankDriveCmd.java (not open)
+  RearDriveCmd.java
+    package org.usfirst.frc.team6201.robot.commands
+    import org.usfirst.frc.team6201.robot.RobotMap
+    import edu.wpi.first.wpilibj.command.Command
+    class RearDriveCmd
+      RearDriveCmd()
+      void initialize()
+      void execute()
+      boolean isFinished()
+      void end()
+      void interrupted()
+  RollInCmd.java
+    package org.usfirst.frc.team6201.robot.commands
+    import org.usfirst.frc.team6201.robot.Robot
+    import org.usfirst.frc.team6201.robot.RobotMap
+    import edu.wpi.first.wpilibj.command.Command
+    class RollInCmd
+      RollInCmd()
+      void initialize()
+      void execute()
+      boolean isFinished()
+      void end()
+      void interrupted()
+  [Working copy] ArcadeDriveCmd.java
+    package org.usfirst.frc.team6201.robot.commands
+    import org.usfirst.frc.team6201.robot.Robot
+    import org.usfirst.frc.team6201.robot.RobotMap
+    import edu.wpi.first.wpilibj.command.Command
+    import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard
+    class ArcadeDriveCmd
+      double rawTurn
+      double rawPower
+      double processedOnceTurn
+      double processedTwiceTurn
+      double processedPower
+      double TANDOMAIN_Y
+      double TANDOMAIN_X
+      double pTurnGain
+      double gyroRateGain
+      double scaledValTan(double, double)
+      ArcadeDriveCmd()
+      void initialize()
+      void execute()
+      boolean isFinished()
+      void end()
+      void interrupted()
+  RearCamCmd.java
+    package org.usfirst.frc.team6201.robot.commands
+    import org.usfirst.frc.team6201.robot.Robot
+    import edu.wpi.first.wpilibj.command.Command
+    class RearCamCmd
+      RearCamCmd()
+      void initialize()
+      void execute()
+      boolean isFinished()
+      void end()
+      void interrupted()]
+
+!ENTRY WPILib_Java_Robot_Development 1 0 2016-02-17 16:10:20.446
+!MESSAGE class org.eclipse.jdt.internal.core.PackageFragment
+
+!ENTRY WPILib_Java_Robot_Development 1 0 2016-02-17 16:10:20.493
+!MESSAGE initialize
+
+!ENTRY WPILib_Java_Robot_Development 1 0 2016-02-17 16:10:20.521
+!MESSAGE Project: P/newRobot
+
+!ENTRY WPILib_Java_Robot_Development 1 0 2016-02-17 16:10:27.262
+!MESSAGE Class: TurnAngleCmdTwo Package: org.usfirst.frc.team6201.robot.commands

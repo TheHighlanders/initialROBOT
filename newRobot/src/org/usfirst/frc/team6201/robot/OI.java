@@ -67,12 +67,7 @@ public class OI {
 		button4.whenPressed(new RollInCmd());
 		button6.whenPressed(new RollOutCmd());
 		
-		//turning tester
-		Button button7 = new JoystickButton(arcade, 7);
-		Button button8 = new JoystickButton(arcade, 8);
 		
-		button7.whenPressed(new TurnAngleCmd(90.0));
-		button8.whenPressed(new TurnAngleCmd(-90.0));
 	}
 	
 	
