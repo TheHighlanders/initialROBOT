@@ -21,19 +21,19 @@ public class RollOutCmd extends Command {
     protected void initialize() {
 
     	Robot.roller.timer.reset();
-    
+    	Robot.roller.timer.start();
     }
 
     // Called repeatedly when this Command is scheduled to run
     protected void execute() {
-    	Robot.roller.timer.start();
+
     	Robot.roller.roll(RobotMap.RELEASE_BALL);
     }
 
     // Make this return true when this Command no longer needs to run execute()
  // Make this return true when this Command no longer needs to run execute()
     protected boolean isFinished() {
-        return (Robot.roller.timer.get() >= 2);
+        return (Robot.roller.timer.get() >= 10);
     }
 
     // Called once after isFinished returns true

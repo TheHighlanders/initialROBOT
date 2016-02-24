@@ -19,7 +19,7 @@ public class RearDriveCmd extends Command {
 
     // Called just before this Command runs the first time
     protected void initialize() {
-    	RobotMap.fowardOrReverse = 1;
+    	RobotMap.fowardOrReverse = -1;
     }
 
     // Called repeatedly when this Command is scheduled to run

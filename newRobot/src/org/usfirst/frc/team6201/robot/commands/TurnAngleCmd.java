@@ -13,7 +13,7 @@ import edu.wpi.first.wpilibj.command.Command;
 public class TurnAngleCmd extends Command {
 
 	private double turn;
-	private double scalarOnTurn = 1;
+	private double scalarOnTurn = 1/3;
 	private double rotation;
 	private double acceptedError;
 	

@@ -1,5 +1,6 @@
 package org.usfirst.frc.team6201.robot;
 
+import org.usfirst.frc.team6201.robot.commands.Auto;
 import org.usfirst.frc.team6201.robot.commands.FowardCamCmd;
 import org.usfirst.frc.team6201.robot.commands.FowardDriveCmd;
 import org.usfirst.frc.team6201.robot.commands.RearCamCmd;
@@ -7,6 +8,7 @@ import org.usfirst.frc.team6201.robot.commands.RearDriveCmd;
 import org.usfirst.frc.team6201.robot.commands.RollInCmd;
 import org.usfirst.frc.team6201.robot.commands.RollOutCmd;
 import org.usfirst.frc.team6201.robot.commands.TurnAngleCmd;
+import org.usfirst.frc.team6201.robot.commands.TurnAngleWithoutZeroingCmd;
 
 import edu.wpi.first.wpilibj.Joystick;
 import edu.wpi.first.wpilibj.buttons.Button;
@@ -54,18 +56,27 @@ public class OI {
 		Button button3 = new JoystickButton(arcade, 3);
 		Button button5 = new JoystickButton(arcade, 5);
 		
-		button3.whenPressed(new FowardDriveCmd());
-		button3.whenPressed(new FowardCamCmd());
-		
-		button5.whenPressed(new RearDriveCmd());
-		button5.whenPressed(new RearCamCmd());
-		
+		button5.whenPressed(new FowardDriveCmd());
+		button5.whenPressed(new FowardCamCmd());
+	
+		button3.whenPressed(new RearDriveCmd());
+		button3.whenPressed(new RearCamCmd());
+
 		// ball roller
 		Button button4 = new JoystickButton(arcade, 4);
 		Button button6 = new JoystickButton(arcade, 6);
 		
 		button4.whenPressed(new RollInCmd());
 		button6.whenPressed(new RollOutCmd());
+		
+		// tests
+		Button button11 = new JoystickButton(arcade, 11);
+		Button button12 = new JoystickButton(arcade, 12);
+		
+		button11.whenPressed(new Auto());
+		button12.whenPressed(new TurnAngleCmd(90,1));
+		
+		
 		
 		
 	}

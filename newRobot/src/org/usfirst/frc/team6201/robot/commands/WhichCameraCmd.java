@@ -45,6 +45,7 @@ public class WhichCameraCmd extends Command {
     public int getRearCam(){
     	return camRear;
     }
+    
     public void initialize() {
     	changeCam(camFront);
     	

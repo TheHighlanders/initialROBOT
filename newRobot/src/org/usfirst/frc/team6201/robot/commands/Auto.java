@@ -13,6 +13,6 @@ import edu.wpi.first.wpilibj.command.CommandGroup;
 public class Auto extends CommandGroup {
     
     public  Auto() {
-    	addSequential(new TurnAngleCmd(200, 20));
+    	addSequential(new DriveTimeCmd(3));
 	}
 }

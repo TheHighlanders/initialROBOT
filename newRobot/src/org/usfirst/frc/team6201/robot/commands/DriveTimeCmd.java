@@ -23,10 +23,15 @@ public class DriveTimeCmd extends Command {
     protected void initialize() {
     	//we start driving
     	timer.start ();
-    	Robot.dt.driveLR(1.0, 1.0);
     }
 
     protected void execute() {
+    	
+    	while (timer.get()>this.drivingTime)
+    	{
+    		Robot.dt.driveLR(1.0, 1.0);
+    	}
+    	
     }
 
     protected boolean isFinished() {

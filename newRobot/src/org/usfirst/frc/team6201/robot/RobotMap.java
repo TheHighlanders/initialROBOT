@@ -26,8 +26,8 @@ public class RobotMap {
 	public static final double ROTATION_SPEED = 1.0;
 	
 	// Roller
-	public static final double PICKUP_BALL = 1.0;
-	public static final double RELEASE_BALL = -1.0;
+	public static final double PICKUP_BALL = 1;
+	public static final double RELEASE_BALL = -1;
 	
 	/// OI
 	
@@ -53,9 +53,9 @@ public class RobotMap {
 	
 	
 	// Which camera to view from?
-	public static final String FRONT_CAM = "cam0";
-	public static final String REAR_CAM = "cam1";
-	public static final int IMG_QUALITY = 20;
-	
+	public static final String FRONT_CAM = "cam1";
+	public static final String REAR_CAM = "cam0";
+	public static final int IMG_QUALITY = 10;
+
 	
 }

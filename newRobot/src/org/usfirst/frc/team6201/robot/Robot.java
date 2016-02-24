@@ -11,6 +11,8 @@ import org.usfirst.frc.team6201.robot.commands.DriveDistanceCmd;
 
 import org.usfirst.frc.team6201.robot.commands.WhichCameraCmd;
 import org.usfirst.frc.team6201.robot.commands.DriveTimeCmd;
+import org.usfirst.frc.team6201.robot.commands.TurnAngleCmd;
+import org.usfirst.frc.team6201.robot.commands.TurnAngleWithoutZeroingCmd;
 import org.usfirst.frc.team6201.robot.subsystems.Drivetrain;
 import org.usfirst.frc.team6201.robot.subsystems.Roller;
 
@@ -54,13 +56,12 @@ public class Robot extends IterativeRobot {
     
     public void robotInit() {
     	wcc.initialize();
-        
-        
+
 		oi = new OI();
         chooser = new SendableChooser();
-        chooser.addDefault("Default Auto", new DriveTimeCmd(3.0));
-        chooser.addObject("Drive Distance", new DriveDistanceCmd(15));
-        chooser.addObject("Drive, wait, and drive Auto", new Auto());
+        chooser.addDefault("Default Auto", new Auto());
+        chooser.addObject("TurnAngleCmd(20,3)", new TurnAngleCmd(20,3));
+        chooser.addObject("TurnAngleCmdWithoutZeroing(50,5)", new TurnAngleWithoutZeroingCmd(50,3));
         SmartDashboard.putData("Auto mode", chooser);
     	
         
