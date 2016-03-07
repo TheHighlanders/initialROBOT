@@ -56,10 +56,10 @@ public class Drivetrain extends PIDSubsystem {
     // Power can be between -1 and 1.
     // 0 is stop, extremum  are full speed.
     public void driveLR (double leftPower, double rightPower) {
+     	rightDrive2.set(-rightPower);
     	leftDrive1.set(leftPower);
     	rightDrive1.set(-rightPower);
     	leftDrive2.set(leftPower);
-    	rightDrive2.set(-rightPower);
     }
     
     //stops the drivetrain

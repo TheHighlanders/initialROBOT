@@ -57,7 +57,7 @@ public class WhichCameraCmd extends Command {
     }
 
     protected boolean isFinished() {
-        return false;
+        return false; // is this a problem? try to switch it. 
     }
 
     protected void end() {
