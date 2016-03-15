@@ -13,6 +13,7 @@ import edu.wpi.first.wpilibj.command.CommandGroup;
 public class Auto extends CommandGroup {
     
     public  Auto() {
-    	addSequential(new DriveTimeCmd(3));
+    	//Originally was 2 sec. may be lower due to going into 1/2 way to wall. 
+    	addSequential(new DriveTimeCmd(2.0));
 	}
 }

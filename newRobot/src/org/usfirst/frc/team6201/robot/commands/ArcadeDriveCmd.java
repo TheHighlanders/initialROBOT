@@ -22,7 +22,7 @@ public class ArcadeDriveCmd extends Command {
 
 	
 	private final double TANDOMAIN_Y = 1.3; // used for sensitivity of joystick
-	private final double TANDOMAIN_X = 1.3; // used for sensitivity of joystick
+	private final double TANDOMAIN_X = 1.2; // used for sensitivity of joystick // changed after reading competition
 	
 	private final double pTurnGain = 0.05; // This is used for allowing us to drive in a straight line.
 											//We MUST test to find the appropriate  value for this.
@@ -47,7 +47,7 @@ public class ArcadeDriveCmd extends Command {
 
     // Called just before this Command runs the first time
     protected void initialize() {
-    	Robot.dt.calibrateGyro();
+//    	Robot.dt.calibrateGyro(); removed after reading.
     	Robot.dt.resetGyro();
     	
     }

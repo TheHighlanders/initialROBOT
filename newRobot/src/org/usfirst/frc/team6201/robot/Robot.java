@@ -7,6 +7,7 @@ import edu.wpi.first.wpilibj.command.Scheduler;
 import edu.wpi.first.wpilibj.livewindow.LiveWindow;
 
 import org.usfirst.frc.team6201.robot.commands.Auto;
+import org.usfirst.frc.team6201.robot.commands.DoNothingDuringAuto;
 import org.usfirst.frc.team6201.robot.commands.DriveDistanceCmd;
 
 import org.usfirst.frc.team6201.robot.commands.WhichCameraCmd;
@@ -59,10 +60,11 @@ public class Robot extends IterativeRobot {
 
 		oi = new OI();
         chooser = new SendableChooser();
-        chooser.addDefault("Default Auto", new Auto());
-        chooser.addObject("TurnAngleCmd(20,3)", new TurnAngleCmd(20,3));
-        chooser.addObject("TurnAngleCmdWithoutZeroing(50,5)", new TurnAngleWithoutZeroingCmd(50,3));
+        chooser.addDefault("Cross Obstacle", new Auto());
+        chooser.addObject("Reach Obstacle", new DriveTimeCmd(0.6)); // added after reading.
         SmartDashboard.putData("Auto mode", chooser);
+        
+        Robot.dt.calibrateGyro(); // added after reading.
     	
         
    

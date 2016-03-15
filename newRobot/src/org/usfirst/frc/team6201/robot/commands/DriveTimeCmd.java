@@ -28,6 +28,10 @@ public class DriveTimeCmd extends Command {
     	//we start driving
     	timer.start ();
 
+// replaced with calibration in  int of robot.    	
+//    	// this was added after reading. Untesting on the Field management system.
+//    	Robot.dt.calibrateGyro();
+
     }
 
     protected void execute() {
@@ -35,7 +39,7 @@ public class DriveTimeCmd extends Command {
     	while(timer.get()< drivingTime){
     		calibrated = ((0.8 - 0.05*Robot.dt.getGyroRate())*0.05); // uses the gyro as a feedback loop to drive at the desired turn rate. 
   
-    		Robot.dt.driveLR(0.80+calibrated, 0.8+0.12-calibrated );
+    		Robot.dt.driveLR(-0.80-calibrated, -0.8-0.12+calibrated );
     	}
 
     }

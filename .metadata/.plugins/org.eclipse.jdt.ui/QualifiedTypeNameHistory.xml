@@ -31,4 +31,5 @@
 <fullyQualifiedTypeName name="org.usfirst.frc.team6201.robot.commands.TurnAngleWithoutZeroingCmd"/>
 <fullyQualifiedTypeName name="org.usfirst.frc.team6201.robot.commands.Auto"/>
 <fullyQualifiedTypeName name="org.usfirst.frc.team6201.robot.commands.TurnAngleCmd"/>
+<fullyQualifiedTypeName name="org.usfirst.frc.team6201.robot.commands.DoNothingDuringAuto"/>
 </qualifiedTypeNameHistroy>
