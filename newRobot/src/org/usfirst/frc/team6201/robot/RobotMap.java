@@ -55,7 +55,7 @@ public class RobotMap {
 	// Which camera to view from?
 	public static final String FRONT_CAM = "cam1";
 	public static final String REAR_CAM = "cam0";
-	public static final int IMG_QUALITY = 10;
+	public static final int IMG_QUALITY = 20;
 
 	
 }

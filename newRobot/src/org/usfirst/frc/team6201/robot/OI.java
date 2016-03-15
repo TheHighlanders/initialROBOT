@@ -1,9 +1,8 @@
 package org.usfirst.frc.team6201.robot;
 
 import org.usfirst.frc.team6201.robot.commands.Auto;
-import org.usfirst.frc.team6201.robot.commands.FowardCamCmd;
 import org.usfirst.frc.team6201.robot.commands.FowardDriveCmd;
-import org.usfirst.frc.team6201.robot.commands.RearCamCmd;
+
 import org.usfirst.frc.team6201.robot.commands.RearDriveCmd;
 import org.usfirst.frc.team6201.robot.commands.RollInCmd;
 import org.usfirst.frc.team6201.robot.commands.RollOutCmd;
@@ -57,10 +56,9 @@ public class OI {
 		Button button5 = new JoystickButton(arcade, 5);
 		
 		button5.whenPressed(new FowardDriveCmd());
-		button5.whenPressed(new FowardCamCmd());
 	
 		button3.whenPressed(new RearDriveCmd());
-		button3.whenPressed(new RearCamCmd());
+
 
 		// ball roller
 		Button button4 = new JoystickButton(arcade, 4);
@@ -68,14 +66,14 @@ public class OI {
 		
 		button4.whenPressed(new RollInCmd());
 		button6.whenPressed(new RollOutCmd());
-		
-		// tests
-		Button button11 = new JoystickButton(arcade, 11);
-		Button button12 = new JoystickButton(arcade, 12);
-		
-		button11.whenPressed(new Auto());
-		button12.whenPressed(new TurnAngleCmd(90,1));
-		
+//	after reading, not supposed to be used. We discoverd it as a bug during testing luckly!.	
+//		// tests
+//		Button button11 = new JoystickButton(arcade, 11);
+//		Button button12 = new JoystickButton(arcade, 12);
+//		
+//		button11.whenPressed(new Auto());
+//		button12.whenPressed(new TurnAngleCmd(90,1));
+//		
 		
 		
 		

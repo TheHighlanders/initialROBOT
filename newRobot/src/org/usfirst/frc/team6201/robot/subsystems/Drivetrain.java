@@ -5,7 +5,7 @@ import org.usfirst.frc.team6201.robot.RobotMap;
 import org.usfirst.frc.team6201.robot.commands.ArcadeDriveCmd;
 /// not used
 // import org.usfirst.frc.team6201.robot.commands.TankDriveCmd;
-import org.usfirst.frc.team6201.robot.commands.CameraAndDriveCmdGrp;
+
 
 import edu.wpi.first.wpilibj.ADXRS450_Gyro;
 import edu.wpi.first.wpilibj.Encoder;
@@ -49,8 +49,10 @@ public class Drivetrain extends PIDSubsystem {
 	}
 	
 	public void initDefaultCommand() {
-    	setDefaultCommand (new CameraAndDriveCmdGrp());
-    }
+		
+		setDefaultCommand(new ArcadeDriveCmd());
+   
+	}
     
     //sets the power of the left and right motors.
     // Power can be between -1 and 1.
