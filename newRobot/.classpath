@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <classpath>
-	<classpathentry exported="true" kind="lib" path="/Users/maxnadeau/wpilib/java/current/lib/NetworkTables.jar"/>
-	<classpathentry exported="true" kind="lib" path="/Users/maxnadeau/wpilib/java/current/lib/WPILib.jar"/>
 	<classpathentry excluding="org/usfirst/frc/team6201/robot/subsystems/Sensors.java" kind="src" path="src"/>
 	<classpathentry exported="true" kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
+	<classpathentry kind="lib" path="C:/Users/FRC_6201/wpilib/java/current/lib/WPILib.jar"/>
+	<classpathentry kind="lib" path="C:/Users/FRC_6201/wpilib/java/current/lib/NetworkTables.jar"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>
