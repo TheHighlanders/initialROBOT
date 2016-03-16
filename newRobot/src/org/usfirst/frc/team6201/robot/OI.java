@@ -16,7 +16,7 @@ import edu.wpi.first.wpilibj.buttons.JoystickButton;
  * interface to the commands and command groups that allow control of the robot.
  *
  *@author David Matthews
- *
+ *@author Adriana Massie
  */
 public class OI {
 	
@@ -64,6 +64,13 @@ public class OI {
 		
 		button4.whenPressed(new RollInCmd());
 		button6.whenPressed(new RollOutCmd());
+		
+		//spin 
+		Button button7 = new Joystickbutton (arcade, 7); //Counter Clockwise
+		Button button8 = new Joystickbutton (arcade, 8); //Clockwise
+		
+		button7.whenPressed(new CounterClockwiseCmd());
+		button8.whenPressed(new ClockewiseCmd()); 
 	}
 	
 	
