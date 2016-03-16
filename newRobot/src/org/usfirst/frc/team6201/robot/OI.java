@@ -6,6 +6,8 @@ import org.usfirst.frc.team6201.robot.commands.RearCamCmd;
 import org.usfirst.frc.team6201.robot.commands.RearDriveCmd;
 import org.usfirst.frc.team6201.robot.commands.RollInCmd;
 import org.usfirst.frc.team6201.robot.commands.RollOutCmd;
+import org.usfirst.frc.team6201.robot.commands.SpinClockwiseCmd;
+import org.usfirst.frc.team6201.robot.commands.SpinCounterClockwiseCmd;
 
 import edu.wpi.first.wpilibj.Joystick;
 import edu.wpi.first.wpilibj.buttons.Button;
