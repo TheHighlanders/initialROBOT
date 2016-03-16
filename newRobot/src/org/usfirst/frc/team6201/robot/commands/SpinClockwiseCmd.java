@@ -10,7 +10,7 @@ package org.usfirst.frc.team6201.robot.commands;
 	 *
 	 *Tells the robot to spin clockwise 
 	 */
-	public class SpinClockwiseCmd() extends Command {
+	public class SpinClockwiseCmd extends Command {
 
 	    public SpinClockwiseCmd() {
 	        // Use requires() here to declare subsystem dependencies
