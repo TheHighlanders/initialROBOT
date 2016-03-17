@@ -15,6 +15,7 @@ import org.usfirst.frc.team6201.robot.commands.DriveTimeCmd;
 import org.usfirst.frc.team6201.robot.commands.TurnAngleCmd;
 import org.usfirst.frc.team6201.robot.commands.TurnAngleWithoutZeroingCmd;
 import org.usfirst.frc.team6201.robot.subsystems.Drivetrain;
+import org.usfirst.frc.team6201.robot.subsystems.Pneumatics;
 import org.usfirst.frc.team6201.robot.subsystems.Roller;
 
 import com.ni.vision.NIVision;
@@ -42,6 +43,7 @@ public class Robot extends IterativeRobot {
 
 	public static final Drivetrain dt = new Drivetrain();
 	public static final Roller roller = new Roller();
+	public static final Pneumatics pneumatics = new Pneumatics();
 	public static OI oi;
 
     Command autonomousCommand;

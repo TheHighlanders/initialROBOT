@@ -1,12 +1,16 @@
 package org.usfirst.frc.team6201.robot;
 
 import org.usfirst.frc.team6201.robot.commands.Auto;
+import org.usfirst.frc.team6201.robot.commands.BottomPneumaticOnCmd;
 import org.usfirst.frc.team6201.robot.commands.FowardCamCmd;
 import org.usfirst.frc.team6201.robot.commands.FowardDriveCmd;
 import org.usfirst.frc.team6201.robot.commands.RearCamCmd;
 import org.usfirst.frc.team6201.robot.commands.RearDriveCmd;
 import org.usfirst.frc.team6201.robot.commands.RollInCmd;
 import org.usfirst.frc.team6201.robot.commands.RollOutCmd;
+import org.usfirst.frc.team6201.robot.commands.SpinClockwiseCmd;
+import org.usfirst.frc.team6201.robot.commands.SpinCounterClockwiseCmd;
+import org.usfirst.frc.team6201.robot.commands.TopPneumaticOnCmd;
 import org.usfirst.frc.team6201.robot.commands.TurnAngleCmd;
 import org.usfirst.frc.team6201.robot.commands.TurnAngleWithoutZeroingCmd;
 
@@ -70,11 +74,18 @@ public class OI {
 		button6.whenPressed(new RollOutCmd());
 		
 		//spin 
-		Button button7 = new Joystickbutton (arcade, 7); //Counter Clockwise
-		Button button8 = new Joystickbutton (arcade, 8); //Clockwise
+		Button button7 = new JoystickButton (arcade, 7); //Counter Clockwise
+		Button button8 = new JoystickButton (arcade, 8); //Clockwise
 		
-		button7.whenPressed(new CounterClockwiseCmd());
-		button8.whenPressed(new ClockewiseCmd()); 
+		button7.whileHeld(new SpinCounterClockwiseCmd());
+		button8.whileHeld(new SpinClockwiseCmd());
+		
+		//pneumatics 
+		Button button9 = new JoystickButton (arcade, 9); //Top pneumatic
+		Button button10 = new JoystickButton (arcade, 10); //Bottom pneumatic
+				
+		button9.whileHeld(new TopPneumaticOnCmd());
+		button10.whileHeld(new BottomPneumaticOnCmd()); 
 		
 //	after reading, not supposed to be used. We discoverd it as a bug during testing luckly!.	
 //		// tests

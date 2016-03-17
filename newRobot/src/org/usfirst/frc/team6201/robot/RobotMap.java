@@ -29,6 +29,11 @@ public class RobotMap {
 	public static final double PICKUP_BALL = 1;
 	public static final double RELEASE_BALL = -1;
 	
+	
+	// Pneumatics
+	public static final int TOP_PNEUMATIC = 0;
+	public static final int BOTTOM_PNEUMATIC = 0;
+	
 	/// OI
 	
 	// TankdriveCmd
@@ -56,6 +61,7 @@ public class RobotMap {
 	public static final String FRONT_CAM = "cam1";
 	public static final String REAR_CAM = "cam0";
 	public static final int IMG_QUALITY = 20;
+	
 
 	
 }
