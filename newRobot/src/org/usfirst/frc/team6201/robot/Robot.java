@@ -6,7 +6,8 @@ import edu.wpi.first.wpilibj.command.Command;
 import edu.wpi.first.wpilibj.command.Scheduler;
 import edu.wpi.first.wpilibj.livewindow.LiveWindow;
 
-import org.usfirst.frc.team6201.robot.commands.Auto;
+import org.usfirst.frc.team6201.robot.commands.AutoCrossDefenseCmdGrp;
+import org.usfirst.frc.team6201.robot.commands.AutoReachDefenseCmdGrp;
 import org.usfirst.frc.team6201.robot.commands.DoNothingDuringAuto;
 import org.usfirst.frc.team6201.robot.commands.DriveDistanceCmd;
 
@@ -37,7 +38,9 @@ import edu.wpi.first.wpilibj.vision.USBCamera;
  * creating this project, you must also update the manifest file in the resource
  * directory.
  * 	
- * @contributor David Matthews 
+ * @author David Matthews
+ * @author Adriana Massie 
+ *
  */
 public class Robot extends IterativeRobot {
 
@@ -62,8 +65,8 @@ public class Robot extends IterativeRobot {
 
 		oi = new OI();
         chooser = new SendableChooser();
-        chooser.addDefault("Cross Obstacle", new Auto());
-        chooser.addObject("Reach Obstacle", new DriveTimeCmd(0.6)); // added after reading.
+        chooser.addDefault("Cross Obstacle", new AutoCrossDefenseCmdGrp());
+        chooser.addObject("Reach Obstacle", new AutoReachDefenseCmdGrp()); // added after reading.
         SmartDashboard.putData("Auto mode", chooser);
         
         Robot.dt.calibrateGyro(); // added after reading.

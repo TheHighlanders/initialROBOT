@@ -36,6 +36,7 @@ public class DriveTimeCmd extends Command {
 
     protected void execute() {
     	
+    	
     	while(timer.get()< drivingTime){
     		calibrated = ((0.8 - 0.05*Robot.dt.getGyroRate())*0.05); // uses the gyro as a feedback loop to drive at the desired turn rate. 
   

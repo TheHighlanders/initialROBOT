@@ -1,6 +1,6 @@
 package org.usfirst.frc.team6201.robot;
 
-import org.usfirst.frc.team6201.robot.commands.Auto;
+import org.usfirst.frc.team6201.robot.commands.AutoCrossDefenseCmdGrp;
 import org.usfirst.frc.team6201.robot.commands.BottomPneumaticOnCmd;
 import org.usfirst.frc.team6201.robot.commands.FowardCamCmd;
 import org.usfirst.frc.team6201.robot.commands.FowardDriveCmd;
