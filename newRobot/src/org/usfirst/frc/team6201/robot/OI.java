@@ -68,6 +68,14 @@ public class OI {
 		
 		button4.whenPressed(new RollInCmd());
 		button6.whenPressed(new RollOutCmd());
+		
+		//spin 
+		Button button7 = new Joystickbutton (arcade, 7); //Counter Clockwise
+		Button button8 = new Joystickbutton (arcade, 8); //Clockwise
+		
+		button7.whenPressed(new CounterClockwiseCmd());
+		button8.whenPressed(new ClockewiseCmd()); 
+		
 //	after reading, not supposed to be used. We discoverd it as a bug during testing luckly!.	
 //		// tests
 //		Button button11 = new JoystickButton(arcade, 11);
