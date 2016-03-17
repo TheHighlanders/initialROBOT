@@ -20,7 +20,7 @@ import edu.wpi.first.wpilibj.buttons.JoystickButton;
  *
  *@author David Matthews
  *@author Max Nadeau
- *
+ *@author Adriana Massie
  */
 public class OI {
 	
