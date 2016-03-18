@@ -29,6 +29,7 @@ public class BottomPneumaticOnCmd extends Command {
 
     // Called once after isFinished returns true
     protected void end() {
+    	Robot.pneumatics.setBottom(false);
     
     }
 
