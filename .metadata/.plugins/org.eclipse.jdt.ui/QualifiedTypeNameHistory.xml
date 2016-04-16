@@ -16,7 +16,6 @@
 <fullyQualifiedTypeName name="org.usfirst.frc.team6201.robot.commands.CameraAndDriveCmdGrp"/>
 <fullyQualifiedTypeName name="org.usfirst.frc.team6201.robot.commands.DirectionCmdGrp"/>
 <fullyQualifiedTypeName name="org.usfirst.frc.team6201.robot.commands.SwitchCamCmd"/>
-<fullyQualifiedTypeName name="org.usfirst.frc.team6201.robot.commands.ArcadeDriveCmd"/>
 <fullyQualifiedTypeName name="org.usfirst.frc.team6201.robot.commands.DriveDistanceCmd"/>
 <fullyQualifiedTypeName name="org.usfirst.frc.team6201.robot.commands.FowardDriveCmd"/>
 <fullyQualifiedTypeName name="org.usfirst.frc.team6201.robot.commands.RearCamCmd"/>
@@ -32,4 +31,6 @@
 <fullyQualifiedTypeName name="org.usfirst.frc.team6201.robot.commands.Auto"/>
 <fullyQualifiedTypeName name="org.usfirst.frc.team6201.robot.commands.TurnAngleCmd"/>
 <fullyQualifiedTypeName name="org.usfirst.frc.team6201.robot.commands.DoNothingDuringAuto"/>
+<fullyQualifiedTypeName name="edu.wpi.first.wpilibj.VictorSP"/>
+<fullyQualifiedTypeName name="org.usfirst.frc.team6201.robot.commands.ArcadeDriveCmd"/>
 </qualifiedTypeNameHistroy>

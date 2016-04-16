@@ -11,7 +11,6 @@ import org.usfirst.frc.team6201.robot.commands.RollOutCmd;
 import org.usfirst.frc.team6201.robot.commands.SpinClockwiseCmd;
 import org.usfirst.frc.team6201.robot.commands.SpinCounterClockwiseCmd;
 import org.usfirst.frc.team6201.robot.commands.TopPneumaticOnCmd;
-import org.usfirst.frc.team6201.robot.commands.TurnAngleCmd;
 import org.usfirst.frc.team6201.robot.commands.TurnAngleWithoutZeroingCmd;
 
 import edu.wpi.first.wpilibj.Joystick;
