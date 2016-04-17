@@ -33,4 +33,5 @@
 <fullyQualifiedTypeName name="org.usfirst.frc.team6201.robot.commands.DoNothingDuringAuto"/>
 <fullyQualifiedTypeName name="edu.wpi.first.wpilibj.VictorSP"/>
 <fullyQualifiedTypeName name="org.usfirst.frc.team6201.robot.commands.ArcadeDriveCmd"/>
+<fullyQualifiedTypeName name="edu.wpi.first.wpilibj.DriverStation"/>
 </qualifiedTypeNameHistroy>

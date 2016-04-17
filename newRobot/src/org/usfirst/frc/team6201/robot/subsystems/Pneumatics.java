@@ -16,9 +16,6 @@ public class Pneumatics extends PIDSubsystem
 	private Solenoid		bottom	= new Solenoid(RobotMap.BOTTOM_PNEUMATIC);
 	public Timer			timer	= new Timer();
 
-	// Put methods for controlling this subsystem
-	// here. Call these from Commands.
-
 	public static double	P		= 0;
 	public static double	I		= 0;
 	public static double	D		= 0;
