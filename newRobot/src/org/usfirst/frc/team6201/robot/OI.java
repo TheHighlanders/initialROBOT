@@ -2,8 +2,8 @@ package org.usfirst.frc.team6201.robot;
 
 import org.usfirst.frc.team6201.robot.commands.AutoCrossDefenseCmdGrp;
 import org.usfirst.frc.team6201.robot.commands.BottomPneumaticOnCmd;
-import org.usfirst.frc.team6201.robot.commands.FowardCamCmd;
-import org.usfirst.frc.team6201.robot.commands.FowardDriveCmd;
+import org.usfirst.frc.team6201.robot.commands.ForwardCamCmd;
+import org.usfirst.frc.team6201.robot.commands.ForwardDriveCmd;
 import org.usfirst.frc.team6201.robot.commands.RearCamCmd;
 import org.usfirst.frc.team6201.robot.commands.RearDriveCmd;
 import org.usfirst.frc.team6201.robot.commands.RollInCmd;
@@ -59,8 +59,8 @@ public class OI {
 		Button button3 = new JoystickButton(arcade, 3);
 		Button button5 = new JoystickButton(arcade, 5);
 		
-		button5.whenPressed(new FowardDriveCmd());
-		button5.whenPressed(new FowardCamCmd());
+		button5.whenPressed(new ForwardDriveCmd());
+		button5.whenPressed(new ForwardCamCmd());
 	
 		button3.whenPressed(new RearDriveCmd());
 		button3.whenPressed(new RearCamCmd());

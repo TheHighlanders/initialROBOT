@@ -11,9 +11,9 @@ import edu.wpi.first.wpilibj.command.Command;
  *
  * Switches the cam feed to the front camera
  */
-public class FowardCamCmd extends Command {
+public class ForwardCamCmd extends Command {
 
-    public FowardCamCmd() {
+    public ForwardCamCmd() {
         // Use requires() here to declare subsystem dependencies
         // eg. requires(chassis);
     }

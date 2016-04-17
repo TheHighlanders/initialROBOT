@@ -7,12 +7,12 @@ import edu.wpi.first.wpilibj.command.Command;
  * 
  * @author David Matthews
  */
-public class FowardDriveCmd extends Command
+public class ForwardDriveCmd extends Command
 {
 	/**
 	 * Does nothing
 	 */
-	public FowardDriveCmd()
+	public ForwardDriveCmd()
 	{
 	}
 

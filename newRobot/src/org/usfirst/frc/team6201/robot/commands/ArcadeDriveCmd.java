@@ -136,7 +136,7 @@ public class ArcadeDriveCmd extends Command
 	/**
 	 * When this command is scheduled to run it gets the joystick position from
 	 * the driverstation and sets the motors to the appropriate power level to
-	 * achieve the desired result
+	 * achieve the desired result.
 	 */
 	protected void execute()
 	{
