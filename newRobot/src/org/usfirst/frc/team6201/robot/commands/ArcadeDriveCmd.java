@@ -1,7 +1,8 @@
 package org.usfirst.frc.team6201.robot.commands;
 
 import org.usfirst.frc.team6201.robot.Robot;
-import org.usfirst.frc.team6201.robot.RobotMap;
+
+import edu.wpi.first.wpilibj.DriverStation;
 import edu.wpi.first.wpilibj.command.Command;
 import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
 
@@ -16,6 +17,13 @@ import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
  */
 public class ArcadeDriveCmd extends Command
 {
+	/**
+	 * This sets which side of the robot is the driving direction. 1 is when the
+	 * robot is driving towards the front, -1 is when the robot is driving
+	 * opposite the front.
+	 */
+	private static int		drivingDirection	= 1;
+
 	/**
 	 * The raw output reading of the attached joystick on the x axis after it
 	 * has been put through scaledValTan(). The value of this corresponds to the
@@ -53,24 +61,49 @@ public class ArcadeDriveCmd extends Command
 	/**
 	 * The domain of the tangent function used for the y axis of the joystick.
 	 */
-	private final double	TANDOMAIN_Y		= 1.3;
+	private final double	TANDOMAIN_Y			= 1.3;
 
 	/**
 	 * The domain of the tangent function used for the x axis of the joystick.
 	 */
-	private final double	TANDOMAIN_X		= 1.2;
+	private final double	TANDOMAIN_X			= 1.2;
 
 	/**
 	 * This scales the input gyro rate to allow the desired turn rate to match
 	 * the actual turn rate.
 	 */
-	private final double	pTurnGain		= 0.05;
+	private final double	pTurnGain			= 0.05;
 
 	/**
 	 * This scales the error of our desired turn rate to it's affect on the
 	 * motors.
 	 */
-	private final double	gyroRateGain	= 0.05;
+	private final double	gyroRateGain		= 0.05;
+
+	/**
+	 * This command will require the drivetrain to run.
+	 */
+	public ArcadeDriveCmd()
+	{
+		requires(Robot.dt);
+	}
+
+	public static void setDrivingDirection(int direction)
+	{
+		if (direction == -1)
+		{
+			drivingDirection = -1;
+		}
+		if (direction == 1)
+		{
+			drivingDirection = 1;
+		}
+		else
+		{
+			DriverStation.reportError("Whoops, driving direction can not be: " + direction, false);
+		}
+
+	}
 
 	/**
 	 * This method uses the tangent function as a joystick sensitivity transfer
@@ -90,14 +123,6 @@ public class ArcadeDriveCmd extends Command
 	private double scaledValTan(double rawVal, double domain)
 	{
 		return Math.tan(rawVal * domain) / (Math.tan(domain));
-	}
-
-	/**
-	 * This command will require the drivetrain to run.
-	 */
-	public ArcadeDriveCmd()
-	{
-		requires(Robot.dt);
 	}
 
 	/**
@@ -129,15 +154,15 @@ public class ArcadeDriveCmd extends Command
 		SmartDashboard.putNumber("GyroAngle: ", Robot.dt.getGyroAngle());
 		SmartDashboard.putNumber("GyroRate: ", Robot.dt.getGyroRate());
 
-		if (RobotMap.fowardOrReverse == 1)
+		if (drivingDirection == 1)
 		{
-			Robot.dt.driveLR(RobotMap.fowardOrReverse * (processedPower + processedTurnTwice),
-					RobotMap.fowardOrReverse * (processedPower - processedTurnTwice));
+			Robot.dt.driveLR(drivingDirection * (processedPower + processedTurnTwice),
+					drivingDirection * (processedPower - processedTurnTwice));
 		}
 		else
 		{
-			Robot.dt.driveLR(RobotMap.fowardOrReverse * (processedPower - processedTurnTwice),
-					RobotMap.fowardOrReverse * (processedPower + processedTurnTwice));
+			Robot.dt.driveLR(drivingDirection * (processedPower - processedTurnTwice),
+					drivingDirection * (processedPower + processedTurnTwice));
 		}
 	}
 

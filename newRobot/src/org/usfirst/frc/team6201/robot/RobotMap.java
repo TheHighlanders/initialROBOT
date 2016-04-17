@@ -49,7 +49,7 @@ public class RobotMap {
 	public static final int LOGITECH_X_AXIS = 0;
 	public static final int LOGITECH_Y_AXIS = 1;
 	public static final int LOGITECH_ROTATE_AXIS = 2;
-	public static int fowardOrReverse = 1; // which side of the robot is considered 'front'?
+	
 
 
 	// Analog
@@ -57,7 +57,7 @@ public class RobotMap {
 	public static final int LED = 1;
 	
 	
-	// Which camera to view from?
+	// Cameras
 	public static final String FRONT_CAM = "cam1";
 	public static final String REAR_CAM = "cam0";
 	public static final int IMG_QUALITY = 20;

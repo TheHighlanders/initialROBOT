@@ -1,44 +1,55 @@
 package org.usfirst.frc.team6201.robot.commands;
 
-import org.usfirst.frc.team6201.robot.RobotMap;
-
 import edu.wpi.first.wpilibj.command.Command;
 
 /**
+ * Sets the robot's driving direction to be towards the front of the robot.
  * 
  * @author David Matthews
- * 
- * sets the robot to think that the forward is the front.
- *
  */
-public class FowardDriveCmd extends Command {
+public class FowardDriveCmd extends Command
+{
+	/**
+	 * Does nothing
+	 */
+	public FowardDriveCmd()
+	{
+	}
 
-    public FowardDriveCmd() {
-        // Use requires() here to declare subsystem dependencies
-        // eg. requires(chassis);
-    }
+	/**
+	 * Called once when the scheduler first calls this command.
+	 */
+	protected void initialize()
+	{
+		ArcadeDriveCmd.setDrivingDirection(1);
+	}
 
-    // Called just before this Command runs the first time
-    protected void initialize() {
-    	RobotMap.fowardOrReverse = 1;
-    }
+	/**
+	 * Does nothing
+	 */
+	protected void execute()
+	{
+	}
 
-    // Called repeatedly when this Command is scheduled to run
-    protected void execute() {
-    }
+	/**
+	 * Returns true.
+	 */
+	protected boolean isFinished()
+	{
+		return true;
+	}
 
-    // Make this return true when this Command no longer needs to run execute()
-    protected boolean isFinished() {
-        return true;
+	/**
+	 * Does nothing
+	 */
+	protected void end()
+	{
+	}
 
-    }
-
-    // Called once after isFinished returns true
-    protected void end() {
-    }
-
-    // Called when another command which requires one or more of the same
-    // subsystems is scheduled to run
-    protected void interrupted() {
-    }
+	/**
+	 * Does nothing
+	 */
+	protected void interrupted()
+	{
+	}
 }
