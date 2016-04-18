@@ -6,36 +6,53 @@ import edu.wpi.first.wpilibj.Timer;
 import edu.wpi.first.wpilibj.command.PIDSubsystem;
 
 /**
+ * The subsystem for controlling the ball picking up device.
+ * 
  * @author David Matthews
- * @author Max Nadeau The subsystem for controlling the ball picking up device.
+ * @author Max Nadeau
  */
 public class Roller extends PIDSubsystem
 {
+	/**
+	 * The controller for the motor that runs the rollers.
+	 */
 	private Spark			motor	= new Spark(RobotMap.ROLLER);
+
 	public Timer			timer	= new Timer();
 
-	// Put methods for controlling this subsystem
-	// here. Call these from Commands.
-
 	public static double	P		= 0;
+
 	public static double	I		= 0;
+
 	public static double	D		= 0;
 
 	public Roller()
 	{
 		super("Roller", P, I, D);
 	}
-
+/**
+ * Not used.
+ */
 	public void initDefaultCommand()
 	{
 
 	}
 
+	/**
+	 * This method is used to collect and shoot balls.
+	 * 
+	 * @param power
+	 *            The speed of the rollers. Positive if pulling in a ball,
+	 *            negative if rolling a ball out.
+	 */
 	public void roll(double power)
 	{
 		motor.set(power);
 	}
 
+	/**
+	 * Stops the rollers.
+	 */
 	public void stop()
 	{
 		roll(0.0);

@@ -8,27 +8,14 @@ import edu.wpi.first.wpilibj.livewindow.LiveWindow;
 
 import org.usfirst.frc.team6201.robot.commands.AutoCrossDefenseCmdGrp;
 import org.usfirst.frc.team6201.robot.commands.AutoReachDefenseCmdGrp;
-import org.usfirst.frc.team6201.robot.commands.DoNothingDuringAuto;
-import org.usfirst.frc.team6201.robot.commands.DriveDistanceCmd;
-
 import org.usfirst.frc.team6201.robot.commands.WhichCameraCmd;
-import org.usfirst.frc.team6201.robot.commands.DriveTimeCmd;
-import org.usfirst.frc.team6201.robot.commands.TurnAngleWithoutZeroingCmd;
+
 import org.usfirst.frc.team6201.robot.subsystems.Drivetrain;
 import org.usfirst.frc.team6201.robot.subsystems.Pneumatics;
 import org.usfirst.frc.team6201.robot.subsystems.Roller;
 
-import com.ni.vision.NIVision;
-import com.ni.vision.NIVision.DrawMode;
-import com.ni.vision.NIVision.Image;
-import com.ni.vision.NIVision.ShapeMode;
-
-import edu.wpi.first.wpilibj.CameraServer;
-import edu.wpi.first.wpilibj.SampleRobot;
-import edu.wpi.first.wpilibj.Timer;
 import edu.wpi.first.wpilibj.smartdashboard.SendableChooser;
 import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
-import edu.wpi.first.wpilibj.vision.USBCamera;
 
 /**
  * The VM is configured to automatically run this class, and to call the
@@ -51,31 +38,29 @@ public class Robot extends IterativeRobot
 
 	public static OI				oi;
 
+	public static WhichCameraCmd	wcc			= new WhichCameraCmd();
+
 	Command							autonomousCommand;
 
 	SendableChooser					chooser;
 
 	/**
-	 * This function is run when the robot is first started up and should be
-	 * used for any initialization code.
+	 * This method is called when the robot first turns on. In this method, we
+	 * initialize the cameras, the OI, and the gyro. The robot should be
+	 * stationary for the first 10 seconds after it is turned on. This method
+	 * also adds to the smartdashboard the option for the robot driver to choose
+	 * if the robot should reach the defense or should try and cross it.
 	 */
-
-	public static WhichCameraCmd	wcc			= new WhichCameraCmd();
-
 	public void robotInit()
 	{
-		wcc.initialize();
 
+		Robot.dt.calibrateGyro();
+		wcc.initialize();
 		oi = new OI();
 		chooser = new SendableChooser();
 		chooser.addDefault("Cross Obstacle", new AutoCrossDefenseCmdGrp());
-		chooser.addObject("Reach Obstacle", new AutoReachDefenseCmdGrp()); // added
-																			// after
-																			// reading.
+		chooser.addObject("Reach Obstacle", new AutoReachDefenseCmdGrp());
 		SmartDashboard.putData("Auto mode", chooser);
-
-		Robot.dt.calibrateGyro(); // added after reading.
-
 	}
 
 	/**
@@ -88,7 +73,11 @@ public class Robot extends IterativeRobot
 
 	}
 
-	// will only work when robot is disabled
+	/**
+	 * When the robot is disabled we can edit values on the robot via the
+	 * smartdashboard. TODO: We should use this in the future to edit parameters
+	 * like the gyro for controlling turning rate.
+	 */
 	public void disabledPeriodic()
 	{
 
@@ -131,20 +120,29 @@ public class Robot extends IterativeRobot
 	}
 
 	/**
-	 * 
+	 * The scheduler will run all the scheduler commands in a loop that takes
+	 * approximately 20ms. We should try to keep each call of the execute method
+	 * in each command we use take under this amount of time.
 	 */
 	public void autonomousPeriodic()
 	{
 		Scheduler.getInstance().run();
 	}
 
+	/**
+	 * Called at the end of autonomousPeriodic and just before teleopInit. This
+	 * is currently being used to ensure that the autonomous commands are not
+	 * running at the start of teleop.
+	 */
 	public void teleopInit()
 	{
 		if (autonomousCommand != null) autonomousCommand.cancel();
 	}
 
 	/**
-	 * This function is called periodically during operator control
+	 * The scheduler will run all the scheduler commands in a loop that takes
+	 * approximately 20ms. We should try to keep each call of the execute method
+	 * in each command we use take under this amount of time.
 	 */
 	public void teleopPeriodic()
 	{
@@ -153,7 +151,9 @@ public class Robot extends IterativeRobot
 	}
 
 	/**
-	 * This function is called periodically during test mode
+	 * The scheduler will run all the scheduler commands in a loop that takes
+	 * approximately 20ms. We should try to keep each call of the execute method
+	 * in each command we use take under this amount of time.
 	 */
 	public void testPeriodic()
 	{
