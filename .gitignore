@@ -7,3 +7,6 @@ jars
 /.metadata/.plugins/org.eclipse.jdt.core
 /RemoteSystemsTempFiles
 /.metadata/.plugins/org.eclipse.core.resources/.projects/RemoteSystemsTempFiles
+*.classpath
+.metadata
+.recommenders

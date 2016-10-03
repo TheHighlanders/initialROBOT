@@ -5,29 +5,14 @@ import edu.wpi.first.wpilibj.IterativeRobot;
 import edu.wpi.first.wpilibj.command.Command;
 import edu.wpi.first.wpilibj.command.Scheduler;
 import edu.wpi.first.wpilibj.livewindow.LiveWindow;
+import edu.wpi.first.wpilibj.smartdashboard.SendableChooser;
+import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
 
 import org.usfirst.frc.team6201.robot.commands.Auto;
-import org.usfirst.frc.team6201.robot.commands.DoNothingDuringAuto;
-import org.usfirst.frc.team6201.robot.commands.DriveDistanceCmd;
-
-import org.usfirst.frc.team6201.robot.commands.WhichCameraCmd;
 import org.usfirst.frc.team6201.robot.commands.DriveTimeCmd;
-import org.usfirst.frc.team6201.robot.commands.TurnAngleCmd;
-import org.usfirst.frc.team6201.robot.commands.TurnAngleWithoutZeroingCmd;
 import org.usfirst.frc.team6201.robot.subsystems.Drivetrain;
 import org.usfirst.frc.team6201.robot.subsystems.Roller;
 
-import com.ni.vision.NIVision;
-import com.ni.vision.NIVision.DrawMode;
-import com.ni.vision.NIVision.Image;
-import com.ni.vision.NIVision.ShapeMode;
-
-import edu.wpi.first.wpilibj.CameraServer;
-import edu.wpi.first.wpilibj.SampleRobot;
-import edu.wpi.first.wpilibj.Timer;
-import edu.wpi.first.wpilibj.smartdashboard.SendableChooser;
-import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
-import edu.wpi.first.wpilibj.vision.USBCamera;
 
 /**
  * The VM is configured to automatically run this class, and to call the
@@ -53,10 +38,8 @@ public class Robot extends IterativeRobot {
      * used for any initialization code.
      */
     
-    //public static WhichCameraCmd wcc = new WhichCameraCmd();
     
     public void robotInit() {
-//    	wcc.initialize();
 
 		oi = new OI();
         chooser = new SendableChooser();

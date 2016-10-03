@@ -47,14 +47,16 @@ public class RobotMap {
 	public static int fowardOrReverse = 1; // which side of the robot is considered 'front'?
 
 
+
 	// Analog
 	public static final int IR_COLLIDER_DECTOR = 0;
 	public static final int LED = 1;
 	
 	
 	// Which camera to view from?
-	public static final String FRONT_CAM = "cam1";
-	public static final String REAR_CAM = "cam0";
+	// TODO: What is CAM1 and CAM2 name?
+	public static final String CAM1 = "cam4";
+	public static final String CAM2 = "";
 	public static final int IMG_QUALITY = 20;
 
 	
