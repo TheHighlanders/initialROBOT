@@ -13,3 +13,8 @@ jars
 dist
 build
 /newRobot/bin
+/newRobot/.project
+/newRobot/build.properties
+/newRobot/build.xml
+/newRobot/dictionary.txt
+/newRobot/sysProps.xml

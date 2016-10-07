@@ -26,7 +26,7 @@ public class RobotMap {
 	public static final double ROTATION_SPEED = 1.0;
 	
 	// Roller
-	public static final double PICKUP_BALL = 1;
+	public static final double PICKUP_BALL = 0.5;
 	public static final double RELEASE_BALL = -1;
 	
 	/// OI
