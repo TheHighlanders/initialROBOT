@@ -1,6 +1,8 @@
 
 package org.usfirst.frc.team6201.robot.subsystems;
 
+import org.usfirst.frc.team6201.robot.DataCollection;
+import org.usfirst.frc.team6201.robot.Robot;
 import org.usfirst.frc.team6201.robot.RobotMap;
 import org.usfirst.frc.team6201.robot.commands.ArcadeDriveCmd;
 /// not used
@@ -9,6 +11,7 @@ import org.usfirst.frc.team6201.robot.commands.ArcadeDriveCmd;
 
 import edu.wpi.first.wpilibj.ADXRS450_Gyro;
 import edu.wpi.first.wpilibj.Encoder;
+import edu.wpi.first.wpilibj.PowerDistributionPanel;
 import edu.wpi.first.wpilibj.Talon;
 import edu.wpi.first.wpilibj.Victor;
 import edu.wpi.first.wpilibj.Spark;
@@ -37,6 +40,7 @@ public class Drivetrain extends PIDSubsystem {
 	private Encoder leftEncoder = new Encoder (RobotMap.ENCODER_LEFT_A, RobotMap.ENCODER_LEFT_B);
 	private	ADXRS450_Gyro gyro = new ADXRS450_Gyro();
 	
+	
 	// PID values
 	public static double P = 0;
 	public static double I = 0;
@@ -62,6 +66,8 @@ public class Drivetrain extends PIDSubsystem {
     	leftDrive1.set(leftPower);
     	rightDrive1.set(-rightPower);
     	leftDrive2.set(leftPower);
+    	DataCollection.motorSpeedLeft = leftPower;
+    	DataCollection.motorSpeedRight = rightPower;
     }
     
     //stops the drivetrain

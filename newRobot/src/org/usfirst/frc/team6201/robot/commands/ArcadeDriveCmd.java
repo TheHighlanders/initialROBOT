@@ -1,8 +1,10 @@
 package org.usfirst.frc.team6201.robot.commands;
 
+import org.usfirst.frc.team6201.robot.DataCollection;
 import org.usfirst.frc.team6201.robot.Robot;
 import org.usfirst.frc.team6201.robot.RobotMap;
 import edu.wpi.first.wpilibj.command.Command;
+import edu.wpi.first.wpilibj.command.Scheduler;
 import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
 
 /**
@@ -61,16 +63,11 @@ public class ArcadeDriveCmd extends Command {
     	processedPower = 0.95*rawPower; // leaves room for turning at full speed ahead.
     	processedOnceTurn = (1-rawPower) * rawTurn; // allows for turning full speed at stop.
     	processedTwiceTurn = (processedOnceTurn - gyroRateGain*Robot.dt.getGyroRate())*pTurnGain + processedOnceTurn; // uses the gyro as a feedback loop to drive at the desired turn rate. 
-    	
-    	SmartDashboard.putNumber("rPower: ", Robot.oi.getYAxisOfLogitech());
-    	SmartDashboard.putNumber("rTurn: ", Robot.oi.getXAxisOfLogitech());
-    	
-    	SmartDashboard.putNumber("pPower: ", processedPower);
-    	SmartDashboard.putNumber("p1Turn: ", processedOnceTurn);
-    	SmartDashboard.putNumber("p2Turn: ", processedTwiceTurn);
-    	
-    	SmartDashboard.putNumber("GyroAngle: ", Robot.dt.getGyroAngle());
-    	SmartDashboard.putNumber("GyroRate: ", Robot.dt.getGyroRate());
+    
+ 		SmartDashboard.putNumber("gyro: ", DataCollection.gyro);
+ 		SmartDashboard.putNumber("motorSpeedLeft: ", DataCollection.motorSpeedLeft);
+ 		SmartDashboard.putNumber("motorSpeedRight: ", DataCollection.motorSpeedRight);
+ 		
     	
     	if (RobotMap.fowardOrReverse == 1){
         	Robot.dt.driveLR(RobotMap.fowardOrReverse*(processedPower + processedTwiceTurn), RobotMap.fowardOrReverse*(processedPower - processedTwiceTurn));

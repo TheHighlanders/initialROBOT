@@ -11,6 +11,7 @@ import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
 import org.usfirst.frc.team6201.robot.commands.Auto;
 import org.usfirst.frc.team6201.robot.commands.DriveTimeCmd;
 import org.usfirst.frc.team6201.robot.subsystems.Drivetrain;
+import org.usfirst.frc.team6201.robot.subsystems.Power;
 import org.usfirst.frc.team6201.robot.subsystems.Roller;
 
 
@@ -28,6 +29,7 @@ public class Robot extends IterativeRobot {
 	public static final Drivetrain dt = new Drivetrain();
 	public static final Roller roller = new Roller();
 	public static OI oi;
+	public static Power pdp;
 
     Command autonomousCommand;
     SendableChooser chooser;
@@ -42,6 +44,7 @@ public class Robot extends IterativeRobot {
     public void robotInit() {
 
 		oi = new OI();
+		pdp = new Power();
         chooser = new SendableChooser();
         chooser.addDefault("Cross Obstacle", new Auto());
         chooser.addObject("Reach Obstacle", new DriveTimeCmd(0.6)); // added after reading.
@@ -111,6 +114,12 @@ public class Robot extends IterativeRobot {
      */
     public void autonomousPeriodic() {
         Scheduler.getInstance().run();
+    	SmartDashboard.putNumber("Total Current: ", DataCollection.totalCurrent);
+		SmartDashboard.putNumber("gyro: ", DataCollection.gyro);
+		SmartDashboard.putNumber("motorSpeedLeft: ", DataCollection.motorSpeedLeft);
+		SmartDashboard.putNumber("motorSpeedRight: ", DataCollection.motorSpeedRight);
+		
+		Scheduler.getInstance().run();
     }
 
     public void teleopInit() {
