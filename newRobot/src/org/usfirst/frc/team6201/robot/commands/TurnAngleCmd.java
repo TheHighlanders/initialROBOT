@@ -12,35 +12,82 @@ import edu.wpi.first.wpilibj.command.Command;
  */
 public class TurnAngleCmd extends Command {
 
-	private double turn;
+	private boolean targetFound = false;
+	/**
+	 * The initial angle as measured by the gyroscope
+	 */
+	private double initialAngle;
+	
+	/**
+	 * The target final angle as measured by the gyroscope. 
+	 */
+	private double targetAngle;
+	
+	/**
+	 * How slow we turn.
+	 */
 	private double scalarOnTurn = 1/3;
-	private double rotation;
+	
+	/**
+	 * How much we should be turning.
+	 */
+	private double deltaAngle;
+	
+	/**
+	 * How much error is acceptable between our target turn amount and our actual turn amount.
+	 * 
+	 * This is measured as a percent.
+	 */
 	private double acceptedError;
 	
-    public TurnAngleCmd(double rotation, double acceptedError) {
+	/**
+	 * 
+	 * @param deltaAngle	Angle which we should be turnin
+	 * @param acceptedError	Error in target angle vs. measured angle that is acceptable as a percent.
+	 */
+    public TurnAngleCmd(double deltaAngle, double acceptedError) {
     	requires(Robot.dt);
-    	this.rotation = rotation;
+    	this.deltaAngle = deltaAngle;
         this.acceptedError = acceptedError;
     }
-
-    // Called just before this Command runs the first time
-    protected void initialize() {
-       	Robot.dt.resetGyro();
+	
+    private double error () {
+    	return (Robot.dt.getGyroAngle() - targetAngle);
     }
+    /**
+     * Before we start moving, get the initialAngle from the gyroscope,
+     * and calculate the target angle.
+     */
+    protected void initialize() {
+    	initialAngle = Robot.dt.getGyroAngle();
+    	targetAngle = initialAngle + deltaAngle;
+    	
+    }
+    
 
-    // Called repeatedly when this Command is scheduled to run
+    /**
+     * If currError is within acceptedError of the deltaAngle stops driving.
+     * Else drives slowly towards in the correct direction.
+     * 
+     * If we plan to use this in a competition we might want to create a mapping function for hitting the target angle.
+     */
     protected void execute() {
     	
-    	while (!(Math.abs(Robot.dt.getGyroAngle() - rotation) <= acceptedError))
-    	{
-    		turn = scalarOnTurn*(Robot.dt.getGyroAngle() - rotation);
-    		Robot.dt.driveLR(turn, -turn);
+    	double currError = error();
+    	if(currError >= -acceptedError*deltaAngle && currError <= acceptedError*deltaAngle) {
+    		targetFound = true;
+    	} else if (currError >=0) {
+    		Robot.dt.driveLR(-0.1, 0.1);
+ 
+    	} else if (currError <0) {
+    		Robot.dt.driveLR(0.1, -0.1);
     	}
+
     }
 
     // Make this return true when this Command no longer needs to run execute()
     protected boolean isFinished() {
-    	return true;
+    	return targetFound;
     }
 
     // Called once after isFinished returns true

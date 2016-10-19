@@ -7,7 +7,6 @@ import org.usfirst.frc.team6201.robot.commands.RearDriveCmd;
 import org.usfirst.frc.team6201.robot.commands.RollInCmd;
 import org.usfirst.frc.team6201.robot.commands.RollOutCmd;
 import org.usfirst.frc.team6201.robot.commands.TurnAngleCmd;
-import org.usfirst.frc.team6201.robot.commands.TurnAngleWithoutZeroingCmd;
 
 import edu.wpi.first.wpilibj.Joystick;
 import edu.wpi.first.wpilibj.buttons.Button;
@@ -51,32 +50,26 @@ public class OI {
 	}
 	
 	public OI () {
-		//camera reversal
+		// Driving Direction reversal.
+		
 		Button button3 = new JoystickButton(arcade, 3);
 		Button button5 = new JoystickButton(arcade, 5);
 		
 		button5.whenPressed(new FowardDriveCmd());
-	
 		button3.whenPressed(new RearDriveCmd());
-
 
 		// ball roller
 		Button button4 = new JoystickButton(arcade, 4);
 		Button button6 = new JoystickButton(arcade, 6);
 		
 		button4.whenPressed(new RollInCmd());
-		button6.whenPressed(new RollOutCmd());
-//	after reading, not supposed to be used. We discoverd it as a bug during testing luckly!.	
-//		// tests
-//		Button button11 = new JoystickButton(arcade, 11);
-//		Button button12 = new JoystickButton(arcade, 12);
-//		
-//		button11.whenPressed(new Auto());
-//		button12.whenPressed(new TurnAngleCmd(90,1));
-//		
+		button6.whenPressed(new RollOutCmd());	
 		
 		
+		// testing turn angle command
 		
+		Button button10 = new JoystickButton(arcade, 10);
+		button10.whenPressed(new TurnAngleCmd(0.1, 100));
 	}
 	
 	

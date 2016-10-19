@@ -54,9 +54,11 @@ public class Drivetrain extends PIDSubsystem {
    
 	}
     
-    //sets the power of the left and right motors.
-    // Power can be between -1 and 1.
-    // 0 is stop, extremum  are full speed.
+   /**
+    * Sets the power on the left and right motor speed controllers.
+    * @param leftPower -1 to 1 inclusive.
+    * @param rightPower -1 to 1 inclusive.
+    */
     public void driveLR (double leftPower, double rightPower) {
      	rightDrive2.set(-rightPower);
     	leftDrive1.set(leftPower);
@@ -64,32 +66,44 @@ public class Drivetrain extends PIDSubsystem {
     	leftDrive2.set(leftPower);
     }
     
-    //stops the drivetrain
+    /**
+     * Stops the motors on the drivetrain.
+     */
     public void stop () {
     	this.driveLR(0,0);
     }
     
-    //resets the encoder count
+    /**
+     * We don't have encoders. Should reset the encoders.
+     */
     public void resetEncoders () {
     	leftEncoder.reset();
     }
     
-    //calibrates the gyro
+    /**
+     * Runs a calibration on the gyro. Takes 5 seconds.
+     */
     public void calibrateGyro(){
     	gyro.calibrate();
     }
     
-    //resets the gyro to 0
-    public void resetGyro(){
+    /**
+     * Resets the gyroscope accumulated angle to 0. The accumulator is done in the FPGA to make it drift less.
+     */
+    private void resetGyro(){
     	gyro.reset();
     }
     
-    //gets the current gyro angle
+    /**
+     * @return Current angle of gyroscope since last reset.
+     */
     public double getGyroAngle(){
     	return gyro.getAngle();
     }
     
-    //gets the current gyro rate
+    /**
+     * @return Current rate of turning in degrees.
+     */
     public double getGyroRate(){
     	return gyro.getRate();
     }

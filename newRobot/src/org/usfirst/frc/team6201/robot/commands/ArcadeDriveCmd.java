@@ -47,8 +47,6 @@ public class ArcadeDriveCmd extends Command {
 
     // Called just before this Command runs the first time
     protected void initialize() {
-//    	Robot.dt.calibrateGyro(); removed after reading.
-    	Robot.dt.resetGyro();
     	
     }
 

@@ -23,15 +23,10 @@ public class DriveTimeCmd extends Command {
         this.drivingTime = drivingTime;
         requires(Robot.dt);
     }
-
+    
     protected void initialize() {
     	//we start driving
     	timer.start ();
-
-// replaced with calibration in  int of robot.    	
-//    	// this was added after reading. Untesting on the Field management system.
-//    	Robot.dt.calibrateGyro();
-
     }
 
     protected void execute() {
