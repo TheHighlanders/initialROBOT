@@ -68,8 +68,8 @@ public class OI {
 		
 		// testing turn angle command
 		
-		Button button10 = new JoystickButton(arcade, 10);
-		button10.whenPressed(new TurnAngleCmd(0.1, 100));
+		Button button11 = new JoystickButton(arcade, 11);
+		button11.whenPressed(new TurnAngleCmd(arcade.getRawAxis(3)*100, 0.05));
 	}
 	
 	

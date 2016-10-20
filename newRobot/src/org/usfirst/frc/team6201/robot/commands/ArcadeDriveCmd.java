@@ -3,7 +3,6 @@ package org.usfirst.frc.team6201.robot.commands;
 import org.usfirst.frc.team6201.robot.Robot;
 import org.usfirst.frc.team6201.robot.RobotMap;
 import edu.wpi.first.wpilibj.command.Command;
-import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
 
 /**
  *@author David Matthews
@@ -60,15 +59,6 @@ public class ArcadeDriveCmd extends Command {
     	processedOnceTurn = (1-rawPower) * rawTurn; // allows for turning full speed at stop.
     	processedTwiceTurn = (processedOnceTurn - gyroRateGain*Robot.dt.getGyroRate())*pTurnGain + processedOnceTurn; // uses the gyro as a feedback loop to drive at the desired turn rate. 
     	
-    	SmartDashboard.putNumber("rPower: ", Robot.oi.getYAxisOfLogitech());
-    	SmartDashboard.putNumber("rTurn: ", Robot.oi.getXAxisOfLogitech());
-    	
-    	SmartDashboard.putNumber("pPower: ", processedPower);
-    	SmartDashboard.putNumber("p1Turn: ", processedOnceTurn);
-    	SmartDashboard.putNumber("p2Turn: ", processedTwiceTurn);
-    	
-    	SmartDashboard.putNumber("GyroAngle: ", Robot.dt.getGyroAngle());
-    	SmartDashboard.putNumber("GyroRate: ", Robot.dt.getGyroRate());
     	
     	if (RobotMap.fowardOrReverse == 1){
         	Robot.dt.driveLR(RobotMap.fowardOrReverse*(processedPower + processedTwiceTurn), RobotMap.fowardOrReverse*(processedPower - processedTwiceTurn));

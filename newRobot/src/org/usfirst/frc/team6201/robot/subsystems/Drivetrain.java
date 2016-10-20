@@ -1,18 +1,14 @@
 
 package org.usfirst.frc.team6201.robot.subsystems;
 
+import org.usfirst.frc.team6201.robot.Robot;
 import org.usfirst.frc.team6201.robot.RobotMap;
 import org.usfirst.frc.team6201.robot.commands.ArcadeDriveCmd;
-/// not used
-// import org.usfirst.frc.team6201.robot.commands.TankDriveCmd;
-
-
 import edu.wpi.first.wpilibj.ADXRS450_Gyro;
 import edu.wpi.first.wpilibj.Encoder;
-import edu.wpi.first.wpilibj.Talon;
-import edu.wpi.first.wpilibj.Victor;
-import edu.wpi.first.wpilibj.Spark;
+import edu.wpi.first.wpilibj.VictorSP;
 import edu.wpi.first.wpilibj.command.PIDSubsystem;
+import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
 
 
 /**
@@ -28,10 +24,10 @@ import edu.wpi.first.wpilibj.command.PIDSubsystem;
 public class Drivetrain extends PIDSubsystem {
 
 	//  Motors
-	private Victor leftDrive1 = new Victor (RobotMap.LEFT_DRIVE1);
-	private Victor rightDrive1 = new Victor (RobotMap.RIGHT_DRIVE1);
-	private Victor leftDrive2 = new Victor (RobotMap.LEFT_DRIVE2);
-	private Victor rightDrive2 = new Victor (RobotMap.RIGHT_DRIVE2);
+	private VictorSP leftDrive1 = new VictorSP (RobotMap.LEFT_DRIVE1);
+	private VictorSP rightDrive1 = new VictorSP (RobotMap.RIGHT_DRIVE1);
+	private VictorSP leftDrive2 = new VictorSP (RobotMap.LEFT_DRIVE2);
+	private VictorSP rightDrive2 = new VictorSP (RobotMap.RIGHT_DRIVE2);
 	
 	// Sensors
 	private Encoder leftEncoder = new Encoder (RobotMap.ENCODER_LEFT_A, RobotMap.ENCODER_LEFT_B);
@@ -60,6 +56,11 @@ public class Drivetrain extends PIDSubsystem {
     * @param rightPower -1 to 1 inclusive.
     */
     public void driveLR (double leftPower, double rightPower) {
+    	SmartDashboard.putNumber("GyroAngle: ", Robot.dt.getGyroAngle());
+    	SmartDashboard.putNumber("GyroRate: ", Robot.dt.getGyroRate());
+    	SmartDashboard.putNumber("lMotorPower: ", leftPower);
+    	SmartDashboard.putNumber("rMotorPower ", rightPower);
+    	
      	rightDrive2.set(-rightPower);
     	leftDrive1.set(leftPower);
     	rightDrive1.set(-rightPower);

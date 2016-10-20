@@ -24,11 +24,6 @@ public class TurnAngleCmd extends Command {
 	private double targetAngle;
 	
 	/**
-	 * How slow we turn.
-	 */
-	private double scalarOnTurn = 1/3;
-	
-	/**
 	 * How much we should be turning.
 	 */
 	private double deltaAngle;
@@ -42,26 +37,22 @@ public class TurnAngleCmd extends Command {
 	
 	/**
 	 * 
-	 * @param deltaAngle	Angle which we should be turnin
+	 * @param deltaAngle	Angle which we should be turning
 	 * @param acceptedError	Error in target angle vs. measured angle that is acceptable as a percent.
 	 */
     public TurnAngleCmd(double deltaAngle, double acceptedError) {
     	requires(Robot.dt);
     	this.deltaAngle = deltaAngle;
         this.acceptedError = acceptedError;
+        targetAngle = Robot.dt.getGyroAngle() + deltaAngle;
+        targetFound = false;
     }
 	
-    private double error () {
+    private double getCurrError () {
     	return (Robot.dt.getGyroAngle() - targetAngle);
     }
-    /**
-     * Before we start moving, get the initialAngle from the gyroscope,
-     * and calculate the target angle.
-     */
+
     protected void initialize() {
-    	initialAngle = Robot.dt.getGyroAngle();
-    	targetAngle = initialAngle + deltaAngle;
-    	
     }
     
 
@@ -73,14 +64,16 @@ public class TurnAngleCmd extends Command {
      */
     protected void execute() {
     	
-    	double currError = error();
+    	double currError = getCurrError();
     	if(currError >= -acceptedError*deltaAngle && currError <= acceptedError*deltaAngle) {
     		targetFound = true;
     	} else if (currError >=0) {
-    		Robot.dt.driveLR(-0.1, 0.1);
+    		double newTurningSpeed = Math.min(currError * 0.1, 0.7);
+    		Robot.dt.driveLR(-newTurningSpeed, newTurningSpeed);
  
     	} else if (currError <0) {
-    		Robot.dt.driveLR(0.1, -0.1);
+    		double newTurningSpeed = Math.min(currError * 0.1, 0.7);
+    		Robot.dt.driveLR(newTurningSpeed, -newTurningSpeed);
     	}
 
     }
