@@ -2,6 +2,7 @@ package org.usfirst.frc.team6201.robot.commands;
 
 import org.usfirst.frc.team6201.robot.Robot;
 import edu.wpi.first.wpilibj.command.Command;
+import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
 
 /**
  * 
@@ -44,8 +45,7 @@ public class TurnAngleCmd extends Command {
     	requires(Robot.dt);
     	this.deltaAngle = deltaAngle;
         this.acceptedError = acceptedError;
-        targetAngle = Robot.dt.getGyroAngle() + deltaAngle;
-        targetFound = false;
+        
     }
 	
     private double getCurrError () {
@@ -53,6 +53,12 @@ public class TurnAngleCmd extends Command {
     }
 
     protected void initialize() {
+    	targetAngle = Robot.dt.getGyroAngle() + deltaAngle;
+    	SmartDashboard.putNumber("targetAngle", targetAngle);
+        targetFound = false;
+        SmartDashboard.putBoolean("targetFound", targetFound);
+        SmartDashboard.putNumber("deltaAngle: ", deltaAngle);
+        
     }
     
 
@@ -65,15 +71,19 @@ public class TurnAngleCmd extends Command {
     protected void execute() {
     	
     	double currError = getCurrError();
+    	SmartDashboard.putNumber("currError: ", currError);
+    	
+    	
     	if(currError >= -acceptedError*deltaAngle && currError <= acceptedError*deltaAngle) {
     		targetFound = true;
+    		SmartDashboard.putBoolean("targetFound", targetFound);
     	} else if (currError >=0) {
-    		double newTurningSpeed = Math.min(currError * 0.1, 0.7);
+    		double newTurningSpeed = Math.min(currError * 0.1, 0.5);
     		Robot.dt.driveLR(-newTurningSpeed, newTurningSpeed);
  
     	} else if (currError <0) {
-    		double newTurningSpeed = Math.min(currError * 0.1, 0.7);
-    		Robot.dt.driveLR(newTurningSpeed, -newTurningSpeed);
+    		double newTurningSpeed = Math.min(currError * 0.1, 0.5);
+    		Robot.dt.driveLR(-newTurningSpeed, newTurningSpeed);
     	}
 
     }
