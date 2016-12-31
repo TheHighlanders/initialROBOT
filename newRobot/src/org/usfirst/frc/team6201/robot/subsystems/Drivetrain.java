@@ -11,6 +11,7 @@ import org.usfirst.frc.team6201.robot.commands.ArcadeDriveCmd;
 
 import edu.wpi.first.wpilibj.ADXRS450_Gyro;
 import edu.wpi.first.wpilibj.Encoder;
+import edu.wpi.first.wpilibj.Sendable;
 import edu.wpi.first.wpilibj.PowerDistributionPanel;
 import edu.wpi.first.wpilibj.Talon;
 import edu.wpi.first.wpilibj.Victor;
@@ -28,7 +29,7 @@ import edu.wpi.first.wpilibj.command.PIDSubsystem;
  */
 
 
-public class Drivetrain extends PIDSubsystem {
+public class Drivetrain extends PIDSubsystem  {
 
 	//  Motors
 	private Victor leftDrive1 = new Victor (RobotMap.LEFT_DRIVE1);
