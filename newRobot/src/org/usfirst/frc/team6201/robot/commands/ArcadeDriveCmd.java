@@ -1,8 +1,9 @@
 package org.usfirst.frc.team6201.robot.commands;
 
-import org.usfirst.frc.team6201.robot.DataCollection;
+
 import org.usfirst.frc.team6201.robot.Robot;
 import org.usfirst.frc.team6201.robot.RobotMap;
+
 import edu.wpi.first.wpilibj.command.Command;
 import edu.wpi.first.wpilibj.command.Scheduler;
 import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
@@ -64,9 +65,7 @@ public class ArcadeDriveCmd extends Command {
     	processedOnceTurn = (1-rawPower) * rawTurn; // allows for turning full speed at stop.
     	processedTwiceTurn = (processedOnceTurn - gyroRateGain*Robot.dt.getGyroRate())*pTurnGain + processedOnceTurn; // uses the gyro as a feedback loop to drive at the desired turn rate. 
     
- 		SmartDashboard.putNumber("gyro: ", DataCollection.gyro);
- 		SmartDashboard.putNumber("motorSpeedLeft: ", DataCollection.motorSpeedLeft);
- 		SmartDashboard.putNumber("motorSpeedRight: ", DataCollection.motorSpeedRight);
+
  		
     	
     	if (RobotMap.fowardOrReverse == 1){

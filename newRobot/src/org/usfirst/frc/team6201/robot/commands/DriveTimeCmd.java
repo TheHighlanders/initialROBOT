@@ -7,8 +7,10 @@ import edu.wpi.first.wpilibj.Timer;
 import edu.wpi.first.wpilibj.command.Command;
 
 /**
- *
+ * @author David Matthews
  */
+
+//TODO: add comments, clean up
 public class DriveTimeCmd extends Command {
 
 	

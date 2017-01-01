@@ -3,9 +3,11 @@ package org.usfirst.frc.team6201.robot.commands;
 import org.usfirst.frc.team6201.robot.Robot;
 
 import edu.wpi.first.wpilibj.command.Command;
-
+//TODO:This command does not work; we do not have encoders... Either add encoders or clean up.
 /**
  * Drives the robot a set distance
+ * @author David Matthews
+ * @author NUTRONS
  */
 public class DriveDistanceCmd extends Command {
 

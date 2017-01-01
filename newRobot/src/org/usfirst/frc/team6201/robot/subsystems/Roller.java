@@ -1,6 +1,8 @@
 package org.usfirst.frc.team6201.robot.subsystems;
 
 import org.usfirst.frc.team6201.robot.RobotMap;
+
+import dataLogger.DataCollator;
 import edu.wpi.first.wpilibj.Spark;
 import edu.wpi.first.wpilibj.Timer;
 import edu.wpi.first.wpilibj.command.PIDSubsystem;
@@ -32,6 +34,7 @@ public class Roller extends PIDSubsystem {
     
     public void roll(double power){
     	motor.set(power);
+    	DataCollator.motorRoller.setVal(power);
     }
     
     public void stop(){
@@ -40,14 +43,11 @@ public class Roller extends PIDSubsystem {
 
 	@Override
 	protected double returnPIDInput() {
-		// TODO Auto-generated method stub
 		return 0;
 	}
 
 	@Override
 	protected void usePIDOutput(double arg0) {
-		// TODO Auto-generated method stub
-		
 	}
 }
 

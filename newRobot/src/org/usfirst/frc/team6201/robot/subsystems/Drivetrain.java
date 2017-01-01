@@ -1,13 +1,10 @@
 
 package org.usfirst.frc.team6201.robot.subsystems;
 
-import org.usfirst.frc.team6201.robot.DataCollection;
+import dataLogger.DataCollator;
 import org.usfirst.frc.team6201.robot.Robot;
 import org.usfirst.frc.team6201.robot.RobotMap;
 import org.usfirst.frc.team6201.robot.commands.ArcadeDriveCmd;
-/// not used
-// import org.usfirst.frc.team6201.robot.commands.TankDriveCmd;
-
 
 import edu.wpi.first.wpilibj.ADXRS450_Gyro;
 import edu.wpi.first.wpilibj.Encoder;
@@ -32,6 +29,7 @@ import edu.wpi.first.wpilibj.command.PIDSubsystem;
 public class Drivetrain extends PIDSubsystem  {
 
 	//  Motors
+	//TODO: Switch to VictorSP as they should be.
 	private Victor leftDrive1 = new Victor (RobotMap.LEFT_DRIVE1);
 	private Victor rightDrive1 = new Victor (RobotMap.RIGHT_DRIVE1);
 	private Victor leftDrive2 = new Victor (RobotMap.LEFT_DRIVE2);
@@ -67,8 +65,8 @@ public class Drivetrain extends PIDSubsystem  {
     	leftDrive1.set(leftPower);
     	rightDrive1.set(-rightPower);
     	leftDrive2.set(leftPower);
-    	DataCollection.motorSpeedLeft = leftPower;
-    	DataCollection.motorSpeedRight = rightPower;
+    	DataCollator.motorSpeedLeft.setVal(leftPower);
+    	DataCollator.motorSpeedRight.setVal(rightPower);
     }
     
     //stops the drivetrain
@@ -103,13 +101,11 @@ public class Drivetrain extends PIDSubsystem  {
 
 	@Override
 	protected double returnPIDInput() {
-		// TODO Auto-generated method stub
 		return leftEncoder.getDistance();
 	}
 
 	@Override
 	protected void usePIDOutput(double output) {
-		// TODO Auto-generated method stub
 		this.driveLR(output, output);
 		
 	}
