@@ -16,7 +16,7 @@ import java.util.*;
 public class DataLoggerRecorder {
 
 	private static boolean moreDataExists = true;
-	private static boolean needNewFile = false;
+	private static boolean needNewFile = true;
 	private static boolean needHeader = true;
 	private static File f = null;
 	private static FileWriter fw = null;
@@ -32,8 +32,8 @@ public class DataLoggerRecorder {
 
 		DatagramPacket dataPacket;
 		String dataString;
-		newFile();
-
+        newFile();
+        
 		try {
 
 			// receive data and save
@@ -64,14 +64,18 @@ public class DataLoggerRecorder {
 			Date date = new Date();
 			SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd HH-mm-ss");
 			fNew = new File(dateFormat.format(date) + ".csv");
-			fwNew = new FileWriter(f, true);	
+			fwNew = new FileWriter(fNew, true);	
 		}
 		catch (IOException e) {
-			return;
+			System.out.println("File Failed to be created.");
 		}
 		
 		f = fNew;
-		fw = fwNew;		
+		fw = fwNew;
+        System.out.println("f and fw set to fNew and fwNew");
+        System.out.println(fw);
+        System.out.println(f);
+        needNewFile = false;
 	}
 
 	private static void saveData(FileWriter fw, String data) {
@@ -79,6 +83,7 @@ public class DataLoggerRecorder {
 			// is this the exit message?
 			if (data.charAt(0) == 'e') {
 				moreDataExists = false;
+                System.out.println("No More Data");
 			}
 
 			// is this a header string?
