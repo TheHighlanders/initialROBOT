@@ -10,7 +10,7 @@ package dataLogger;
  */
 public class DataField {
 	public String name;
-	public volatile double value;
+    public volatile double value = 0;
 	
 	/**
 	 * This constructor sets the name of the DataField. 

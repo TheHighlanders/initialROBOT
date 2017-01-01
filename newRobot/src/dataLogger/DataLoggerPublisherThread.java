@@ -97,7 +97,7 @@ public class DataLoggerPublisherThread extends Thread {
 	 * @return A String flagged as a header row for the CSV file.
 	 */
 	private String getHeader() {
-		return ("h," + Integer.toString(sequenceNumb) + "," + DataCollator.getHeader());
+		return ("h," + Integer.toString(sequenceNumb) + "," + DataCollator.getHeader() + "\n");
 	}
 
 	/**
@@ -105,7 +105,7 @@ public class DataLoggerPublisherThread extends Thread {
 	 * @return A String flagged as a row of data for a CSV file.
 	 */
 	private String getData() {
-		return ("d," + Integer.toString(sequenceNumb) + "," + DataCollator.getData());
+		return ("d," + Integer.toString(sequenceNumb) + "," + DataCollator.getData() + "\n");
 	}
 
 	/**
