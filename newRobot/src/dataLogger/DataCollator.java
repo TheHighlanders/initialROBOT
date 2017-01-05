@@ -28,7 +28,7 @@ public class DataCollator {
 	public static DataField current3 =  new DataField("current3");
 	public static DataField current14 =  new DataField("current14");
 	public static DataField current15 =  new DataField("current15");
-	private static DataField[] dataFieldArray  = {totalCurrent, gyro, motorSpeedLeft, motorSpeedRight, motorRoller, batteryVoltage, pdpTemp, accelX, accelY, accelZ, current1, current2, current3, current14, current15};
+	private static DataField[] dataFieldArray  = {totalCurrent, gyro, motorSpeedLeft, motorSpeedRight, motorRoller, batteryVoltage, pdpTemp, accelX, accelY, accelZ, current1, current2, current3, current14, current15, totalCurrent};
 
 	/**
 	 * 
