@@ -65,17 +65,6 @@ public class OI {
 		
 		button4.whenPressed(new RollInCmd());
 		button6.whenPressed(new RollOutCmd());
-//	after reading, not supposed to be used. We discoverd it as a bug during testing luckly!.	
-//		// tests
-//		Button button11 = new JoystickButton(arcade, 11);
-//		Button button12 = new JoystickButton(arcade, 12);
-//		
-//		button11.whenPressed(new Auto());
-//		button12.whenPressed(new TurnAngleCmd(90,1));
-//		
-		
-		
-		
 	}
 	
 	
