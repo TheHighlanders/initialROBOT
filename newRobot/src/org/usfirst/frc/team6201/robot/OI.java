@@ -6,6 +6,7 @@ import org.usfirst.frc.team6201.robot.commands.FowardDriveCmd;
 import org.usfirst.frc.team6201.robot.commands.RearDriveCmd;
 import org.usfirst.frc.team6201.robot.commands.RollInCmd;
 import org.usfirst.frc.team6201.robot.commands.RollOutCmd;
+import org.usfirst.frc.team6201.robot.commands.StopLoggingData;
 import org.usfirst.frc.team6201.robot.commands.TurnAngleCmd;
 
 import edu.wpi.first.wpilibj.Joystick;
@@ -65,6 +66,10 @@ public class OI {
 		
 		button4.whenPressed(new RollInCmd());
 		button6.whenPressed(new RollOutCmd());
+		
+		Button button8 = new JoystickButton(arcade, 8);
+		button8.whenPressed(new StopLoggingData());
+		
 //	after reading, not supposed to be used. We discoverd it as a bug during testing luckly!.	
 //		// tests
 //		Button button11 = new JoystickButton(arcade, 11);

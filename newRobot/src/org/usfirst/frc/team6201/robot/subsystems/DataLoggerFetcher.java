@@ -20,12 +20,15 @@ public class DataLoggerFetcher extends Subsystem {
 	private PowerDistributionPanel powerPanel;
 	private	ADXRS450_Gyro gyro;
 	private ADXL362 accel;
+	private DataLoggerPublisherThread loggerPublisherThread;
 	public DataLoggerFetcher() {
 		powerPanel = new PowerDistributionPanel(0);
 		gyro = new ADXRS450_Gyro();
 		accel = new ADXL362(Accelerometer.Range.k16G);
+		
 		try {
-			new DataLoggerPublisherThread().start();
+			loggerPublisherThread = new DataLoggerPublisherThread();
+			loggerPublisherThread.start();
 		}
 		catch (IOException e) {
 			System.out.println("DataLoggerPublisherThread().start(); crashed" + e.getStackTrace());
@@ -34,6 +37,9 @@ public class DataLoggerFetcher extends Subsystem {
 
 	}
 	
+	public void stopLogging(){
+		loggerPublisherThread.stopLogging();
+	}
 	public void initDefaultCommand() {
         setDefaultCommand(new DataLoggerScanner());
     }
