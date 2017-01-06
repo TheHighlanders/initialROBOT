@@ -48,6 +48,7 @@ public class DataLoggerRecorder {
 				
 				//process string appropriately.
 				saveData(fw, dataString);
+                fw.flush();
 			}
 			fw.close();
 			inputSocket.close();
