@@ -13,43 +13,62 @@ import edu.wpi.first.wpilibj.command.Command;
 //TODO: add comments, clean up
 public class DriveTimeCmd extends Command {
 
+	/**
+	 * 
+	 */
+	private double calibratedPower;
+	/**
+	 * how long have we been driving?
+	 */
+	private Timer timeDriven = new Timer ();
+
+	/**
+	 * how long do we want to drive?
+	 */
+	private double targetDrivingTime;
 	
-	private double calibrated;
-	// how long have we been driving?
-	private Timer timer = new Timer ();
+	/**
+	 * have we been driving long enough? 
+	 */
+	private boolean stillDriving = true;
 	
-	// how long do we want to drive?
-	private double drivingTime;
-	
+	/**
+	 * Constructor requires Robot.dt
+	 * 
+	 * @param drivingTime How much time in seconds we want to drive for.
+	 */
     public DriveTimeCmd(double drivingTime) {
-        this.drivingTime = drivingTime;
+        this.targetDrivingTime = drivingTime;
         requires(Robot.dt);
     }
 
+    /**
+     * Starts the timer.
+     */
     protected void initialize() {
-    	//we start driving
-    	timer.start ();
-
-// replaced with calibration in  int of robot.    	
-//    	// this was added after reading. Untesting on the Field management system.
-//    	Robot.dt.calibrateGyro();
-
+    	timeDriven.start ();
     }
 
+    /**
+     * if we have not been driving long enough, we attempt to drive straight.
+     * 
+     * To drive straight, we look at how fast we are turning, and attempt to spin one of the motors faster to drive straight.
+     */
     protected void execute() {
     	
-    	while(timer.get()< drivingTime){
-    		calibrated = ((0.8 - 0.05*Robot.dt.getGyroRate())*0.05); // uses the gyro as a feedback loop to drive at the desired turn rate. 
+    	if(stillDriving){
+    		calibratedPower = ((0.8 - 0.05*Robot.dt.getGyroRate())*0.05); // uses the gyro as a feedback loop to drive at the desired turn rate. 
   
-    		Robot.dt.driveLR(-0.80-calibrated, -0.8-0.12+calibrated );
+    		Robot.dt.driveLR(-0.80-calibratedPower, -0.8-0.12+calibratedPower );
     	}
-
+    	if (timeDriven.get()>= targetDrivingTime) {
+    		stillDriving = false;
+    	}
     }
 
+    
     protected boolean isFinished() {
-        
-  // have we been driving as long as we want to
-    	return true;
+    	return stillDriving;
     }
 
     protected void end() {
