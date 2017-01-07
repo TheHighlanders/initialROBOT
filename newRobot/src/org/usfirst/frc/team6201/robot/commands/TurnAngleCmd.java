@@ -12,35 +12,59 @@ import edu.wpi.first.wpilibj.command.Command;
  */
 public class TurnAngleCmd extends Command {
 
-	private double turn;
+	private double turningPower = 0;
+	private double currAngle = 0;
 	private double scalarOnTurn = 1/3;
-	private double rotation;
-	private double acceptedError;
+	private double targetAngle;
+	private double acceptedErrorInTargetAngle;
+	private boolean onTarget = false;
 	
-    public TurnAngleCmd(double rotation, double acceptedError) {
+	/**
+	 * Constructor for this command to make it rotate a set number of degrees clockwise with given accuracy
+	 * 
+	 * @param angleAmount number of degrees to rotate the robot. Positive is rotate clockwise, negative is rotate counterclockwise 
+	 * @param acceptedError percent error acceptable for this command to end.
+	 */
+    public TurnAngleCmd(double angleAmount, double acceptedError) {
     	requires(Robot.dt);
-    	this.rotation = rotation;
-        this.acceptedError = acceptedError;
+    	this.targetAngle = angleAmount;
+        this.acceptedErrorInTargetAngle = acceptedError;
     }
 
-    // Called just before this Command runs the first time
     protected void initialize() {
        	Robot.dt.resetGyro();
     }
 
-    // Called repeatedly when this Command is scheduled to run
+    /**
+     * Calculates the power to set the motors to so that we move toward the target angle. 
+     */
+    private void getError() {
+    	turningPower = scalarOnTurn*(currAngle - targetAngle);
+    }
+    
+    /**
+     * 
+     * @return true if we are on target, false if not.
+     */
+    private boolean onTarget(){
+    	return (currAngle + acceptedErrorInTargetAngle*targetAngle >= targetAngle ||currAngle + acceptedErrorInTargetAngle*targetAngle < targetAngle);
+    }
     protected void execute() {
     	
-    	while (!(Math.abs(Robot.dt.getGyroAngle() - rotation) <= acceptedError))
+    	if (!onTarget)
     	{
-    		turn = scalarOnTurn*(Robot.dt.getGyroAngle() - rotation);
-    		Robot.dt.driveLR(turn, -turn);
+    		currAngle = Robot.dt.getGyroAngle();
+    		getError();
+    		Robot.dt.driveLR(turningPower, -turningPower);
+    		if (onTarget()){
+    			onTarget = true;
+    		}
     	}
     }
 
     // Make this return true when this Command no longer needs to run execute()
     protected boolean isFinished() {
-    	return true;
+    	return onTarget;
     }
 
     // Called once after isFinished returns true
