@@ -8,6 +8,9 @@ import org.usfirst.frc.team6201.robot.commands.RollInCmd;
 import org.usfirst.frc.team6201.robot.commands.RollOutCmd;
 import org.usfirst.frc.team6201.robot.commands.TurnAngleCmd;
 
+import dataLogger.StartLoggerCmd;
+import dataLogger.StopAllLoggingCmd;
+import dataLogger.StopLoggingRecorderCmd;
 import edu.wpi.first.wpilibj.Joystick;
 import edu.wpi.first.wpilibj.buttons.Button;
 import edu.wpi.first.wpilibj.buttons.JoystickButton;
@@ -65,16 +68,17 @@ public class OI {
 		
 		button4.whenPressed(new RollInCmd());
 		button6.whenPressed(new RollOutCmd());
-//	after reading, not supposed to be used. We discoverd it as a bug during testing luckly!.	
-//		// tests
-//		Button button11 = new JoystickButton(arcade, 11);
-//		Button button12 = new JoystickButton(arcade, 12);
-//		
-//		button11.whenPressed(new Auto());
-//		button12.whenPressed(new TurnAngleCmd(90,1));
-//		
 		
+		//Data Logger
 		
+		Button button7 = new JoystickButton(arcade, 7);
+		button7.whenPressed(new StartLoggerCmd());
+		
+		Button button8 = new JoystickButton(arcade, 8);
+		button8.whenPressed(new StopLoggingRecorderCmd());
+		
+		Button button9 = new JoystickButton(arcade, 9);
+		button9.whenPressed(new StopAllLoggingCmd());
 		
 	}
 	

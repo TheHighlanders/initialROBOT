@@ -1,19 +1,17 @@
-package org.usfirst.frc.team6201.robot.commands;
+package dataLogger;
 
 
 import org.usfirst.frc.team6201.robot.Robot;
 
-
-import dataLogger.DataCollator;
 import edu.wpi.first.wpilibj.command.Command;
 import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
 
 /**
  *@author David Matthews
  */
-public class DataLoggerScanner extends Command {
+public class DataLoggerScannerCmd extends Command {
 
-    public DataLoggerScanner() {
+    public DataLoggerScannerCmd() {
 
     	requires(Robot.dlf);
     }

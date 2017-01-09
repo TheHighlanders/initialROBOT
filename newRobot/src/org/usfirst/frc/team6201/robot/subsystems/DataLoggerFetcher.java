@@ -4,8 +4,6 @@ package org.usfirst.frc.team6201.robot.subsystems;
 
 import java.io.IOException;
 
-import org.usfirst.frc.team6201.robot.commands.DataLoggerScanner;
-
 import dataLogger.*;
 import edu.wpi.first.wpilibj.ADXL362;
 import edu.wpi.first.wpilibj.ADXRS450_Gyro;
@@ -20,12 +18,15 @@ public class DataLoggerFetcher extends Subsystem {
 	private PowerDistributionPanel powerPanel;
 	private	ADXRS450_Gyro gyro;
 	private ADXL362 accel;
+	private DataLoggerPublisherThread loggerPublisherThread;
 	public DataLoggerFetcher() {
 		powerPanel = new PowerDistributionPanel(0);
 		gyro = new ADXRS450_Gyro();
 		accel = new ADXL362(Accelerometer.Range.k16G);
+		
 		try {
-			new DataLoggerPublisherThread().start();
+			loggerPublisherThread = new DataLoggerPublisherThread();
+			loggerPublisherThread.start();
 		}
 		catch (IOException e) {
 			System.out.println("DataLoggerPublisherThread().start(); crashed" + e.getStackTrace());
@@ -34,8 +35,18 @@ public class DataLoggerFetcher extends Subsystem {
 
 	}
 	
+	public void stopAllLogging(){
+		loggerPublisherThread.endAllLogging();
+	}
+	public void stopLoggingRecorder() {
+		loggerPublisherThread.stopLoggingRecorder();
+	}
+	public void startLoggingData() {
+		loggerPublisherThread.startLogging();
+	}
+	
 	public void initDefaultCommand() {
-        setDefaultCommand(new DataLoggerScanner());
+        setDefaultCommand(new DataLoggerScannerCmd());
     }
 
 	public void setTotalCurrent() {
