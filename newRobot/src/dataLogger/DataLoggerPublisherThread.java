@@ -66,12 +66,6 @@ public class DataLoggerPublisherThread extends Thread {
 		toLog = false;
 	}
 	
-	/**
-	 * Restarts the publishing of logging data
-	 */
-	public void startLogging(){
-		toLog = true;
-	}
 
 	/**
 	 * Calls on helper methods to ship logging data over UDP until toLog becomes false.

@@ -35,15 +35,12 @@ public class DataLoggerFetcher extends Subsystem {
 
 	}
 	
-	public void stopAllLogging(){
-		loggerPublisherThread.endAllLogging();
-	}
+	
+
 	public void stopLoggingRecorder() {
 		loggerPublisherThread.stopLoggingRecorder();
 	}
-	public void startLoggingData() {
-		loggerPublisherThread.startLogging();
-	}
+
 	
 	public void initDefaultCommand() {
         setDefaultCommand(new DataLoggerScannerCmd());
