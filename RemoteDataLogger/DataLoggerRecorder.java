@@ -89,6 +89,12 @@ public class DataLoggerRecorder {
 
 	private static void saveData(FileWriter fw, String data) {
 		try {
+            if (needNewFile){
+                newFile();
+                needHeader = true;
+                needNewFile = false;
+            }
+            
 			// is this the exit message?
 			if (data.charAt(0) == 'e') {
 				moreDataExists = false;
@@ -97,12 +103,7 @@ public class DataLoggerRecorder {
 
 			// is this a header string?
 			if (data.charAt(0) == 'h') {
-				if (needNewFile) {
-					newFile();
-					needHeader = true;
-					needNewFile = false;
-				}
-				if (needHeader) {
+                if (needHeader) {
 					fw.append(data);
 					needHeader = false;
 				}
