@@ -28,6 +28,7 @@ public class DataLoggerRecorder {
 
 		// init
 		DatagramSocket inputSocket = new DatagramSocket(4445);
+        inputSocket.setSoTimeout(5000);
 		byte[] buffer = new byte[256];
 
 		DatagramPacket dataPacket;
@@ -53,9 +54,15 @@ public class DataLoggerRecorder {
 			}
 			fw.close();
 			inputSocket.close();
-		} catch (IOException e) {
-			System.out.println("Data Logger failed to open log file." + e.getStackTrace());
-		}
+		}  catch (SocketException se) {
+            System.out.println(se.getStackTrace());
+            System.out.println("Closing LoggerRecorder");
+            moreDataExists = false;
+            
+        }
+        catch (IOException ioe) {
+            System.out.println("Data Logger failed to open log file." + ioe.getStackTrace());
+        }
 
 	}
 
