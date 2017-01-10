@@ -20,53 +20,65 @@ public class DataLoggerRecorder {
 	private static boolean needHeader = true;
 	private static File f = null;
 	private static FileWriter fw = null;
+  private static DatagramSocket inputSocket;
+  private static byte[] buffer;
+  
 
+  
 	/**
 	 * @param args
 	 */
 	public static void main(String[] args) throws IOException {
 
-		// init
-		DatagramSocket inputSocket = new DatagramSocket(4445);
-        inputSocket.setSoTimeout(5000);
-		byte[] buffer = new byte[256];
-
-		DatagramPacket dataPacket;
-		String dataString;
-        newFile();
-        
+		init();
+            
 		try {
-
+      
 			// receive data and save
 			while (moreDataExists) {
-
-				// receive data via UDP packet
-				dataPacket = new DatagramPacket(buffer, buffer.length);
-				inputSocket.receive(dataPacket);
-				
-				//parse to string 
-				dataString = new String(dataPacket.getData(), 0, dataPacket.getLength());
-				
-				//process string appropriately.
-				saveData(fw, dataString);
-                System.out.println(dataString);
-                fw.flush();
+        receiveAndProcessData();
 			}
 			fw.close();
 			inputSocket.close();
-		}  catch (SocketException se) {
-            System.out.println(se.getStackTrace());
-            System.out.println("Closing LoggerRecorder");
-            moreDataExists = false;
-            
-        }
-        catch (IOException ioe) {
-            System.out.println("Data Logger failed to open log file." + ioe.getStackTrace());
-        }
-
+		}
+    catch (IOException e) {
+        System.out.println("Starting new file");
+        fw = null;
+        f = null;
+        needNewFile = true;
+        needHeader = true;
+    }
 	}
 
-	private static void newFile() {
+  
+  private static void saveData(FileWriter fw, String data) {
+  	try {        
+        // is this the exit message?
+        if (data.charAt(0) == 'e') {
+            if (fw == null ) {
+                System.out.println("No FileWriter Open");
+            }
+            else {
+                System.out.println("Starting new file");
+                needNewFile = true;
+            }
+        }
+
+        // is this a header string?
+        if (data.charAt(0) == 'h' && needHeader) {
+              fw.append(data);
+              needHeader = false;
+        }
+        // is this a data message?
+        if (data.charAt(0) == 'd') {
+            fw.append(data);
+        }
+        fw.flush();
+  	} catch (IOException e) {
+  		System.out.println("Data Logger failed to open log file." + e.getStackTrace());
+  	}
+  }
+  private static void newFile() {
 		File fNew = null;
 		FileWriter fwNew = null;
 		try {
@@ -85,37 +97,42 @@ public class DataLoggerRecorder {
         System.out.println(fw);
         System.out.println(f);
         needNewFile = false;
+        needHeader = true;
 	}
 
-	private static void saveData(FileWriter fw, String data) {
-		try {
-            if (needNewFile){
-                newFile();
-                needHeader = true;
-                needNewFile = false;
-            }
-            
-			// is this the exit message?
-			if (data.charAt(0) == 'e') {
-				moreDataExists = false;
-                System.out.println("No More Data");
-			}
-
-			// is this a header string?
-			if (data.charAt(0) == 'h') {
-                if (needHeader) {
-					fw.append(data);
-					needHeader = false;
-				}
-				return;
-			}
-
-			// is this a data message?
-			if (data.charAt(0) == 'd') {
-				fw.append(data);
-			}
-		} catch (IOException e) {
-			System.out.println("Data Logger failed to open log file." + e.getStackTrace());
-		}
-	}
+  private static void init(){
+    try {
+      inputSocket = new DatagramSocket(4445);
+    }
+    catch (SocketException e) {
+      System.out.println("DatagramSocket Failed to open");
+    }
+    
+    buffer = new byte[256];
+    newFile();
+  }
+  
+  /**
+   * recieves data and stores it in buffer
+   */
+  private static void receiveAndProcessData() {
+    try {
+        DatagramPacket dataPacket = new DatagramPacket(buffer, buffer.length);
+        inputSocket.setSoTimeout(5000);
+        inputSocket.receive(dataPacket);
+        
+        //parse to string 
+        String dataString = new String(dataPacket.getData(), 0, dataPacket.getLength());
+        
+        // if need new file, create one here.
+        if (needNewFile) {
+          newFile();
+        }
+        saveData(fw, dataString);
+    }
+    catch (IOException e) {
+      System.out.println("Timeout Occured. " + e.getMessage());
+      needNewFile = true;
+    }
+  }
 }
