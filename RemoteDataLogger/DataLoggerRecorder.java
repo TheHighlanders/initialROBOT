@@ -28,6 +28,7 @@ public class DataLoggerRecorder {
 
 		// init
 		DatagramSocket inputSocket = new DatagramSocket(4445);
+        inputSocket.setSoTimeout(5000);
 		byte[] buffer = new byte[256];
 
 		DatagramPacket dataPacket;
@@ -48,12 +49,20 @@ public class DataLoggerRecorder {
 				
 				//process string appropriately.
 				saveData(fw, dataString);
+                System.out.println(dataString);
+                fw.flush();
 			}
 			fw.close();
 			inputSocket.close();
-		} catch (IOException e) {
-			System.out.println("Data Logger failed to open log file." + e.getStackTrace());
-		}
+		}  catch (SocketException se) {
+            System.out.println(se.getStackTrace());
+            System.out.println("Closing LoggerRecorder");
+            moreDataExists = false;
+            
+        }
+        catch (IOException ioe) {
+            System.out.println("Data Logger failed to open log file." + ioe.getStackTrace());
+        }
 
 	}
 
@@ -80,6 +89,12 @@ public class DataLoggerRecorder {
 
 	private static void saveData(FileWriter fw, String data) {
 		try {
+            if (needNewFile){
+                newFile();
+                needHeader = true;
+                needNewFile = false;
+            }
+            
 			// is this the exit message?
 			if (data.charAt(0) == 'e') {
 				moreDataExists = false;
@@ -88,12 +103,7 @@ public class DataLoggerRecorder {
 
 			// is this a header string?
 			if (data.charAt(0) == 'h') {
-				if (needNewFile) {
-					newFile();
-					needHeader = true;
-					needNewFile = false;
-				}
-				if (needHeader) {
+                if (needHeader) {
 					fw.append(data);
 					needHeader = false;
 				}

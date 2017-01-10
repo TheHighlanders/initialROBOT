@@ -17,3 +17,4 @@ build
 /newRobot/build.properties
 /newRobot/build.xml
 /newRobot/sysProps.xml
+*.csv

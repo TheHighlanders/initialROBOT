@@ -1,6 +1,7 @@
 ## Testing Process
 
 Open terminal, and run the following;
+You will need to javac all the classes first. 
 
 * DataLoggerRecorder
 * DataLoggerPublisher

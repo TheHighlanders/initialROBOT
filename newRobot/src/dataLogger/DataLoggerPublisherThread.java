@@ -54,10 +54,18 @@ public class DataLoggerPublisherThread extends Thread {
 	/**
 	 * Gracefully shuts down logger, sending a message to the UDP receivers that logging is ending.
 	 */
-	public void stopLogging() {
-		toLog = false;
+	public void stopLoggingRecorder() {
 		sendData(getStopMessage());
 	}
+	
+	/**
+	 * Stops the logger publisher after sending a message to the recorders to gracefully end logging.
+	 */
+	public void endAllLogging() {
+		stopLoggingRecorder();
+		toLog = false;
+	}
+	
 
 	/**
 	 * Calls on helper methods to ship logging data over UDP until toLog becomes false.
