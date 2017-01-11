@@ -13,22 +13,23 @@ package dataLogger;
  */
 public class DataCollator {
 	
-	public static DataField totalCurrent = new DataField("totalCurrent");
-	public static DataField gyro = new DataField("gyro");
-	public static DataField motorSpeedLeft =  new DataField("motorSpeedLeft");
-	public static DataField motorSpeedRight =  new DataField("motorSpeedRight");
-	public static DataField motorRoller =  new DataField("motorRoller");
-	public static DataField batteryVoltage =  new DataField("batteryVoltage");
-	public static DataField pdpTemp =  new DataField("pdpTemp");
-	public static DataField accelX =  new DataField("accelX");
-	public static DataField accelY =  new DataField("accelY");
-	public static DataField accelZ =  new DataField("accelZ");
-	public static DataField current1 =  new DataField("current1");
-	public static DataField current2 =  new DataField("current2");
-	public static DataField current3 =  new DataField("current3");
-	public static DataField current14 =  new DataField("current14");
-	public static DataField current15 =  new DataField("current15");
-	private static DataField[] dataFieldArray  = {totalCurrent, gyro, motorSpeedLeft, motorSpeedRight, motorRoller, batteryVoltage, pdpTemp, accelX, accelY, accelZ, current1, current2, current3, current14, current15, totalCurrent};
+	public static DataField<Double> totalCurrent = new DataField<>("totalCurrent");
+	public static DataField<Double> gyro = new DataField<>("gyro");
+	public static DataField<Double> motorSpeedLeft =  new DataField<>("motorSpeedLeft");
+	public static DataField<Double> motorSpeedRight =  new DataField<>("motorSpeedRight");
+	public static DataField<Double> motorRoller =  new DataField<>("motorRoller");
+	public static DataField<Double> batteryVoltage =  new DataField<>("batteryVoltage");
+	public static DataField<Double> pdpTemp =  new DataField<>("pdpTemp");
+	public static DataField<Double> accelX =  new DataField<>("accelX");
+	public static DataField<Double> accelY =  new DataField<>("accelY");
+	public static DataField<Double> accelZ =  new DataField<>("accelZ");
+	public static DataField<Double> current1 =  new DataField<>("current1");
+	public static DataField<Double> current2 =  new DataField<>("current2");
+	public static DataField<Double> current3 =  new DataField<>("current3");
+	public static DataField<Double> current14 =  new DataField<>("current14");
+	public static DataField<Double> current15 =  new DataField<>("current15");
+	public static DataField<String> state = new DataField<>("state");
+	private static DataField[] dataFieldArray  = {state, gyro, motorSpeedLeft, motorSpeedRight, motorRoller, batteryVoltage, pdpTemp, accelX, accelY, accelZ, current1, current2, current3, current14, current15, totalCurrent};
 
 	/**
 	 * 
