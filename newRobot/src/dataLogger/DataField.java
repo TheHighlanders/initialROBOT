@@ -8,9 +8,9 @@ package dataLogger;
  * @version Dec 31, 2016
  *
  */
-public class DataField {
+public class DataField <T> {
 	public String name;
-    public volatile double value = 0;
+    public volatile T value;
 	
 	/**
 	 * This constructor sets the name of the DataField. 
@@ -24,7 +24,7 @@ public class DataField {
 	/**
 	 * @param v The updated value of the DataField
 	 */
-	public void setVal (double v) {
+	public void setVal (T v) {
 		value = v;
 	}
 	
@@ -32,8 +32,8 @@ public class DataField {
 	 * 
 	 * @return the current value of the DataField.
 	 */
-	public double getVal (){
-		return value;
+	public T getVal (){
+		return  value;
 	}
 	
 	/**

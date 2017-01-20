@@ -34,14 +34,15 @@ public class DriveTimeCmd extends Command {
 //    	// this was added after reading. Untesting on the Field management system.
 //    	Robot.dt.calibrateGyro();
 
+    	timeDriven.reset();
     }
 
     protected void execute() {
     	
     	while(timer.get()< drivingTime){
     		calibrated = ((0.8 - 0.05*Robot.dt.getGyroRate())*0.05); // uses the gyro as a feedback loop to drive at the desired turn rate. 
-  
-    		Robot.dt.driveLR(-0.80-calibrated, -0.8-0.12+calibrated );
+    		System.out.println("driving");
+    		Robot.dt.driveLR(0.50, 0.5);
     	}
 
     }
@@ -53,6 +54,7 @@ public class DriveTimeCmd extends Command {
     }
 
     protected void end() {
+    	System.out.println("Done");
     	Robot.dt.stop();
     }
 

@@ -52,6 +52,7 @@ public class Robot extends IterativeRobot {
         SmartDashboard.putData("Auto mode", chooser);
         
         Robot.dt.calibrateGyro(); // added after reading.
+        dataLogger.DataCollator.state.setVal("RobotInit");
     	
         
    

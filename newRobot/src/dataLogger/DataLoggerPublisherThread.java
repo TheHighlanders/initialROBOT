@@ -19,7 +19,7 @@ public class DataLoggerPublisherThread extends Thread {
 	/**
 	 * This sets how often a row of data is sent over UDP, in ms. Lower values = more data resolution.
 	 */
-	private final long SLEEP_TIME = 30;
+	private final long SLEEP_TIME = 15;
 	/**
 	 * Set to false to end this thread.
 	 */
