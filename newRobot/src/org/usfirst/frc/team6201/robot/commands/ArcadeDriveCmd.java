@@ -52,12 +52,13 @@ public class ArcadeDriveCmd extends Command {
     protected void initialize() {
 //    	Robot.dt.calibrateGyro(); removed after reading.
     	Robot.dt.resetGyro();
+    	 dataLogger.DataCollator.state.setVal("ArcadeDriveCmdInit");
     	
     }
 
     // Called repeatedly when this Command is scheduled to run
     protected void execute() {
-    	
+    	 dataLogger.DataCollator.state.setVal("ArcadeDriveCmdExecute");
     	rawTurn = scaledValTan(Robot.oi.getXAxisOfLogitech(), TANDOMAIN_X);
     	rawPower = scaledValTan(Robot.oi.getYAxisOfLogitech(), TANDOMAIN_Y);
     	
