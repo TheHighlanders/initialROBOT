@@ -34,10 +34,12 @@ public class DriveTimeCmd extends Command {
 //    	// this was added after reading. Untesting on the Field management system.
 //    	Robot.dt.calibrateGyro();
 
-    	timeDriven.reset();
+    	timer.reset();
+    	dataLogger.DataCollator.state.setVal("DriveTimeCmdInit");
     }
 
     protected void execute() {
+    	dataLogger.DataCollator.state.setVal("DriveTimeCmdExecute");
     	
     	while(timer.get()< drivingTime){
     		calibrated = ((0.8 - 0.05*Robot.dt.getGyroRate())*0.05); // uses the gyro as a feedback loop to drive at the desired turn rate. 

@@ -64,12 +64,14 @@ public class Robot extends IterativeRobot {
 	 * the robot is disabled.
      */
     public void disabledInit(){
+    	 dataLogger.DataCollator.state.setVal("DisabledInit");
 
     }
 	
     
     // will only work when robot is disabled
 	public void disabledPeriodic() {
+		 dataLogger.DataCollator.state.setVal("DisabledPeriodic");
 		
 		// Displays PID Values
 		SmartDashboard.putNumber("P: ", Drivetrain.P);
@@ -94,6 +96,7 @@ public class Robot extends IterativeRobot {
 	 * or additional comparisons to the switch structure below with additional strings & commands.
 	 */
     public void autonomousInit() {
+    	 dataLogger.DataCollator.state.setVal("AutonomousInit");
         autonomousCommand = (Command) chooser.getSelected();
         
 		/* String autoSelected = SmartDashboard.getString("Auto Selector", "Default");
@@ -115,6 +118,7 @@ public class Robot extends IterativeRobot {
      * 
      */
     public void autonomousPeriodic() {
+    	 dataLogger.DataCollator.state.setVal("AutonomousPeriodic");
 //      Scheduler.getInstance().run();
 //    	SmartDashboard.putNumber("Total Current: ", DataCollator.totalCurrent);
 //		SmartDashboard.putNumber("gyro: ", DataCollator.gyro);
@@ -125,6 +129,7 @@ public class Robot extends IterativeRobot {
     }
 
     public void teleopInit() {
+    	 dataLogger.DataCollator.state.setVal("teleopInit");
         if (autonomousCommand != null) autonomousCommand.cancel();
     }
 
@@ -132,6 +137,7 @@ public class Robot extends IterativeRobot {
      * This function is called periodically during operator control
      */
     public void teleopPeriodic() {
+    	 dataLogger.DataCollator.state.setVal("TeleopPeriodic");
     	
         Scheduler.getInstance().run();     
     }
@@ -139,6 +145,7 @@ public class Robot extends IterativeRobot {
      * This function is called periodically during test mode
      */
     public void testPeriodic() {
+    	 dataLogger.DataCollator.state.setVal("TestPeriodic");
         LiveWindow.run();
     }
 }
